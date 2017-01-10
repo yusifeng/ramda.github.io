@@ -1,1 +1,1 @@
-../../../ramdacn/ramda/dist/ramda.js
+../../../ramda/dist/ramda.js
