@@ -4,8 +4,6 @@
 
 ### 1. 在[ramdacn](https://github.com/ramdacn) github 中，下载 ramda 和 ramda.github.io，将 ramda 工程中的 ramda.js 软连接到 ramda.github.io 中。
 
-
-
 ```console
 $ cd one_directory
 $ mkdir ramda_translate && cd ramda_translate
