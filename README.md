@@ -43,13 +43,7 @@ $ vi translate_file.js
 $ npm run server
 ```
 
-查看最新的翻译结果，先运行 npm run jsdoc，然后刷新网页。
-
-```console
-$ npm run jsdoc
-```
-
-刷新网页
+刷新网页即可查看最新的翻译结果。
 
 ## 原 READMD.md 文档
 
