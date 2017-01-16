@@ -1730,7 +1730,6 @@
 
             <div class="description"><p>柯里化函数的参数占位符。允许部分应用于任何位置的参数。</p>
 <p>假设 <code>g</code> 代表柯里化的三元函数，<code>_</code> 代表 <code>R.__</code>，下面几种写法是等价的：</p>
-<p>haha</p>
 <ul>
 <li><code>g(1, 2, 3)</code></li>
 <li><code>g(_, 2, 3)(1)</code></li>
@@ -1903,7 +1902,7 @@ mapIndexed(<span class="hljs-function">(<span class="hljs-params">val, idx</span
 
             <p><small>Added in v0.14.0</small></p>
 
-            <div class="description"><p>对数组中给定索引的值进行函数变换，返回一份新的数组拷贝，给定索引处的值被替换为函数变换的结果。</p>
+            <div class="description"><p>对数组中给定索引的值进行函数变换，返回一份新的数组拷贝，数组中给定索引处的值被替换为函数变换的结果。</p>
 </div>
 
 
@@ -1960,10 +1959,9 @@ R.adjust(R.add(<span class="hljs-number">10</span>))(<span class="hljs-number">1
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Returns <code>true</code> if all elements of the list match the predicate, <code>false</code> if
-there are any that don&#39;t.</p>
-<p>Dispatches to the <code>all</code> method of the second argument, if present.</p>
-<p>Acts as a transducer if a transformer is given in list position.</p>
+            <div class="description"><p>如果列表中的所有元素都满足 predicate，则返回 <code>true</code>，如果有任意元素不满足，则返回 <code>false</code>。</p>
+<p>若第二个参数自身存在 <code>all</code> 方法，则调用自身的 <code>all</code> 方法。</p>
+<p>若在列表位置中给出 transfomer，则用作 transducer 。</p>
 </div>
 
 
@@ -2015,11 +2013,8 @@ R.all(equals3)([<span class="hljs-number">3</span>, <span class="hljs-number">3<
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>Takes a list of predicates and returns a predicate that returns true for a
-given list of arguments if every one of the provided predicates is satisfied
-by those arguments.</p>
-<p>The function returned is a curried function whose arity matches that of the
-highest-arity predicate.</p>
+            <div class="description"><p>接受一个 predicates 列表，并返回一个满足下面条件的 predicate：如果给定的每个参数都满足所有的 predicates ，则返回 <code>true</code>。</p>
+<p>该函数返回一个柯里化的函数，参数个数由参数最多的 predicate 决定。</p>
 </div>
 
 
@@ -2072,10 +2067,8 @@ isQueenOfSpades({<span class="hljs-attr">rank</span>: <span class="hljs-string">
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Returns a function that always returns the given value. Note that for
-non-primitives the value returned is a reference to the original value.</p>
-<p>This function is known as <code>const</code>, <code>constant</code>, or <code>K</code> (for K combinator) in
-other languages and libraries.</p>
+            <div class="description"><p>返回一个总是返回给定值的函数。注意，对于非原始值，返回的值是对原始值的引用。</p>
+<p>此函数在其他语言或库中被称作：<code>const</code>、<code>constant</code>、或 <code>K</code> (在 K combinator 中)</p>
 </div>
 
 
@@ -2125,7 +2118,7 @@ t(); <span class="hljs-comment">//=&gt; 'Tee'</span></code></pre>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Returns <code>true</code> if both arguments are <code>true</code>; <code>false</code> otherwise.</p>
+            <div class="description"><p>如果两个参数都是 <code>true</code>，则返回 <code>true</code>；否则为<code>false</code>。</p>
 </div>
 
 
@@ -2184,10 +2177,9 @@ R.and(<span class="hljs-literal">false</span>, <span class="hljs-literal">false<
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Returns <code>true</code> if at least one of elements of the list match the predicate,
-<code>false</code> otherwise.</p>
-<p>Dispatches to the <code>any</code> method of the second argument, if present.</p>
-<p>Acts as a transducer if a transformer is given in list position.</p>
+            <div class="description"><p>若列表中至少有一个元素满足 predicate，则返回 <code>true</code>，否则返回 <code>false</code>。</p>
+<p>若第二个参数自身存在 <code>any</code> 方法，则调用其自身的 <code>any</code>。</p>
+<p>若在列表位置中给出 transfomer，则用作 transducer 。</p>
 </div>
 
 
@@ -2240,11 +2232,8 @@ R.any(lessThan2)([<span class="hljs-number">1</span>, <span class="hljs-number">
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>Takes a list of predicates and returns a predicate that returns true for a
-given list of arguments if at least one of the provided predicates is
-satisfied by those arguments.</p>
-<p>The function returned is a curried function whose arity matches that of the
-highest-arity predicate.</p>
+            <div class="description"><p>接受一个 predicates 列表，并返回一个满足下面条件的 predicate：如果给定的参数满足至少一个 predicates ，则返回 <code>true</code>。</p>
+<p>该函数返回一个柯里化的函数，参数个数由参数最多的 predicate 决定。</p>
 </div>
 
 
@@ -2306,9 +2295,8 @@ isBlackCard({<span class="hljs-attr">rank</span>: <span class="hljs-string">'Q'<
 
             <p><small>Added in v0.3.0</small></p>
 
-            <div class="description"><p>ap applies a list of functions to a list of values.</p>
-<p>Dispatches to the <code>ap</code> method of the second argument, if present. Also
-treats curried functions as applicatives.</p>
+            <div class="description"><p>ap 将一系列函数列表作用于一系列值上。</p>
+<p>若第二个参数自身存在 <code>ap</code> 方法，则调用自身的 <code>ap</code> 方法。柯里化函数也被当做 applicative。</p>
 </div>
 
 
@@ -2360,9 +2348,8 @@ R.ap([R.concat(<span class="hljs-string">'tasty '</span>), R.toUpper], [<span cl
 
             <p><small>Added in v0.12.0</small></p>
 
-            <div class="description"><p>Returns a new list, composed of n-tuples of consecutive elements If <code>n</code> is
-greater than the length of the list, an empty list is returned.</p>
-<p>Acts as a transducer if a transformer is given in list position.</p>
+            <div class="description"><p>返回一个新列表，由相邻元素组成的 n元组组成。如果 <code>n</code> 大于列表的长度，则返回空列表。</p>
+<p>若在列表位置中给出 transfomer，则用作 transducer 。</p>
 </div>
 
 
@@ -2420,8 +2407,7 @@ R.aperture(<span class="hljs-number">7</span>, [<span class="hljs-number">1</spa
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Returns a new list containing the contents of the given list, followed by
-the given element.</p>
+            <div class="description"><p>返回一个新列表，前面为给定列表的内容，末尾拼接给定的元素</p>
 </div>
 
 
@@ -2478,9 +2464,7 @@ R.append([<span class="hljs-string">'tests'</span>], [<span class="hljs-string">
 
             <p><small>Added in v0.7.0</small></p>
 
-            <div class="description"><p>Applies function <code>fn</code> to the argument list <code>args</code>. This is useful for
-creating a fixed-arity function from a variadic function. <code>fn</code> should be a
-bound function if context is significant.</p>
+            <div class="description"><p>将函数 <code>fn</code> 作用于参数列表 <code>args</code>。这对于从变参函数创建为定参（参数个数确定）函数很有帮助。如果上下文很重要，则 <code>fn</code> 应该绑定其上下文。</p>
 </div>
 
 
@@ -2533,9 +2517,7 @@ associated function with the supplied arguments.</span>
 
             <p><small>Added in v0.20.0</small></p>
 
-            <div class="description"><p>Given a spec object recursively mapping properties to functions, creates a
-function producing an object of the same structure, by mapping each property
-to the result of calling its associated function with the supplied arguments.</p>
+            <div class="description"><p>给定一个能递归地将属性值映射到函数的特定规范的对象，来创建一个能生成相同结构对象的函数。该函数使用传入的参数调用对象的每个属性位对应的函数来生成相应属性的值。</p>
 </div>
 
 
@@ -2602,8 +2584,7 @@ getMetrics(<span class="hljs-number">2</span>, <span class="hljs-number">4</span
 
             <p><small>Added in v0.23.0</small></p>
 
-            <div class="description"><p>Makes an ascending comparator function out of a function that returns a value
-that can be compared with <code>&lt;</code> and <code>&gt;</code>.</p>
+            <div class="description"><p>接受一个返回值可以与 <code>&lt;</code> 和 <code>&gt;</code> 比较的函数，返回一个升序比较器。</p>
 </div>
 
 
@@ -2665,10 +2646,7 @@ that can be compared with <code>&lt;</code> and <code>&gt;</code>.</p>
 
             <p><small>Added in v0.8.0</small></p>
 
-            <div class="description"><p>Makes a shallow clone of an object, setting or overriding the specified
-property with the given value. Note that this copies and flattens prototype
-properties onto the new object as well. All non-primitive properties are
-copied by reference.</p>
+            <div class="description"><p>将对象浅复制，并设置或覆盖指定的属性。注意，这也会将 prototype 属性复制和展开到新的对象中。所有非原始类型属性都通过引用复制。</p>
 </div>
 
 
@@ -2731,10 +2709,7 @@ copied by reference.</p>
 
             <p><small>Added in v0.8.0</small></p>
 
-            <div class="description"><p>Makes a shallow clone of an object, setting or overriding the nodes required
-to create the given path, and placing the specific value at the tail end of
-that path. Note that this copies and flattens prototype properties onto the
-new object as well. All non-primitive properties are copied by reference.</p>
+            <div class="description"><p>将对象浅复制，设置或覆盖即将创建的给定路径所需的节点，并将特定值放在该路径的尾端。请注意，这也会将原型属性复制和展开到新对象上。所有非原始类型属性都通过引用复制。</p>
 </div>
 
 
@@ -2786,9 +2761,7 @@ R.assocPath([<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'
 
             <p><small>Added in v0.2.0</small></p>
 
-            <div class="description"><p>Wraps a function of any arity (including nullary) in a function that accepts
-exactly 2 parameters. Any extraneous parameters will not be passed to the
-supplied function.</p>
+            <div class="description"><p>将任意元函数封装进二元函数（只接受2个参数）中。 任何额外的参数都不会传递给被包裹的函数。</p>
 </div>
 
 
@@ -2848,9 +2821,8 @@ takesTwoArgs(<span class="hljs-number">1</span>, <span class="hljs-number">2</sp
 
             <p><small>Added in v0.6.0</small></p>
 
-            <div class="description"><p>Creates a function that is bound to a context.
-Note: <code>R.bind</code> does not provide the additional argument-binding capabilities of
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">Function.prototype.bind</a>.</p>
+            <div class="description"><p>创建一个绑定了上下文的函数。</p>
+<p>注意：与 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">Function.prototype.bind</a> 不同，<code>R.bind</code> 不会绑定额外参数。</p>
 </div>
 
 
@@ -2907,14 +2879,8 @@ R.pipe(R.assoc(<span class="hljs-string">'a'</span>, <span class="hljs-number">2
 
             <p><small>Added in v0.12.0</small></p>
 
-            <div class="description"><p>A function which calls the two provided functions and returns the <code>&amp;&amp;</code>
-of the results.
-It returns the result of the first function if it is false-y and the result
-of the second function otherwise. Note that this is short-circuited,
-meaning that the second function will not be invoked if the first returns a
-false-y value.</p>
-<p>In addition to functions, <code>R.both</code> also accepts any fantasy-land compatible
-applicative functor.</p>
+            <div class="description"><p>该函数调用两个函数，并对两函数返回值进行<code>与操作</code>。若第一个函数结果为 false-y 的 (false, null, 0 等)，则返回该结果，否则返回第二个函数的结果。注意，<code>both</code> 为短路操作，即如果第一个函数返回 false-y 的值，则不会调用第二个函数。</p>
+<p>除了函数，<code>R.both</code> 还接受任何兼容 fantasy-land 的 applicative functor。</p>
 </div>
 
 
@@ -2973,10 +2939,7 @@ f(<span class="hljs-number">30</span>); <span class="hljs-comment">//=&gt; false
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>Returns the result of calling its first argument with the remaining
-arguments. This is occasionally useful as a converging function for
-<code>R.converge</code>: the left branch can produce a function while the right branch
-produces a value to be passed to that function as an argument.</p>
+            <div class="description"><p>提取第一个参数作为函数，其余参数作为刚提取的函数的参数，调用该函数并将结果返回。这有时可以用作 <code>R.converge</code> 的 convergeing 函数：第一个分支函数可以产生一个函数，而其余分支函数产生一个系列值作为参数传递给该函数。（<code>R.converge</code> 第二个参数为一个分支函数列表）</p>
 </div>
 
 
@@ -3042,10 +3005,8 @@ format({<span class="hljs-attr">indent</span>: <span class="hljs-number">2</span
 
             <p><small>Added in v0.3.0</small></p>
 
-            <div class="description"><p><code>chain</code> maps a function over a list and concatenates the results. <code>chain</code>
-is also known as <code>flatMap</code> in some libraries</p>
-<p>Dispatches to the <code>chain</code> method of the second argument, if present,
-according to the <a href="https://github.com/fantasyland/fantasy-land#chain">FantasyLand Chain spec</a>.</p>
+            <div class="description"><p><code>chain</code> 将函数映射到列表中每个元素，并将结果连接起来。 <code>chain</code> 在一些库中也称为 <code>flatMap</code>（先 map 再 flatten ）。</p>
+<p>若第二个参数存在 <code>chain</code> 方法，则调用其自身的 <code>chain</code>方法。该参数需符合 <a href="https://github.com/fantasyland/fantasy-land#chain">FantasyLand Chain 规范</a>。</p>
 </div>
 
 
@@ -3106,8 +3067,8 @@ R.chain(R.append, R.head)([<span class="hljs-number">1</span>, <span class="hljs
 
             <p><small>Added in v0.20.0</small></p>
 
-            <div class="description"><p>Restricts a number to be within a range.</p>
-<p>Also works for other ordered types such as Strings and Dates.</p>
+            <div class="description"><p>将数字限制在某个范围内。</p>
+<p>也适用于其他有序类型，如字符串和日期。</p>
 </div>
 
 
@@ -3153,10 +3114,8 @@ R.clamp(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>,
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Creates a deep copy of the value which may contain (nested) <code>Array</code>s and
-<code>Object</code>s, <code>Number</code>s, <code>String</code>s, <code>Boolean</code>s and <code>Date</code>s. <code>Function</code>s are
-assigned by reference rather than copied</p>
-<p>Dispatches to a <code>clone</code> method if present.</p>
+            <div class="description"><p>深复制。其值可能（嵌套）包含 <code>Array</code>、<code>Object</code>、<code>Number</code>、<code>String</code>、<code>Boolean</code>、<code>Date</code> 类型的数据。<code>Function</code> 进行引用复制。</p>
+<p>若自身存在 <code>clone</code> 方法，则调用自身的 <code>clone</code> 方法。</p>
 </div>
 
 
@@ -3204,8 +3163,7 @@ is less than the second, <code>false</code> otherwise</p>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Makes a comparator function out of a function that reports whether the first
-element is less than the second.</p>
+            <div class="description"><p>接受判断首个元素是否小于第二个元素的函数，返回比较函数。</p>
 </div>
 
 
@@ -3252,9 +3210,8 @@ element is less than the second.</p>
 
             <p><small>Added in v0.12.0</small></p>
 
-            <div class="description"><p>Takes a function <code>f</code> and returns a function <code>g</code> such that if called with the same arguments
-when <code>f</code> returns a &quot;truthy&quot; value, <code>g</code> returns <code>false</code> and when <code>f</code> returns a &quot;falsy&quot; value <code>g</code> returns <code>true</code>.</p>
-<p><code>R.complement</code> may be applied to any functor</p>
+            <div class="description"><p>对函数的返回值取反。接受一个函数 <code>f</code>，返回一个新函数 <code>g</code>：在输入参数相同的情况下，若 <code>f</code> 返回 &#39;true-y&#39; ，则 <code>g</code> 返回 <code>false-y</code> ，反之亦然。</p>
+<p>可以将 <code>R.complement</code> 应用于任何 functor。</p>
 </div>
 
 
@@ -3306,9 +3263,8 @@ isNotNil(<span class="hljs-number">7</span>); <span class="hljs-comment">//=&gt;
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Performs right-to-left function composition. The rightmost function may have
-any arity; the remaining functions must be unary.</p>
-<p><strong>Note:</strong> The result of compose is not automatically curried.</p>
+            <div class="description"><p>从右往左执行函数组合。最右边函数可以是任意元函数（参数个数不限），其余函数必须是一元函数。</p>
+<p><strong>注意：</strong>compose 输出的函数不会自动进行柯里化。</p>
 </div>
 
 
@@ -3360,9 +3316,8 @@ R.compose(<span class="hljs-built_in">Math</span>.abs, R.add(<span class="hljs-n
 
             <p><small>Added in v0.16.0</small></p>
 
-            <div class="description"><p>Returns the right-to-left Kleisli composition of the provided functions,
-each of which must return a value of a type supported by <a href="#chain"><code>chain</code></a>.</p>
-<p><code>R.composeK(h, g, f)</code> is equivalent to <code>R.compose(R.chain(h), R.chain(g), R.chain(f))</code>.</p>
+            <div class="description"><p>接受一系列函数，返回从右向左的 Kleisli 组合，每个函数必须返回支持 <a href="#chain"><code>chain</code></a> 操作的值。</p>
+<p><code>R.composeK(h, g, f)</code> 等同于 <code>R.compose(R.chain(h)，R.chain(g)，R.chain(f))</code>。</p>
 </div>
 
 
@@ -3421,9 +3376,7 @@ each of which must return a value of a type supported by <a href="#chain"><code>
 
             <p><small>Added in v0.10.0</small></p>
 
-            <div class="description"><p>Performs right-to-left composition of one or more Promise-returning
-functions. The rightmost function may have any arity; the remaining
-functions must be unary.</p>
+            <div class="description"><p>从右向左执行返回 Promise 的函数的组合。 最右边的函数可以是任意元函数（参数个数不限）; 其余函数必须是一元函数。</p>
 </div>
 
 
@@ -3497,11 +3450,9 @@ followersForUser(<span class="hljs-string">'JOE'</span>).then(<span class="hljs-
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Returns the result of concatenating the given lists or strings.</p>
-<p>Note: <code>R.concat</code> expects both arguments to be of the same type,
-unlike the native <code>Array.prototype.concat</code> method. It will throw
-an error if you <code>concat</code> an Array with a non-Array value.</p>
-<p>Dispatches to the <code>concat</code> method of the first argument, if present.</p>
+            <div class="description"><p>将给定的 lists 或 strings 串连接起来。</p>
+<p>注意：不同于 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat"><code>Array.prototype.concat</code></a>, <code>R.concat</code> 要求两个参数类型相同。 如果将 Array 与非 Array 连接，将抛出错误。</p>
+<p>若第二个参数自身存在 <code>concat</code> 方法，则调用自身的 <code>concat</code>。</p>
 </div>
 
 
@@ -3547,12 +3498,7 @@ R.concat([], []); <span class="hljs-comment">//=&gt; []</span></code></pre>
 
             <p><small>Added in v0.6.0</small></p>
 
-            <div class="description"><p>Returns a function, <code>fn</code>, which encapsulates <code>if/else, if/else, ...</code> logic.
-<code>R.cond</code> takes a list of [predicate, transformer] pairs. All of the arguments
-to <code>fn</code> are applied to each of the predicates in turn until one returns a
-&quot;truthy&quot; value, at which point <code>fn</code> returns the result of applying its
-arguments to the corresponding transformer. If none of the predicates
-matches, <code>fn</code> returns undefined.</p>
+            <div class="description"><p>返回一个函数 <code>fn</code>，它封装了 <code>if / else，if / else, ...</code> 逻辑。 <code>R.cond</code> 接受列表元素为 [predicate，transformer] 对(pair) 的列表。 <code>fn</code> 的所有参数顺次作用于每个 predicate，直到有一个返回 &quot;truthy&quot; 值，此时相应 transformer 对参数处理，并作为 <code>fn</code> 的结果返回。 如果没有 predicate 匹配，则 <code>fn</code> 返回 undefined。</p>
 </div>
 
 
@@ -3603,8 +3549,7 @@ fn(<span class="hljs-number">100</span>); <span class="hljs-comment">//=&gt; 'wa
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Wraps a constructor function inside a curried function that can be called
-with the same arguments and returns the same type.</p>
+            <div class="description"><p>将构造函数封装在柯里化函数中，输入参数与返回值类型跟被封装的构造函数的相同。</p>
 </div>
 
 
@@ -3671,9 +3616,7 @@ R.map(sightNewAnimal, animalTypes); <span class="hljs-comment">//=&gt; ["It's a 
 
             <p><small>Added in v0.4.0</small></p>
 
-            <div class="description"><p>Wraps a constructor function inside a curried function that can be called
-with the same arguments and returns the same type. The arity of the function
-returned is specified to allow using variadic constructor functions.</p>
+            <div class="description"><p>将构造函数封装在柯里化函数中，可以使用相同的参数调用并返回相同的类型。为了能够使用变参的构造函数，返回函数的元数需要明确指定。</p>
 </div>
 
 
@@ -3742,8 +3685,7 @@ Salad.prototype.recipe = <span class="hljs-function"><span class="hljs-keyword">
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Returns <code>true</code> if the specified value is equal, in <code>R.equals</code> terms, to at
-least one element of the given list; <code>false</code> otherwise.</p>
+            <div class="description"><p>若数组中至少存在一个元素等于指定的值（依据 <code>R.equals</code> 的方法判断），则返回 <code>true</code>；否则返回 <code>false</code>。</p>
 </div>
 
 
@@ -3802,11 +3744,7 @@ R.contains([<span class="hljs-number">42</span>], [[<span class="hljs-number">42
 
             <p><small>Added in v0.4.2</small></p>
 
-            <div class="description"><p>Accepts a converging function and a list of branching functions and returns
-a new function. When invoked, this new function is applied to some
-arguments, each branching function is applied to those same arguments. The
-results of each branching function are passed as arguments to the converging
-function to produce the return value.</p>
+            <div class="description"><p>接受一个 converging 函数和一个分支函数列表，并返回一个新函数。 当被调用时，新函数接受参数，并将这些参数转发给每个分支函数。然后将每个分支函数的计算结果作为参数传递给 converging 函数，converging 函数的结果作为新函数的返回值。</p>
 </div>
 
 
@@ -3865,11 +3803,8 @@ strangeConcat(<span class="hljs-string">"Yodel"</span>) <span class="hljs-commen
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Counts the elements of a list according to how many match each value of a
-key generated by the supplied function. Returns an object mapping the keys
-produced by <code>fn</code> to the number of occurrences in the list. Note that all
-keys are coerced to strings because of how JavaScript objects work.</p>
-<p>Acts as a transducer if a transformer is given in list position.</p>
+            <div class="description"><p>根据给定函数提供的统计规则对列表中的元素进行分类计数。返回一个对象，其键值对为：<code>fn</code> 根据列表元素生成键，列表中通过 <code>fn</code> 映射为对应键的元素的个数作为值。注意，由于JavaScript对象的实现方式，所有键都被强制转换为字符串。</p>
+<p>若在列表位置中给出 transfomer，则用作 transducer 。</p>
 </div>
 
 
