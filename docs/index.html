@@ -3852,20 +3852,15 @@ R.countBy(R.toLower)(letters);   <span class="hljs-comment">//=&gt; {'a': 3, 'b'
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Returns a curried equivalent of the provided function. The curried function
-has two unusual capabilities. First, its arguments needn&#39;t be provided one
-at a time. If <code>f</code> is a ternary function and <code>g</code> is <code>R.curry(f)</code>, the
-following are equivalent:</p>
+            <div class="description"><p>对函数进行柯里化。柯里化函数有两个很好的特性：</p>
+<p>首先，参数不需要一次只传入一个。如果 <code>f</code> 是三元函数，<code>g</code> 是 <code>R.curry(f)</code> ，则下列写法是等价的：</p>
 <ul>
 <li><code>g(1)(2)(3)</code></li>
 <li><code>g(1)(2, 3)</code></li>
 <li><code>g(1, 2)(3)</code></li>
 <li><code>g(1, 2, 3)</code></li>
 </ul>
-<p>Secondly, the special placeholder value <code>R.__</code> may be used to specify
-&quot;gaps&quot;, allowing partial application of any combination of arguments,
-regardless of their positions. If <code>g</code> is as above and <code>_</code> is <code>R.__</code>, the
-following are equivalent:</p>
+<p>其次，特殊的占位符值 <code>R.__</code> 可用于标记暂未传入的参数位置，允许部分应用于任何参数组合，而无需关心它们的位置和顺序。 假设 <code>g</code> 定义如前所示，且 <code>_</code> 代表 <code>R .__</code>，则下列写法是等价的：</p>
 <ul>
 <li><code>g(1, 2, 3)</code></li>
 <li><code>g(_, 2, 3)(1)</code></li>
@@ -3934,20 +3929,15 @@ g(<span class="hljs-number">4</span>); <span class="hljs-comment">//=&gt; 10</sp
 
             <p><small>Added in v0.5.0</small></p>
 
-            <div class="description"><p>Returns a curried equivalent of the provided function, with the specified
-arity. The curried function has two unusual capabilities. First, its
-arguments needn&#39;t be provided one at a time. If <code>g</code> is <code>R.curryN(3, f)</code>, the
-following are equivalent:</p>
+            <div class="description"><p>对函数进行柯里化，并限制柯里化函数的元数。柯里化函数有两个很好的特性：</p>
+<p>首先，参数不需要一次只传入一个。假设 <code>g</code> 由 <code>R.curryN(3, f)</code> 生成，则下列写法是等价的：</p>
 <ul>
 <li><code>g(1)(2)(3)</code></li>
 <li><code>g(1)(2, 3)</code></li>
 <li><code>g(1, 2)(3)</code></li>
 <li><code>g(1, 2, 3)</code></li>
 </ul>
-<p>Secondly, the special placeholder value <code>R.__</code> may be used to specify
-&quot;gaps&quot;, allowing partial application of any combination of arguments,
-regardless of their positions. If <code>g</code> is as above and <code>_</code> is <code>R.__</code>, the
-following are equivalent:</p>
+<p>其次，特殊的占位符值 <code>R.__</code> 可用于标记暂未传入的参数位置，允许部分应用于任何参数组合，而无需关心它们的位置和顺序。 假设 <code>g</code> 定义如前所示，且 <code>_</code> 代表 <code>R .__</code>，则下列写法是等价的：</p>
 <ul>
 <li><code>g(1, 2, 3)</code></li>
 <li><code>g(_, 2, 3)(1)</code></li>
@@ -4008,7 +3998,7 @@ g(<span class="hljs-number">4</span>); <span class="hljs-comment">//=&gt; 10</sp
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>Decrements its argument.</p>
+            <div class="description"><p>减1。</p>
 </div>
 
 
@@ -4063,8 +4053,7 @@ g(<span class="hljs-number">4</span>); <span class="hljs-comment">//=&gt; 10</sp
 
             <p><small>Added in v0.10.0</small></p>
 
-            <div class="description"><p>Returns the second argument if it is not <code>null</code>, <code>undefined</code> or <code>NaN</code>
-otherwise the first argument is returned.</p>
+            <div class="description"><p>如果第二个参数不是 <code>null</code>、<code>undefined</code> 或 <code>NaN</code>，则返回第二个参数，否则返回第一个参数（默认值）。</p>
 </div>
 
 
@@ -4128,8 +4117,7 @@ defaultTo42(<span class="hljs-built_in">parseInt</span>(<span class="hljs-string
 
             <p><small>Added in v0.23.0</small></p>
 
-            <div class="description"><p>Makes a descending comparator function out of a function that returns a value
-that can be compared with <code>&lt;</code> and <code>&gt;</code>.</p>
+            <div class="description"><p>接受一个返回值可以与 <code>&lt;</code> 和 <code>&gt;</code> 比较的函数，返回一个降序比较器。</p>
 </div>
 
 
@@ -4184,9 +4172,7 @@ that can be compared with <code>&lt;</code> and <code>&gt;</code>.</p>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Finds the set (i.e. no duplicates) of all elements in the first list not
-contained in the second list. Objects and Arrays are compared are compared
-in terms of value equality, not reference equality.</p>
+            <div class="description"><p>查找第一个列表中未包含在第二个列表中的所有元素的集合。对象和数组需要比较数值相等，而非引用相等。</p>
 </div>
 
 
@@ -4252,9 +4238,7 @@ R.difference([{<span class="hljs-attr">a</span>: <span class="hljs-number">1</sp
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>Finds the set (i.e. no duplicates) of all elements in the first list not
-contained in the second list. Duplication is determined according to the
-value returned by applying the supplied predicate to two list elements.</p>
+            <div class="description"><p>查找第一个列表中未包含在第二个列表中的所有元素的集合（集合中没有重复元素）。两列表中的元素通过 predicate 判断相应元素是否同时 “包含在” 两列表中。</p>
 </div>
 
 
@@ -4314,7 +4298,7 @@ R.differenceWith(cmp, l1, l2); <span class="hljs-comment">//=&gt; [{a: 1}, {a: 2
 
             <p><small>Added in v0.10.0</small></p>
 
-            <div class="description"><p>Returns a new object that does not contain a <code>prop</code> property.</p>
+            <div class="description"><p>返回一个不包含给定 <code>prop</code> 属性的新对象。</p>
 </div>
 
 
@@ -4370,9 +4354,8 @@ R.differenceWith(cmp, l1, l2); <span class="hljs-comment">//=&gt; [{a: 1}, {a: 2
 
             <p><small>Added in v0.11.0</small></p>
 
-            <div class="description"><p>Makes a shallow clone of an object, omitting the property at the given path.
-Note that this copies and flattens prototype properties onto the new object
-as well. All non-primitive properties are copied by reference.</p>
+            <div class="description"><p>对对象进行浅复制，忽略（除去）给定路径上的属性。</p>
+<p>注意，这也会将 prototype 属性复制到新对象上并展开。所有非原始类型属性都通过引用复制。</p>
 </div>
 
 
@@ -5194,7 +5177,7 @@ R.evolve(transformations, tomato); <span class="hljs-comment">//=&gt; {firstName
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>A function that always returns <code>false</code>. Any passed in parameters are ignored.</p>
+            <div class="description"><p>始终返回 <code>false</code> 的函数。 参数中传递的任何内容都将被忽略。</p>
 </div>
 
 
@@ -13082,7 +13065,7 @@ R.symmetricDifferenceWith(eqA, l1, l2); <span class="hljs-comment">//=&gt; [{a: 
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>A function that always returns <code>true</code>. Any passed in parameters are ignored.</p>
+            <div class="description"><p>始终返回 <code>true</code> 的函数。 参数中传递的任何内容都将被忽略。</p>
 </div>
 
 
