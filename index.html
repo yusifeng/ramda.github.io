@@ -30,7 +30,7 @@
     </header>
     <main class="container">
         <article><h1 id="ramda">Ramda</h1>
-<p>A practical functional library for JavaScript programmers.</p>
+<p>一款实用的 JavaScript 函数式编程库。</p>
 <p><a href="https://travis-ci.org/ramda/ramda"><img src="https://travis-ci.org/ramda/ramda.svg?branch=master" alt="Build Status"></a>
 <a href="https://www.npmjs.org/package/ramda"><img src="https://badge.fury.io/js/ramda.svg" alt="npm module"></a>
 <a href="https://david-dm.org/ramda/ramda"><img src="https://david-dm.org/ramda/ramda.svg" alt="dependencies"></a>
@@ -38,23 +38,20 @@
 <h2 id="why-ramda-">Why Ramda?</h2>
 <p><img src="http://ramda.jcphillipps.com/logo/ramdaFilled_200x235.png" 
      width="170" height="190" align="right" hspace="12" /></p>
-<p>There are already several excellent libraries with a functional flavor. Typically, they are meant to be general-purpose toolkits, suitable for working in multiple paradigms. Ramda has a more focused goal. We wanted a library designed specifically for a functional programming style, one that makes it easy to create functional pipelines, one that never mutates user data. </p>
-<h2 id="what-s-different-">What&#39;s Different?</h2>
-<p>The primary distinguishing features of Ramda are:</p>
+<p>目前已经存在许多优秀的函数式的库。通常，它们作为通用工具包，适合在多种范式下工作。Ramda 有一个更专注的目标。我们想要一个专门为函数式编程风格设计的库，一个更容易创建函数式 pipeline、且从不改变用户数据的库。</p>
+<h2 id="what-s-different-">What&#39;s different?</h2>
+<p>Ramda 主要的独特性质如下：</p>
 <ul>
-<li><p>Ramda emphasizes a purer functional style. Immutability and side-effect free functions 
-are at the heart of its design philosophy. This can help you get the job done with simple, 
-elegant code.</p>
+<li><p>Ramda 强调更加纯粹的函数式风格。数据不变性和函数无副作用是其设计理念的核心。这可以帮助你使用简洁、优雅的代码来完成工作。</p>
 </li>
-<li><p>Ramda functions are automatically curried. This allows you to easily build up new functions 
-from old ones simply by not supplying the final parameters.</p>
+<li><p>Ramda 函数本身都是自动柯里化的。这可以让你在只提供部分参数的情况下，轻松地在已有函数的基础上创建新函数。</p>
 </li>
-<li><p>The parameters to Ramda functions are arranged to make it convenient for currying. The data 
-to be operated on is generally supplied last.</p>
+<li><p>Ramda 函数的参数的排列更便于柯里化。通常最后提供要操作的数据。</p>
+</li>
+<li><p>最后两点一起，使得将多个函数构建为简单的函数序列变得非常容易，每个函数对数据进行变换并将结果传递给下一个函数。Ramda 的设计支持这种风格的编程。</p>
 </li>
 </ul>
-<p>The last two points together make it very easy to build functions as sequences of simpler functions, each of which transforms the data and passes it along to the next. Ramda is designed to support this style of coding.</p>
-<h2 id="introductions">Introductions</h2>
+<h2 id="-">简介</h2>
 <ul>
 <li><a href="http://buzzdecafe.github.io/code/2014/05/16/introducing-ramda">Introducing Ramda</a> by Buzz de Cafe</li>
 <li><a href="http://fr.umio.us/why-ramda/">Why Ramda?</a> by Scott Sauyet</li>
@@ -63,86 +60,65 @@ to be operated on is generally supplied last.</p>
 <li><a href="https://www.youtube.com/watch?v=m3svKOdZijA&amp;app=desktop">Hey Underscore, You&#39;re Doing It Wrong!</a> by Brian Lonsdorf</li>
 <li><a href="http://randycoulman.com/blog/categories/thinking-in-ramda">Thinking in Ramda</a> by Randy Coulman</li>
 </ul>
-<h2 id="philosophy">Philosophy</h2>
-<p>Using Ramda should feel much like just using JavaScript.
-It is practical, functional JavaScript. We&#39;re not introducing
-lambda expressions in strings, we&#39;re not borrowing consed 
-lists, we&#39;re not porting over all of the Clojure functions.</p>
-<p>Our basic data structures are plain JavaScript objects, and our
-usual collections are JavaScript arrays. We also keep other
-native features of JavaScript, such as functions as objects
-with properties.</p>
-<p>Functional programming is in good part about immutable objects and 
-side-effect free functions. While Ramda does not <em>enforce</em> this, it
-enables such style to be as frictionless as possible.</p>
-<p>We aim for an implementation both clean and elegant, but the API is king.
-We sacrifice a great deal of implementation elegance for even a slightly
-cleaner API.</p>
-<p>Last but not least, Ramda strives for performance. A reliable and quick
-implementation wins over any notions of functional purity.</p>
-<h2 id="installation">Installation</h2>
-<p>To use with node:</p>
+<h2 id="-">理念</h2>
+<p>使用 Ramda 时，应该感觉像使用原生 JavaScript 一样，它是实用的且函数式的 JavaScript。Ramda 没有在字符串中引入 lambda 表达式，也没有借用 consed 列表，也不是要移植所有的 Clojure 函数。</p>
+<p>Ramda 基本的数据结构都是原生 JavaScript 对象，我们常用的集合是 JavaScript 的数组。Ramda 还保留了许多其他原生 JavaScript 特性，例如，函数是具有属性的对象。</p>
+<p>函数式编程很大一部分主题是关于对象不变性和函数无副作用两方面。虽然 Ramda 没有特别加强这方面实现，但它足以使这两方面在编程时尽可能自然、方便。</p>
+<p>Ramda 的目标是让实现（编程和 API 实现）简洁、优雅。但 API 为王。谓词我们牺牲了大量优雅、简洁的实现。</p>
+<p>最后，Ramda 非常注重运行性能。可靠和快速的实现胜过强调函数式的纯度。（需要综合考虑性能和代码实现优雅性两方面。如 <a href="https://github.com/CrossEye/eweda">Eweda</a> ，过于强调实现的简洁优雅，而失去了实用价值）</p>
+<h2 id="-">安装</h2>
+<p>使用 node：</p>
 <pre><code class="lang-bash">$ npm install ramda
 </code></pre>
-<p>Then in the console:</p>
+<p>然后在 console 中使用：</p>
 <pre><code class="lang-javascript">var R = require(&#39;ramda&#39;);
 </code></pre>
-<p>To use directly in the browser:</p>
+<p>直接在浏览器中使用：</p>
 <pre><code class="lang-html">&lt;script src=&quot;path/to/yourCopyOf/ramda.js&quot;&gt;&lt;/script&gt;
 </code></pre>
-<p>or the minified version:</p>
+<p>或使用最小化版本：</p>
 <pre><code class="lang-html">&lt;script src=&quot;path/to/yourCopyOf/ramda.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
-<p>or from a CDN, either cdnjs:</p>
+<p>或从 CDN 上获取：</p>
 <pre><code class="lang-html">&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/ramda/0.23.0/ramda.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
-<p>or one of the below links from <a href="http://jsdelivr.com">jsDelivr</a>:</p>
+<p>或使用 <a href="http://jsdelivr.com">jsDelivr</a> 的以下任意链接：</p>
 <pre><code class="lang-html">&lt;script src=&quot;//cdn.jsdelivr.net/ramda/0.23.0/ramda.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;//cdn.jsdelivr.net/ramda/0.23/ramda.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;//cdn.jsdelivr.net/ramda/latest/ramda.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
-<p>(note that using <code>latest</code> is taking a significant risk that ramda API changes could break your code.)</p>
-<p>These script tags add the variable <code>R</code> on the browser&#39;s global scope.</p>
-<p>Or you can inject ramda into virtually any unsuspecting website using <a href="https://github.com/ramda/ramda/blob/master/BOOKMARKLET.md">the bookmarklet</a>.</p>
-<h3 id="build">Build</h3>
+<p>（注意，使用 <code>最新</code> 的版本可能会带来很大的风险，ramda API 的更改可能会对以前代码造成破坏。）</p>
+<p>这些脚本标签在浏览器中添加一个全局变量 <code>R</code>。</p>
+<p>或者也可以借助 <a href="https://github.com/ramda/ramda/blob/master/BOOKMARKLET.md">the bookmarklet</a>，将 ramda 注入到几乎任何不安全的网站。</p>
+<h3 id="-">构建库</h3>
 <ul>
-<li>on Unix-based platforms, <code>npm run build</code> updates <strong>dist/ramda.js</strong> and <strong>dist/ramda.min.js</strong></li>
-<li>on Windows, write the output of <code>scripts/build --complete</code> to a temporary file, then rename the temporary file <strong>dist/ramda.js</strong>.</li>
+<li>在基于 Unix 的平台上，运行 <code>npm run build</code> 更新 <strong>dist/ramda.js</strong> 和 <strong>dist/ramda.min.js</strong></li>
+<li>在 Windows 上，将 <code>scripts/build --complete</code> 的运行结果输出到一个临时文件中，然后将该文件重命名为 <strong>dist/ramda.js</strong>.</li>
 </ul>
-<h4 id="partial-builds">Partial Builds</h4>
-<p>It is possible to build Ramda with a subset of the functionality to reduce its file size. Ramda&#39;s build system supports this with command line flags. For example if you&#39;re using <code>R.compose</code>, <code>R.reduce</code>, and <code>R.filter</code> you can create a partial build with:</p>
+<h4 id="-">部分构建库</h4>
+<p>可以生成一个 Ramda 的函数子集来减小库文件大小。Ramda 的构建系统通过命令行标志来支持部分构建。例如，如果要使用 <code>R.compose</code>, <code>R.reduce</code>, and <code>R.filter</code> ，可以创建一个部分构建库：</p>
 <pre><code>./scripts/build -- src/compose.js src/reduce.js src/filter.js &gt; dist/ramda.custom.js
-</code></pre><p>This requires having Node/io.js installed. </p>
-<h2 id="documentation">Documentation</h2>
-<p>Please review the <a href="http://ramdajs.com/docs/">API documentation</a>.</p>
-<h2 id="the-name">The Name</h2>
-<p>Ok, so we like sheep.  That&#39;s all.  It&#39;s a short name, not already 
-taken.  It could as easily have been <code>eweda</code>, but then we would be 
-forced to say <em>eweda lamb!</em>, and no one wants that.  For non-English 
-speakers, lambs are baby sheep, ewes are female sheep, and rams are male 
-sheep.  So perhaps ramda is a grown-up lambda... but probably not.</p>
-<h2 id="running-the-test-suite">Running The Test Suite</h2>
-<p><strong>Console:</strong></p>
-<p>To run the test suite from the console, you need to have <code>mocha</code> installed:</p>
+</code></pre><p>上述命令需要安装 Node/io.js。</p>
+<h2 id="-">文档</h2>
+<p>请查看 <a href="http://ramdajs.com/docs/">API 文档</a>.</p>
+<h2 id="-">关于名字</h2>
+<p>好吧，因为我们喜欢羊，就是这样。名字要简洁、且未被占用。它可以是 <code>eweda</code>，然后我们被迫叫它 <em>eweda lamb!</em> ，但没有想要这个名字。对于非英语国家的人，lambs 是羔羊，ewes 是母羊，rams 是公羊。所以 ramda 可能是一个成年的 lambda ...，也可能不是。（双关，既有 lambda 表示式的意思，也有羔羊的意思，愿 Ramda 发展壮大）</p>
+<h2 id="-">运行测试套件</h2>
+<p><strong>控制台（Console）:</strong></p>
+<p>要从控制台运行测试套件，需要安装 <code>mocha</code> ：</p>
 <pre><code>npm install -g mocha
-</code></pre><p>Then from the root of the project, you can just call</p>
+</code></pre><p>然后在项目根目录下，可以调用</p>
 <pre><code>mocha
-</code></pre><p>Alternately, if you&#39;ve installed the dependencies, via:</p>
+</code></pre><p>或者，如果已通过下面命令安装依赖：</p>
 <pre><code>npm install
-</code></pre><p>then you can run the tests (and get detailed output) by running:</p>
+</code></pre><p>那么你可以通过下面命令运行测试（并获得详细的输出）：</p>
 <pre><code>npm test
-</code></pre><p><strong>Browser:</strong></p>
-<p>To run the test suite in the browser, you can simply open <code>test/index.html</code>.</p>
-<p>Alternatively, you can use <a href="https://github.com/airportyh/testem">testem</a> to
-test across different browsers (or even headlessly), with livereloading of
-tests too. Install testem (<code>npm install -g testem</code>) and run <code>testem</code>. Open the
-link provided in your browser and you will see the results in your terminal.</p>
-<p>If you have <em>PhantomJS</em> installed, you can run <code>testem -l phantomjs</code> to run the
-tests completely headlessly.</p>
-<h2 id="acknowledgements">Acknowledgements</h2>
-<p>Thanks to <a href="http://www.jcphillipps.com">J. C. Phillipps</a> for the Ramda logo.
-Ramda logo artwork &copy; 2014 J. C. Phillipps. Licensed Creative Commons 
-<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>.</p>
+</code></pre><p><strong>浏览器（Browser）:</strong></p>
+<p>在浏览器中运行测试套件，只需打开 <code>test/index.html</code>。</p>
+<p>或者，可以使用 <a href="https://github.com/airportyh/testem">testem</a> 在不同的浏览器（甚至是无界面浏览器）上测试，也可以使用测试的实时重载特性。 安装 testem （<code>npm install -g testem</code>）并运行 testem。 打开浏览器中提供的链接，将会在终端中看到结果。</p>
+<p>如果已安装 <em>PhantomJS</em>，则可以运行 <code>testem -l phantomjs</code>，以完全无界面方式地运行测试。</p>
+<h2 id="-">致谢</h2>
+<p>感谢 <a href="http://www.jcphillipps.com">J. C. Phillipps</a> 为 Ramda 设计的标志。 Ramda 标志艺术品 &copy; 2014 J. C. Phillipps。 创作共享协议 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>.</p>
 </article>
     </main>
 
