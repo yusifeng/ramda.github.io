@@ -2229,7 +2229,7 @@
     });
 
     /**
-     * 检查输入值是否为`null`或`undefined`。
+     * 检查输入值是否为 `null` 或 `undefined`。
      *
      * @func
      * @memberOf R
@@ -2250,12 +2250,8 @@
     });
 
     /**
-     * Returns a list containing the names of all the enumerable own properties of
-     * the supplied object.
-     * Note that the order of the output array is not guaranteed to be consistent
-     * across different JS platforms.
-     * 返回一个包含提供的对象全部可枚举的自属性名的列表
-     * 注意通过不同的JS平台输出数组的顺序并不能保证是相同的
+     * 返回一个列表，其中包含给定对象的所有可枚举的自身属性的属性名。
+     * 注意，通过不同 JS 平台输出数组的顺序不保证是相同的。
      *
      * @func
      * @memberOf R
@@ -2326,10 +2322,8 @@
     }();
 
     /**
-     * Returns a list containing the names of all the properties of the supplied
-     * object, including prototype properties.
-     * Note that the order of the output array is not guaranteed to be consistent
-     * across different JS platforms.
+     * 返回一个列表，其中包含给定对象的所有属性的 key，包括 prototype 属性的。
+     * 注意，通过不同 JS 平台输出数组的顺序不保证是相同的。
      *
      * @func
      * @memberOf R
@@ -2355,7 +2349,7 @@
     });
 
     /**
-     * 通过返回`list.length`返回数组中元素的数量。
+     * 通过 `list.length` 来返回数组中元素的数量。
      *
      * @func
      * @memberOf R
@@ -2374,7 +2368,7 @@
     });
 
     /**
-     * 如果第一个参数比第二个小，则返回`true`；否则返回`false`。
+     * 如果第一个参数小于第二个，返回 `true`；否则返回 `false`。
      *
      * @func
      * @memberOf R
@@ -2398,7 +2392,7 @@
     });
 
     /**
-     * 如果第一个参数比第二个小或者等于第二个参数，则返回`true`；否则返回`false`。
+     * 如果第一个参数小于或等于第二个，返回 `true`；否则返回 `false`。
      *
      * @func
      * @memberOf R
@@ -2422,13 +2416,11 @@
     });
 
     /**
-     * The mapAccum function behaves like a combination of map and reduce; it
-     * applies a function to each element of a list, passing an accumulating
-     * parameter from left to right, and returning a final value of this
-     * accumulator together with the new list.
+     * mapAccum 函数表现得很像 map 和 reduce 的结合；
+     * 它将一个函数应用到一个列表中的每一个元素，从左往右传递一个累积的参数，
+     * 并将最后累积的值和新列表一并返回。
      *
-     * The iterator function receives two arguments, *acc* and *value*, and should
-     * return a tuple *[acc, value]*.
+     * 迭代器函数接收两个参数，*acc* 和 *value*， 并且应该返回一个元组 *[acc, value]*。
      *
      * @func
      * @memberOf R
@@ -2472,16 +2464,13 @@
     });
 
     /**
-     * The mapAccumRight function behaves like a combination of map and reduce; it
-     * applies a function to each element of a list, passing an accumulating
-     * parameter from right to left, and returning a final value of this
-     * accumulator together with the new list.
+     * mapAccumRight 函数表现得很像 map 和 reduce 的结合；
+     * 它将一个函数应用到一个列表中的每一个元素，从右往左传递一个累积的参数，
+     * 并将这个累积器最后的值和新列表一并返回。
      *
-     * Similar to `mapAccum`, except moves through the input list from the right to
-     * the left.
+     * 除了输入列表是从右往左移动，其他和 `mapAccum` 类似。
      *
-     * The iterator function receives two arguments, *value* and *acc*, and should
-     * return a tuple *[value, acc]*.
+     * 迭代器函数接收两个参数，acc 和 value， 并且应该返回一个元组 [acc, value]。
      *
      * @func
      * @memberOf R
@@ -2524,9 +2513,11 @@
     });
 
     /**
-     * 对一个字符串测试正则表达式。注意当没有匹配项时这个函数会返回一个空数组。这一点和
+     * 对一个字符串进行正则判断，
+     * 注意，当没有匹配项时这个函数会返回一个空数组。
+     * 这一点和
      * [`String.prototype.match`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
-     * 有所不同，后者在没有匹配项时会返回`null`。
+     * 有所不同，后者在没有匹配项时会返回 `null`。
      *
      * @func
      * @memberOf R
@@ -2548,11 +2539,9 @@
     });
 
     /**
-     * mathMod behaves like the modulo operator should mathematically, unlike the
-     * `%` operator (and by extension, R.modulo). So while "-17 % 5" is -2,
-     * mathMod(-17, 5) is 3. mathMod requires Integer arguments, and returns NaN
-     * when the modulus is zero or negative.
-     * mathMod和取模操作类似
+     * mathMod和算术地取模操作类似，而不像 `%` 操作（甚至于 R.Modulo）。
+     * 因此 “-17 % 5” 等于 -2，而 mathMod(-17, 5) 等于 3。
+     * mathMod 要求参数为整型，并且当模数等于 0 或者负数时返回NaN。
      *
      * @func
      * @memberOf R
@@ -2639,9 +2628,8 @@
     });
 
     /**
-     * Create a new object with the own properties of the first object merged with
-     * the own properties of the second object. If a key exists in both objects,
-     * the value from the second object will be used.
+     * 用第一个对象的自属性和第二个对象的自属性融合后去创建一个新对象。
+     * 如果两个对象中存在一个相同的 key，将会使用第二个对象中的值。
      *
      * @func
      * @memberOf R
@@ -2666,7 +2654,7 @@
     });
 
     /**
-     * Merges a list of objects together into one object.
+     * 将一个对象列表融合到一个对象中。
      *
      * @func
      * @memberOf R
@@ -2687,12 +2675,10 @@
     });
 
     /**
-     * Creates a new object with the own properties of the two provided objects. If
-     * a key exists in both objects, the provided function is applied to the key
-     * and the values associated with the key in each object, with the result being
-     * used as the value associated with the key in the returned object. The key
-     * will be excluded from the returned object if the resulting value is
-     * `undefined`.
+     * 用所提供的两个对象的自属性去创建一个新对象。
+     * 如果两个对象中都存在同一个 key， 那么所提供的函数将被应用到该 key 在每个对象中所对应的 key 和 value 上，
+     * 结果就作为返回对象中该 key 所对应的值。
+     * 如果作用结果的值为 `undefined`， 那么这个 key 将在返回结果中被排除。
      *
      * @func
      * @memberOf R
@@ -2778,10 +2764,9 @@
     });
 
     /**
-     * Divides the first parameter by the second and returns the remainder. Note
-     * that this function preserves the JavaScript-style behavior for modulo. For
-     * mathematical modulo see `mathMod`.
-     * 用第一个参数除以第二个参数，返回余数。
+     * 用第一个参数除以第二个参数，并返回余数。
+     * 注意，这个函数应当保持 JavaScript-style 的求模行为。
+     * 数学求模另见 `mathMod`。
      *
      * @func
      * @memberOf R
@@ -2808,8 +2793,7 @@
     });
 
     /**
-     * Multiplies two numbers. Equivalent to `a * b` but curried.
-     * 将两个数字相乘。结果等于`a * b`，但是柯里化的。
+     * 两数相乘，等价于 `a * b`。已被柯里化。
      *
      * @func
      * @memberOf R
@@ -2833,9 +2817,8 @@
     });
 
     /**
-     * Wraps a function of any arity (including nullary) in a function that accepts
-     * exactly `n` parameters. Any extraneous parameters will not be passed to the
-     * supplied function.
+     * 将一个任意元（包括零元）的函数包装成一个可以接收确定 `n` 个参数的函数。
+     * 任何无关的参数都不会传递到所提供的函数中。
      *
      * @func
      * @memberOf R
@@ -2913,7 +2896,7 @@
     });
 
     /**
-     * 对参数取负值。
+     * 对参数进行取反操作。
      *
      *
      * @func
@@ -2932,9 +2915,9 @@
     });
 
     /**
-     * 如果列表中的元素都不满足断言，则返回`true`，否则返回`false`。
+     * 如果列表中的元素都不满足 predicate，返回 `true`；否则返回 `false`。
      *
-     * 如果提供了第二个参数，则将其分派到`any`方法。
+     * 若第二个参数自身存在 `any` 方法，则调用自身的 `any` 方法。
      *
      * @func
      * @memberOf R
@@ -2955,7 +2938,8 @@
     var none = _curry2(_complement(_dispatchable(['any'], _xany, any)));
 
     /**
-     * 一个返回参数`!`运算值得函数。当传入参数为false时返回`true`，传入参数为true时返回`false`。
+     * 对参数进行逻辑非运算。
+     * 当传入参数为 false 时返回 `true`，传入参数为 true 时返回 `false`。
      *
      * @func
      * @memberOf R
@@ -2977,7 +2961,7 @@
     });
 
     /**
-     * 返回给定列表或字符串的第n个元素。如果n为负数，则返回索引为length + n的元素。
+     * 返回给定列表或字符串的第 n 个元素。如果 n 为负数，则返回索引为 length + n 的元素。
      *
      * @func
      * @memberOf R
@@ -3007,7 +2991,7 @@
     });
 
     /**
-     * 返回一个函数，该函数返回它的第n个参数。
+     * 返回一个函数，该函数返回它的第 n 个参数。
      *
      * @func
      * @memberOf R
@@ -3078,11 +3062,8 @@
     var of = _curry1(_of);
 
     /**
-     * Accepts a function `fn` and returns a function that guards invocation of
-     * `fn` such that `fn` can only ever be called once, no matter how many times
-     * the returned function is invoked. The first value calculated is returned in
-     * subsequent invocations.
-     * 接收一个函数`fn`，并返回一个守护`fn`调用的函数，使得`fn`只能够被调用一次，不管返回函数被调用多少次。第一个计算得到的值在后续调用用被返回。
+     * 接收一个函数 `fn`，并返回一个守护 `fn` 调用的函数，使得 `fn` 只能够被调用一次，
+     * 不管返回函数被调用多少次。第一个计算得到的值在后续调用中被返回。
      *
      * @func
      * @memberOf R
@@ -3111,7 +3092,8 @@
     });
 
     /**
-     * 如果一个参数为`true`或全部参数均为`true`，则返回`true`。如果参数均为`false`，则返回`false`。
+     * 逻辑或操作，
+     * 只要有一个参数为 `truth-y`， 则返回 `true`；如果两个参数均为 `false-y`，则返回 `false`。
      *
      * @func
      * @memberOf R
@@ -3134,9 +3116,7 @@
     });
 
     /**
-     * Returns the result of "setting" the portion of the given data structure
-     * focused by the given lens to the result of applying the given function to
-     * the focused value.
+     * 返回给定透镜聚焦的给定数据结构部分 “设置” 为给定函数应用到聚焦的值上的结果的结果。
      *
      * @func
      * @memberOf R
@@ -3182,7 +3162,7 @@
     }();
 
     /**
-     * 接收两个参数，`fst` 和 `snd`，返回数组[fst, snd]。
+     * 接收两个参数，`fst` 和 `snd`，返回数组 `[fst, snd]`。
      *
      * @func
      * @memberOf R
@@ -3205,7 +3185,7 @@
     });
 
     /**
-     * 按照给出的路径，取出结果值。
+     * 按照给定的路径，取出结果值。
      *
      * @func
      * @memberOf R
@@ -3236,8 +3216,7 @@
     });
 
     /**
-     * 如果给出的非空的对象在给出的路径上有值，返回这条路径上的值
-     * 否则返回给出的缺省值
+     * 如果给定的非空对象在给定路径上存在值，则将该值返回；否则返回给定的默认值。
      *
      * @func
      * @memberOf R
@@ -3259,8 +3238,7 @@
     });
 
     /**
-     * 如果指定的对象属性在给定的路径下满足给出的 predicate 条件，
-     * 返回 `ture`，否则返回 `false`。
+     * 如果给定路径下的对象属性满足 predicate，返回 `ture`；否则返回 `false`。
      *
      * @func
      * @memberOf R
@@ -3282,8 +3260,7 @@
     });
 
     /**
-     * 返回对象的部分副本，这个副本仅包含指定键对应的属性。
-     * 如果键不存在，则忽略这个属性
+     * 返回对象的部分拷贝，其仅包含指定键对应的属性。如果某个键不存在，则忽略该属性。
      *
      * @func
      * @memberOf R
@@ -3312,7 +3289,7 @@
     });
 
     /**
-     * 与 pick 相似，不过 pickAll 会将不存在的属性以 `key: undefined` 键值对的形式返回。
+     * 与 `pick` 相似，不过 pickAll 会将不存在的属性以 `key: undefined` 键值对的形式返回。
      *
      * @func
      * @memberOf R
@@ -3341,7 +3318,7 @@
     });
 
     /**
-     * 返回对象的部分副本，这个副本只包含 key 值满足给出的预测条件的属性。
+     * 返回对象的部分拷贝，其中仅包含键值满足 predicate 的属性。
      *
      * @func
      * @memberOf R
@@ -3370,7 +3347,7 @@
     });
 
     /**
-     * 返回一个新列表，最前面是给定的元素，末尾拼接给出的 list 的内容。
+     * 返回一个新列表，首位是给定的元素，末尾拼接 list 的内容。
      *
      * @func
      * @memberOf R
@@ -3390,8 +3367,7 @@
     });
 
     /**
-     * 当作用在一个对象上时，如果指定的属性存在，则返回该属性的值
-     * 否则返回 `undefined`。
+     * 当作用在一个对象上时，如果指定的属性存在，则返回该属性的值，否则返回 `undefined`。
      *
      * @func
      * @memberOf R
@@ -3412,7 +3388,7 @@
     });
 
     /**
-     * 如果被指定的对象属性与给出的类型相符，返回 `true` ；否则返回 `false`。
+     * 如果指定的对象属性与给定的类型相符，返回 `true` ；否则返回 `false`。
      *
      * @func
      * @memberOf R
@@ -3435,7 +3411,7 @@
     });
 
     /**
-     * 对于给出的非空对象，如果有指定的属性存在，则返回那个属性值；否则返回给出的缺省值。
+     * 对于给定的非空对象，如果指定属性存在，则返回该属性值；否则返回给出的默认值。
      *
      * @func
      * @memberOf R
@@ -3463,7 +3439,7 @@
     });
 
     /**
-     * 如果指定的对象属性满足给定的 predicate，返回 `true`；否则，返回 `false`。
+     * 如果指定的对象属性满足给定的 predicate，返回 `true`；否则返回 `false`。
      *
      * @func
      * @memberOf R
@@ -3484,8 +3460,8 @@
     });
 
     /**
-     * 多个 `prop`：输入为 key 的数组，输出为 value 的数组。
-     * 输出的值顺序为相应的 key 的顺序。
+     * 多个 `prop`：输入为键的数组，输出为值的数组。
+     * 输出值的顺序为相应的 key 的顺序。
      *
      * @func
      * @memberOf R
@@ -3515,7 +3491,7 @@
     });
 
     /**
-     * 返回从 from 到 to 的数字类型列表，包括`from`，不包括`to`。
+     * 返回从 from 到 to 的数字类型列表，包括 `from`，不包括 `to`。
      *
      * @func
      * @memberOf R
@@ -3547,7 +3523,7 @@
      * 通过对列表元素的迭代计算，返回单一的累积值。计算过程是遍历数组对象，每次都将累积值和数组中的一项赋给迭代器函数进行计算，
      * 并把结果作为下一次的累积值。
      *
-     * 与 `reduce` 相似，只是遍历list的顺序是从右向左。
+     * 与 `reduce` 相似，只是遍历list的顺序是从右往左。
      *
      * 迭代器函数接收两个值：*(value, acc)*，然而，赋给`reduce`的迭代器函数的参数顺序是：*(acc, value)*.
      *
@@ -3615,8 +3591,8 @@
 
     /**
      * 在 `list` 中移除子列表，这个子列表是从 `start` 开始，包含 `count` 个元素。
-     * _注意这个操作不改变原有列表_：它返回改变的列表的副本。
-     * <small>在使用此功能时，不会有list受到损害。</small>
+     * _注意这个操作不改变原有列表_：它返回改变的列表的拷贝。
+     * <small>在使用此功能时，不会有list被改变。</small>
      *
      * @func
      * @memberOf R
@@ -3662,7 +3638,7 @@
     });
 
     /**
-     * 返回一个新的列表或者字符串，元素或者字符顺序与原来相反。
+     * 返回元素或者字符顺序与原来相反的新列表或者新字符串。
      *
      * @func
      * @memberOf R
@@ -3689,7 +3665,7 @@
     });
 
     /**
-     * Scan 与 reduce 相似，但是, 返回从左开始执行的 reduced 值组成的列表
+     * Scan 与 reduce 相似，但是返回的是从左开始执行的 reduced 值组成的列表
      *
      * @func
      * @memberOf R
@@ -3745,8 +3721,7 @@
     });
 
     /**
-     * 对于给出的列表或者字符串（或者带有 `slice` 方法的对象），返回
-     * 从 `fromIndex`（包括）到 `toIndex`（不包括）的元素
+     * 对于给定的列表或者字符串（或者带有 `slice` 方法的对象），返回从 `fromIndex`（包括）到 `toIndex`（不包括）的元素
      *
      * 如果第三个参数存在 `slice` 方法，则调用其自身的 `slice`。
      *
@@ -3773,9 +3748,8 @@
     }));
 
     /**
-     * 返回列表的副本，并根据 comparator 函数进行排序。这个函数应该同时接受两个值，
-     * 如果第一个值比较小，则返回一个负数，如果第一个值较大，则返回一个正数，如果两数相等，返回零。
-     * 请注意，返回是一个列表的 **副本** ，并没有修改原始列表。
+     * 返回列表的拷贝，并根据 comparator 函数进行排序。该函数同时接收两个值，如果第一个值较小，则返回负数，如果第一个值较大，则返回正数，如果两数相等，返回零。
+     * 请注意，返回是一个列表的 **拷贝** ，并没有修改原始列表。
      *
      * @func
      * @memberOf R
@@ -3795,7 +3769,7 @@
     });
 
     /**
-     * 根据给出的函数对列表进行排序。
+     * 根据给定的函数对列表进行排序。
      *
      * @func
      * @memberOf R
@@ -3933,11 +3907,11 @@
     });
 
     /**
-     * 接收一个列表，和一个 predicate ，返回一对列表，且有以下特征：
+     * 接收一个列表，和一个 predicate ，返回有以下特征的一对列表：
      *
-     *  - 两个输出的 list 拼接起来与输入的 list 相同。
-     *  - 第一个输出的 list 中的元素都不满足 predicate；
-     *  - 如果第二个输出的 list 是非空的，则它的第一个元素满足 predicate。
+     *  - 两个输出的 list 拼接起来等价于输入的 list。
+     *  - 输出的第一个 list 中的元素都不满足 predicate；
+     *  - 如果输出的第二个 list 是非空的，则它的第一个元素满足 predicate。
      *
      * @func
      * @memberOf R
@@ -4916,11 +4890,19 @@
      * @since v0.1.0
      * @category List
      * @sig (a,b -> c) -> [a] -> [b] -> [c]
+    <<<<<<< HEAD
      * @param {Function} fn 用来组合两个元素使之成为一个值的函数。
      * @param {Array} list1 第一个被操作的数组。
      * @param {Array} list2 第二个被操作的数组。
      * @return {Array} list1 和 list2 中的下标相同的元素为参数，使用 fn 进行计算所得的新数组。
      *
+    =======
+     * @param {Function} fn The function used to combine the two elements into one value.
+     * @param {Array} list1 The first array to consider.
+     * @param {Array} list2 The second array to consider.
+     * @return {Array} The list made by combining same-indexed elements of `list1` and `list2`
+     *         using `fn`.
+    >>>>>>> zcx
      * @example
      *
      *      var f = (x, y) => {
@@ -5860,7 +5842,7 @@
     });
 
     /**
-     * 如果给定的值为空，返回`true`，否则返回`false`。
+     * 如果给定的值为空，返回 `true`，否则返回 `false`。
      *
      * @func
      * @memberOf R
@@ -5906,8 +5888,8 @@
     var last = nth(-1);
 
     /**
-     * 返回数组中某一项最后一次出现的位置，如果数组中不包含该项则返回-1。
-     * `R.equals`用来判定相等性。
+     * 返回数组中某一项最后一次出现的位置，如果数组中不包含该项则返回 -1。
+     * 用 `R.equals` 来判定相等性。
      *
      * @func
      * @memberOf R
@@ -5939,18 +5921,17 @@
     });
 
     /**
-     * Takes a function and
-     * a [functor](https://github.com/fantasyland/fantasy-land#functor),
-     * applies the function to each of the functor's values, and returns
-     * a functor of the same shape.
+     * 接收一个函数和一个
+     * [functor](https://github.com/fantasyland/fantasy-land#functor),
+     * 将这个函数应用到 functor 的每个值上，并且返回一个具有相同形态的 functor。
      *
-     * Ramda为`数组`和`对象`都提供了合适的`map`实现，因此这个函数可以适用于`[1, 2, 3]`或`{x: 1, y: 2, z: 3}`
+     * Ramda 为 `数组` 和 `对象` 都提供了合适的 `map` 实现，因此这个函数可以适用于 `[1, 2, 3]` 或 `{x: 1, y: 2, z: 3}`。
      *
-     * Dispatches to the `map` method of the second argument, if present.
+     * 如果提供了第二个参数，将其分派给 `map` 方法。
      *
-     * Acts as a transducer if a transformer is given in list position.
+     * 如果在列表位置给定了 transformer，则充当为 transducer。
      *
-     * Also treats functions as functors and will compose them together.
+     * 同样将函数视作为functors，并且会将它们组合在一起。
      *
      * @func
      * @memberOf R
@@ -5989,9 +5970,9 @@
     }));
 
     /**
-     * An Object-specific version of `map`. The function is applied to three
-     * arguments: *(value, key, obj)*. If only the value is significant, use
-     * `map` instead.
+     * `map` 的一个对象指定版本。
+     * 这个函数应用到三个参数：*(value, key, obj)*。
+     * 如果 value 是有意义的，则使用 `map` 替代。
      *
      * @func
      * @memberOf R
@@ -6017,11 +5998,10 @@
     });
 
     /**
-     * Creates a new object with the own properties of the two provided objects. If
-     * a key exists in both objects, the provided function is applied to the values
-     * associated with the key in each object, with the result being used as the
-     * value associated with the key in the returned object. The key will be
-     * excluded from the returned object if the resulting value is `undefined`.
+     * 用所提供的两个对象的自属性去创建一个新对象。
+     * 如果两个对象中都存在同一个 key，所提供的函数会被应用到该 key 在每一个对象中所对应的值上，
+     * 结果就被用作返回的对象中该 key 所对应的值。
+     * 如果作用结果的值是 `undefined`，那么这个 key 将会在返回对象中被排除。
      *
      * @func
      * @memberOf R
@@ -6047,9 +6027,8 @@
     });
 
     /**
-     * 接收两个参数： 一个函数 f，还有一个 argument列表。返回新函数 g。
-     * 当函数执行时，g 返回的是 f 作用于初始 argument 和后来提供给 g 的参数的结果。
-     * 其中参数调用的顺序是：初始提供的 argument，提供给 g 的 arguments。
+     * 接收两个参数： 一个函数 `f`，还有一个参数列表，返回新函数 `g`。
+     * 当函数执行时，`g` 返回的是 `f` 作用于初始参数和后来提供给 `g` 的参数的结果。参数调用顺序是：初始提供的参数，提供给 `g` 的参数。
      *
      * @func
      * @memberOf R
@@ -6077,9 +6056,8 @@
     var partial = _createPartialApplicator(_concat);
 
     /**
-     * 需要两个参数：一个函数f，还有一个argument列表，返回新函数g。
-     * 当函数执行时，g返回的是f作用于初始argument和后来提供给g的参数的结果。
-     * 其中参数调用的顺序是：提供给g的arguments，初始提供的argument。
+     * 接收两个参数：一个函数 `f`，还有一个参数列表，返回新函数 `g`。
+     * 当函数执行时，`g` 返回的是 `f` 作用于初始参数和后来提供给 `g` 的参数的结果。其中参数调用的顺序是：提供给 `g` 的参数，初始提供的参数。
      *
      * @func
      * @memberOf R
@@ -6103,8 +6081,8 @@
     var partialRight = _createPartialApplicator(flip(_concat));
 
     /**
-     * 确定对象的嵌套路径上是否有某个明确的 value 值，结合 R.path 和 R.equals。
-     * 最常用的场景：过滤一个 list。
+     * 判断对象的嵌套路径上是否有某个特定值，通过 ` R.equals` 函数进行相等性判断。
+     * 常用于列表过滤。
      *
      * @func
      * @memberOf R
@@ -6131,7 +6109,7 @@
     });
 
     /**
-     * 在给出的列表中的所有对象中，将命名相同的属性抽出来，组成一个新的列表。
+     * 从列表内的每个对象中取出特定名称的属性，组成一个新的列表。
      *
      * @func
      * @memberOf R
@@ -6154,7 +6132,7 @@
     });
 
     /**
-     * 对 SQL 中的 select 语句的有效模拟。
+     * 模拟 SQL 中的 `select` 语句。
      *
      * @func
      * @memberOf R
@@ -6179,7 +6157,7 @@
     ]);
 
     /**
-     * 如果指定的对象属性值用 `R.equals` 判定与给出的值相同，则返回 `true`；否则返回 `false` 。
+     * 如果指定的对象属性值用 `R.equals` 判定与给出的值相同，则返回 `true`；否则返回 `false`。
      *
      * @func
      * @memberOf R
@@ -6249,7 +6227,7 @@
     var reduce = _curry3(_reduce);
 
     /**
-     * 通过对 list 的每个元素调用返回字符串的函数 `keyFn` ，将 element 进行分组。然后调用 reducer 函数 `valueFn`，对分出的组内的元素进行 reduces。
+     * 通过对 list 的每个元素调用返回字符串类型的函数 `keyFn` ，将元素进行分组。然后调用 reducer 函数 `valueFn`，对分出的组内的元素进行 reduces。
      *
      * 从根本上讲，该函数是更通用的 `groupBy` 函数。
      *
@@ -6331,7 +6309,7 @@
     });
 
     /**
-     * 与`filter`相反。
+     * 与 `filter` 相反。
      *
      * 若在列表位置给出 transformer，则用做 transducer。
      *
@@ -6357,7 +6335,7 @@
     });
 
     /**
-     * 返回包含指定的相同值且长度为 `n` 的固定列表。
+     * 返回长度为 `n` 的包含同一指定值的列表。
      *
      * @func
      * @memberOf R
@@ -7153,7 +7131,7 @@
     });
 
     /**
-     * juxt将一个函数列表应用到一个值列表。
+     * juxt 将一个函数列表应用到一个值列表。
      *
      * @func
      * @memberOf R
@@ -7176,9 +7154,9 @@
     });
 
     /**
-     * Returns a lens for the given getter and setter functions. The getter "gets"
-     * the value of the focus; the setter "sets" the value of the focus. The setter
-     * should not mutate the data structure.
+     * 返回给定 getter 和 setter 方法的透镜。
+     * getter 和 setter 分别 “获取” 和 “设置” 被透镜聚焦的值。
+     * 但 setter 不应该改变被操作对象的数据结构。
      *
      * @func
      * @memberOf R
@@ -7209,7 +7187,7 @@
     });
 
     /**
-     * Returns a lens whose focus is the specified index.
+     * 返回焦点为指定索引的镜头。
      *
      * @func
      * @memberOf R
@@ -7233,7 +7211,7 @@
     });
 
     /**
-     * Returns a lens whose focus is the specified path.
+     * 返回焦点为指定路径的镜头。
      *
      * @func
      * @memberOf R
@@ -7261,7 +7239,7 @@
     });
 
     /**
-     * Returns a lens whose focus is the specified property.
+     * 返回焦点为指定属性的镜头。
      *
      * @func
      * @memberOf R
@@ -7285,8 +7263,9 @@
     });
 
     /**
-     * "lifts" a function to be the specified arity, so that it may "map over" that
-     * many lists, Functions or other objects that satisfy the [FantasyLand Apply spec](https://github.com/fantasyland/fantasy-land#apply).
+     * 将一个函数提升为指定的 N 元函数，使之能映射到 N 个列表、函数或其他符合
+     * [FantasyLand Apply spec](https://github.com/fantasyland/fantasy-land#apply)
+     * 规范的对象上。
      *
      * @func
      * @memberOf R
@@ -7356,9 +7335,9 @@
     });
 
     /**
-     * 接收一个 predicate 函数，和一个列表或者其他可过滤的对象，返回一对值。
-     * 这一对值中的元素分别是满足和不满足 predicate 条件的结果，
-     * 其类型与列表或者其他可过滤的对象中元素类型一致。
+     * 接收一个 predicate，和一个列表或者其他 "filterable" （可过滤的）的对象，返回一对值。
+     * 这一对值中的元素分别是满足和不满足 predicate 的结果，结果类型与列表或者其他可过滤的对象中元素类型一致。
+     * 意译：通过 predicate 将列表或 "filterable" （可过滤的）对象分成两部分，分别为满足 predicate 和不满足 predicate 的元素。元素类型保持不变。
      *
      * @func
      * @memberOf R
@@ -7384,11 +7363,10 @@
     ]);
 
     /**
-     * 从左往右执行函数组合。最左边的函数可以是任意元函数（参数个数不限）
-     * 其余函数必须是一元函数
+     * 从左往右执行函数组合。最左边的函数可以是任意元函数（参数个数不限），其余函数必须是一元函数。
      * 在一些库中，这个函数叫做 `sequence`。
      *
-     * ** 注意：** pipe函数的结果不是自动柯里化的
+     * ** 注意：** `pipe` 函数的结果不是自动柯里化的
      *
      * @func
      * @memberOf R
@@ -7413,8 +7391,7 @@
     };
 
     /**
-     * 从左到右执行返回 Promise 的函数的组合。
-     * 最左边的函数可以是任意元函数（参数个数不限）； 其余函数必须是一元函数。
+     * 从左往右执行返回 Promise 的函数的组合。最左边的函数可以是任意元函数（参数个数不限）；其余函数必须是一元函数。
      *
      * @func
      * @memberOf R
@@ -7790,8 +7767,9 @@
     var dropRepeats = _curry1(_dispatchable([], _xdropRepeatsWith(equals), dropRepeatsWith(equals)));
 
     /**
-     * "lifts" a function of arity > 1 so that it may "map over" a list, Function or other
-     * object that satisfies the [FantasyLand Apply spec](https://github.com/fantasyland/fantasy-land#apply).
+     * 提升一个多元函数，使之能映射到列表、函数或其他符合
+     * [FantasyLand Apply spec](https://github.com/fantasyland/fantasy-land#apply)
+     * 规范的对象上。
      *
      * @func
      * @memberOf R
@@ -7816,7 +7794,7 @@
     });
 
     /**
-     * 返回一个对象除去指定键值以外的部分拷贝。
+     * 返回一个除去指定键值的对象的拷贝。
      *
      * @func
      * @memberOf R
@@ -7842,10 +7820,9 @@
     });
 
     /**
-     * 将给出的一系列函数，转换成从左到右的 Kleisli 组合，
-     * 每个函数必须返回支持[`chain`](#chain)操作的值。
+     * 将一系列函数，转换成从左到右的 Kleisli 组合，每个函数必须返回支持[`chain`](#chain)操作的值。
      *
-     * `R.pipeK(f, g, h)` 相当于 `R.pipe(R.chain(f), R.chain(g), R.chain(h))`。
+     * `R.pipeK(f, g, h)` 等价于 `R.pipe(R.chain(f), R.chain(g), R.chain(h))`。
      *
      * @func
      * @memberOf R
@@ -8288,7 +8265,7 @@
     });
 
     /**
-     * 返回一个字符串，通过在每个元素之间插入`分隔符`，然后将所有元素合并为一个字符串。
+     * 返回一个字符串，通过在元素之间插入 `分隔符`，将所有元素合并为一个字符串。
      *
      * @func
      * @memberOf R
@@ -8308,11 +8285,9 @@
     var join = invoker(1, 'join');
 
     /**
-     * Creates a new function that, when invoked, caches the result of calling `fn`
-     * for a given argument set and returns the result. Subsequent calls to the
-     * memoized `fn` with the same argument set will not result in an additional
-     * call to `fn`; instead, the cached result for that set of arguments will be
-     * returned.
+     * 创建一个新函数，当这个函数被调用时，缓存为一个指定参数集合调用 `fn` 结果，并返回该结果。
+     * 随后用相同的参数集合去调用被 memoized 的 `fn` 时，不会导致额外调用 `fn`；
+     * 而是直接返回为这个参数集合缓存的结果。
      *
      * @func
      * @memberOf R
