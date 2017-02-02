@@ -8418,7 +8418,7 @@ R.mapAccum(appender, <span class="hljs-number">0</span>, digits); <span class="h
             <p><small>Added in v0.10.0</small></p>
 
             <div class="description"><p>mapAccum 的行为类似于 map 和 reduce 的组合；它将迭代函数作用于列表中的每个元素，从左往右传递经迭代函数计算的累积值，并将最后的累积值和由所有中间的累积值组成的列表一起返回。</p>
-<p>和 <code>mapAccum</code> 类似，除了输入列表是从右往左遍历。</p>
+<p>和 <code>mapAccum</code> 类似，除了列表遍历顺序是从右往左的。</p>
 <p>迭代函数接收两个参数，<em>value</em> 和 <em>acc</em> ，返回一个元组 <em>[value, acc]</em>。</p>
 </div>
 
@@ -9501,7 +9501,7 @@ takesOneArg(<span class="hljs-number">1</span>, <span class="hljs-number">2</spa
             <p><small>Added in v0.12.0</small></p>
 
             <div class="description"><p>如果列表中的元素都不满足 predicate，返回 <code>true</code>；否则返回 <code>false</code>。</p>
-<p>若第二个参数自身存在 <code>any</code> 方法，则调用自身的 <code>any</code> 方法。</p>
+<p>若第二个参数自身存在 <code>none</code> 方法，则调用自身的 <code>none</code> 方法。</p>
 </div>
 
 
