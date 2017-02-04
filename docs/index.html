@@ -12633,14 +12633,14 @@ R.splitEvery(<span class="hljs-number">3</span>, <span class="hljs-string">'foob
                             <span class="type">
                             </span>
                             <span class="name">a</span>
-                            <span class="description"><p>第1个输入</p>
+                            <span class="description"><p>第1个参数</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">b</span>
-                            <span class="description"><p>第2个输入</p>
+                            <span class="description"><p>第2个参数</p>
 </span>
                         </li>
                     </ul>
@@ -12743,28 +12743,28 @@ complementaryAngle(<span class="hljs-number">72</span>); <span class="hljs-comme
                             <span class="type">
                             </span>
                             <span class="name">list1</span>
-                            <span class="description"><p>第1个输入</p>
+                            <span class="description"><p>第1个列表</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">list2</span>
-                            <span class="description"><p>第2个输入</p>
+                            <span class="description"><p>第2个列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">元素仅在list1或list2中出现的集合</span>
+                        <span class="description">元素仅在list1或list2中出现的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.19.0</small></p>
 
-            <div class="description"><p>寻找一个无重复元素的集合，其元素在且仅在输入集合中的一个里面出现。</p>
+            <div class="description"><p>寻找一个无重复元素的集合，其元素在且仅在给定列表中的一个里面出现。</p>
 </div>
 
 
@@ -12808,29 +12808,29 @@ R.symmetricDifference([<span class="hljs-number">7</span>,<span class="hljs-numb
                             <span class="type">
                             </span>
                             <span class="name">list1</span>
-                            <span class="description"><p>第1个集合</p>
+                            <span class="description"><p>第1个列表</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">list2</span>
-                            <span class="description"><p>第2个集合</p>
+                            <span class="description"><p>第2个列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">元素仅在list1或list2中出现的集合</span>
+                        <span class="description">元素仅在list1或list2中出现的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.19.0</small></p>
 
-            <div class="description"><p>寻找一个无重复元素的集合，其元素在且仅在输入集合中的一个里面出现。
-“重复”由条件函数返回值决定。</p>
+            <div class="description"><p>寻找一个无重复元素的集合，其元素在且仅在给定列表中的一个里面出现。
+“重复”由条件函数的返回值决定。</p>
 </div>
 
 
@@ -12931,8 +12931,8 @@ R.symmetricDifferenceWith(eqA, l1, l2); <span class="hljs-comment">//=&gt; [{a: 
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>返回除第1个元素以外的元素（或者调用<code>tail</code>方法）。</p>
-<p>如果第1个参数有<code>slice</code>方法，则调用<code>slice</code>方法。</p>
+            <div class="description"><p>返回除第1个元素以外的元素（或者调用 <code>tail</code> 方法）。</p>
+<p>如果第1个参数有 <code>slice</code> 方法，则调用 <code>slice</code> 方法。</p>
 </div>
 
 
@@ -12996,8 +12996,8 @@ R.tail(<span class="hljs-string">''</span>);     <span class="hljs-comment">//=&
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>返回集合的前<code>n</code>个元素、字符串的前<code>n</code>个字符或者进行 transducer/transform 。</p>
-<p>如果第2个参数有<code>take</code>方法，则调用<code>take</code>方法。</p>
+            <div class="description"><p>返回列表的前<code>n</code>个列表、字符串的前<code>n</code>个字符或者进行 transducer/transform 。</p>
+<p>如果第2个参数有 <code>take</code> 方法，则调用 <code>take</code> 方法。</p>
 </div>
 
 
@@ -13058,7 +13058,7 @@ takeFive(personnel);
                             <span class="type">
                             </span>
                             <span class="name">xs</span>
-                            <span class="description"><p>输入的集合</p>
+                            <span class="description"><p>输入的列表</p>
 </span>
                         </li>
                     </ul>
@@ -13072,8 +13072,8 @@ takeFive(personnel);
 
             <p><small>Added in v0.16.0</small></p>
 
-            <div class="description"><p>返回集合的后<code>n</code>个元素。
-如果<code>n &gt; list.length</code>则返回<code>list.length</code>个元素的集合。</p>
+            <div class="description"><p>返回列表的后<code>n</code>个元素。
+如果 <code>n &gt; list.length</code> 则返回 <code>list.length</code> 个元素的列表。</p>
 </div>
 
 
@@ -13118,23 +13118,23 @@ R.takeLast(<span class="hljs-number">3</span>, <span class="hljs-string">'ramda'
                             <span class="type">
                             </span>
                             <span class="name">list</span>
-                            <span class="description"><p>用于迭代的集合</p>
+                            <span class="description"><p>用于迭代的列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">一个新的集合</span>
+                        <span class="description">一个新的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.16.0</small></p>
 
-            <div class="description"><p>集合中从后往前每个元素都使用条件函数判断，直到条件函数返回<code>false</code>跳出，然后返回集合在迭代跳出时的后<code>n</code>个元素。
+            <div class="description"><p>列表中从后往前每个元素都使用条件函数判断，直到条件函数返回 <code>false</code> 跳出，然后返回列表在迭代跳出时的满足条件的<code>n</code>个元素。
 除非条件函数在处理元素的时候报错。条件函数接收一个值：
-<em>(value)</em>.</p>
+<em>(value)</em></p>
 </div>
 
 
@@ -13178,25 +13178,25 @@ R.takeLastWhile(isNotOne, [<span class="hljs-number">1</span>, <span class="hljs
                             <span class="type">
                             </span>
                             <span class="name">list</span>
-                            <span class="description"><p>用于迭代的集合</p>
+                            <span class="description"><p>用于迭代的列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">一个新的集合</span>
+                        <span class="description">一个新的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>集合中从后往前每个元素都使用条件函数判断，直到条件函数返回<code>false</code>跳出，然后返回集合在迭代跳出时的后<code>n</code>个元素。
+            <div class="description"><p>列表中从后往前每个元素都使用条件函数判断，直到条件函数返回 <code>false</code> 跳出，然后返回列表在迭代跳出时的满足条件的<code>n</code>个元素。
 除非条件函数在处理元素的时候报错。条件函数接收一个值：
-<em>(value)</em>.</p>
-<p>如果第2个参数有<code>takeWhile</code>方法，则调用<code>takeWhile</code>方法。</p>
-<p>如果第2个参数是 transformer ，则<code>takeWhile</code>作为一个 transducer 调用。</p>
+<em>(value)</em></p>
+<p>如果第2个参数有 <code>takeWhile</code> 方法，则调用 <code>takeWhile</code> 方法。</p>
+<p>如果第2个参数是 transformer ，则 <code>takeWhile</code> 作为一个 transducer 调用。</p>
 </div>
 
 
@@ -13234,7 +13234,7 @@ R.takeWhile(isNotFour, [<span class="hljs-number">1</span>, <span class="hljs-nu
                             <span class="type">
                             </span>
                             <span class="name">fn</span>
-                            <span class="description"><p>调用<code>x</code>的函数。抛出<code>fn</code>的执行结果。</p>
+                            <span class="description"><p>调用<code>x</code>的函数。抛弃<code>fn</code>的执行结果。</p>
 </span>
                         </li>
                         <li class="list-group-item">
@@ -13254,7 +13254,7 @@ R.takeWhile(isNotFour, [<span class="hljs-number">1</span>, <span class="hljs-nu
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>对一个输入执行一个函数，然后返回这个输入。</p>
+            <div class="description"><p>对输入的值执行给定的函数，然后返回输入的值。</p>
 </div>
 
 
@@ -13362,7 +13362,7 @@ R.test(<span class="hljs-regexp">/^y/</span>, <span class="hljs-string">'xyz'</s
             <p><small>Added in v0.2.3</small></p>
 
             <div class="description"><p>执行一个函数<code>n</code>次，返回函数执行结果的数组。</p>
-<p><code>fn</code>接收的参数是从<code>0</code>递增到<code>n-1</code>的值。</p>
+<p><code>fn</code> 接收的参数是从 <code>0</code> 递增到 <code>n-1</code> 的值。</p>
 </div>
 
 
@@ -13496,7 +13496,7 @@ R.test(<span class="hljs-regexp">/^y/</span>, <span class="hljs-string">'xyz'</s
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">对所有属性和原型链上属性转换后的·键值对数组</span>
+                        <span class="description">对所有属性和原型链上属性转换后的键值对数组</span>
                     </div>
                 </div>
             </div>
@@ -13551,9 +13551,9 @@ R.toPairsIn(f); <span class="hljs-comment">//=&gt; [['x','X'], ['y','Y']]</span>
             <p><small>Added in v0.14.0</small></p>
 
             <div class="description"><p>返回一个值的字符串表现形式。
-输出的值执行<code>eval</code>结果等价于输入的值。原有的<code>toString</code>方法不满足这一要求。</p>
-<p>如果输入值是一个<code>[object Object]</code>对象，且有不同于<code>Object.prototype.toString</code>的<code>toString</code>方法，那么将再不传递参数的情况下调用这个方法。
-换句话说，在构造函数中自定义的<code>toString</code>方法可以满足这个条件，例如：</p>
+输出的值执行 <code>eval</code> 的结果等价于输入的值。原生的 <code>toString</code> 方法不满足这一条件。</p>
+<p>如果输入值是一个 <code>[object Object]</code> 对象，且有不同于 <code>Object.prototype.toString</code> 的方法，那么将不传递参数直接调用这个方法。
+换句话说，在构造函数中自定义的 <code>toString</code> 方法会满足这个条件，例如：</p>
 <pre><code>function Point(x, y) {
   this.x = x;
   this.y = y;
@@ -13645,61 +13645,51 @@ R.toString(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Dat
                             <span class="type">
                             </span>
                             <span class="name">xf</span>
-                            <span class="description"><p>The transducer function. Receives a transformer and returns a transformer.</p>
+                            <span class="description"><p>transducer 函数，接收 transformer 返回 transformer</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">fn</span>
-                            <span class="description"><p>The iterator function. Receives two values, the accumulator and the
-       current element from the array. Wrapped as transformer, if necessary, and used to
-       initialize the transducer</p>
+                            <span class="description"><p>迭代函数，累加器和数组当前位置的元素，被包装成 transformer ，如果必要的话将用于 transducer 的初始化</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">acc</span>
-                            <span class="description"><p>The initial accumulator value.</p>
+                            <span class="description"><p>累加器初始值</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">list</span>
-                            <span class="description"><p>The list to iterate over.</p>
+                            <span class="description"><p>迭代列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">*</span>
-                        <span class="description">The final, accumulated value.</span>
+                        <span class="description">累加器的最终结果</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.12.0</small></p>
 
-            <div class="description"><p>Initializes a transducer using supplied iterator function. Returns a single
-item by iterating through the list, successively calling the transformed
-iterator function and passing it an accumulator value and the current value
-from the array, and then passing the result to the next call.</p>
-<p>The iterator function receives two values: <em>(acc, value)</em>. It will be
-wrapped as a transformer to initialize the transducer. A transformer can be
-passed directly in place of an iterator function. In both cases, iteration
-may be stopped early with the <code>R.reduced</code> function.</p>
-<p>A transducer is a function that accepts a transformer and returns a
-transformer and can be composed directly.</p>
-<p>A transformer is an an object that provides a 2-arity reducing iterator
-function, step, 0-arity initial value function, init, and 1-arity result
-extraction function, result. The step function is used as the iterator
-function in reduce. The result function is used to convert the final
-accumulator into the return type and in most cases is R.identity. The init
-function can be used to provide an initial accumulator, but is ignored by
-transduce.</p>
-<p>The iteration is performed with R.reduce after initializing the transducer.</p>
+            <div class="description"><p>用迭代函数来初始化一个 transducer ，为列表中每个元素执行迭代函数进行 transform
+，将返回值传入加法器，然后把累加传入进行下一轮迭代。</p>
+<p>迭代函数接收2个参数： <em>(acc, value)</em> ，然后被包装成 transformer 来初始化 transducer 。
+Transformer 能直接替代迭代函数。并且，打断 <code>R.transduce</code> 的迭代过程比 <code>R.reduced</code> 更容易。</p>
+<p>Transducer 接收 transformer ，然后返回 transformer ，可以直接用于函数组合。</p>
+<p>Transformer 传入2个参数到迭代函数进行迭代，传入0个参数到初始化函数进行初始化，传入1个参数到累加函数作为结果。
+迭代用于 reduce 的迭代；
+累加函数作为累加器，用来计算返回值，通常使用 <code>R.identity</code> ；
+初始化函数用来计算初始值，但在 transduce 里面被忽略。</p>
+<p>在 transduce 初始化之后，迭代方式和 <code>R.reduce</code> 一样。</p>
 </div>
 
 
@@ -13753,7 +13743,7 @@ R.transduce(transducer, R.flip(R.append), [], numbers); <span class="hljs-commen
             <p><small>Added in v0.19.0</small></p>
 
             <div class="description"><p>二维数组行列转置。
-输入<code>n</code>个长度为<code>x</code>的数组，输出<code>x</code>个长度为<code>n</code>的数组。</p>
+输入<code>n</code>个长度为 <code>x</code> 的数组，输出<code>x</code>个长度为 <code>n</code> 的数组。</p>
 </div>
 
 
@@ -13814,10 +13804,10 @@ R.transpose([[<span class="hljs-number">10</span>, <span class="hljs-number">11<
             <p><small>Added in v0.19.0</small></p>
 
             <div class="description"><p>Maps an <a href="https://github.com/fantasyland/fantasy-land#applicative">Applicative</a>-returning
-function over a <a href="https://github.com/fantasyland/fantasy-land#traversable">Traversable</a>,
-then uses <a href="#sequence"><code>sequence</code></a> to transform the resulting Traversable of Applicative
-into an Applicative of Traversable.</p>
-<p>Dispatches to the <code>sequence</code> method of the third argument, if present.</p>
+将 <a href="https://github.com/fantasyland/fantasy-land#applicative">Applicative</a> 返回函数映射成为
+<a href="https://github.com/fantasyland/fantasy-land#traversable">Traversable</a>
+，然后把 Applicative 的 Traversable 映射结果对 <a href="#sequence"><code>sequence</code></a> 做转换。</p>
+<p>如果第三个参数有 <code>sequence</code> 方法，则调用 <code>sequence</code> 方法。</p>
 </div>
 
 
@@ -13921,9 +13911,9 @@ R.map(R.trim, R.split(<span class="hljs-string">','</span>, <span class="hljs-st
 
             <p><small>Added in v0.20.0</small></p>
 
-            <div class="description"><p><code>tryCatch</code>接收<code>tryer</code>函数和<code>catcher</code>函数，返回一个函数执行<code>tryer</code>，如果没有抛出异常则正常返回。
-如果<code>tryer</code>抛出异常，重新执行<code>catcher</code>，然后返回结果。
-注意，<code>tryer</code>和<code>catcher</code>都返回同样类型的结果可以提高效率。</p>
+            <div class="description"><p><code>tryCatch</code> 接收 <code>tryer</code> 函数和 <code>catcher</code> 函数，返回一个函数执行 <code>tryer</code> ，如果没有抛出异常则正常返回。
+如果 <code>tryer</code> 抛出异常，重新执行 <code>catcher</code> ，然后返回结果。
+注意，<code>tryer</code> 和 <code>catcher</code> 都返回同样类型的结果可以提高效率。</p>
 </div>
 
 
@@ -13968,7 +13958,7 @@ R.tryCatch(R.prop(<span class="hljs-string">'x'</span>), R.F)(<span class="hljs-
 
             <p><small>Added in v0.8.0</small></p>
 
-            <div class="description"><p>用一个词来描述输入值的（本地）类型，返回诸如 Object 、 Number 、 Array 、 Null 之类的结果。
+            <div class="description"><p>用一个词来描述输入值的（原生）类型，返回诸如 Object 、 Number 、 Array 、 Null 之类的结果。
 不区分用户自定义的类型，统一返回 Object 。</p>
 </div>
 
@@ -14021,10 +14011,10 @@ R.type(<span class="hljs-regexp">/[A-z]/</span>); <span class="hljs-comment">//=
             <div class="description"><p>输入一个只接收一个数组的作为参数的函数，返回一个函数执行下列过程：</p>
 <ul>
 <li>接收所有参数；</li>
-<li>把参数作为数组传递给<code>fn</code>；</li>
+<li>把参数作为数组传递给 <code>fn</code> ；</li>
 <li>返回执行结果。</li>
 </ul>
-<p>换言之，R.apply 输入一个只接收一个数组的作为参数的函数，返回一个不定参函数。R.unapply 是 R.apply 的逆函数。</p>
+<p>换言之， R.apply 输入一个只接收一个数组的作为参数的函数，返回一个不定参函数。 R.unapply 是 R.apply 的逆函数。</p>
 </div>
 
 
@@ -14072,7 +14062,7 @@ R.type(<span class="hljs-regexp">/[A-z]/</span>); <span class="hljs-comment">//=
 
             <p><small>Added in v0.2.0</small></p>
 
-            <div class="description"><p>把接收任意个（包括0个）参数的函数封装成只接收一个参数的函数，无关的参数不会被传入函数。</p>
+            <div class="description"><p>把接收任意个（包括0个）参数的函数封装成只接收一个参数的函数，无关的参数不会被作为参数传入函数。</p>
 </div>
 
 
@@ -14132,7 +14122,7 @@ takesOneArg(<span class="hljs-number">1</span>, <span class="hljs-number">2</spa
 
             <p><small>Added in v0.14.0</small></p>
 
-            <div class="description"><p>输入一个柯里化的函数，返回一个<code>n</code>个参数的函数。</p>
+            <div class="description"><p>输入一个柯里化的函数，返回一个 <code>n</code> 个参数的函数。</p>
 </div>
 
 
@@ -14170,7 +14160,7 @@ uncurriedAddFour(<span class="hljs-number">1</span>, <span class="hljs-number">2
                             </span>
                             <span class="name">fn</span>
                             <span class="description"><p>迭代函数。接收一个参数<code>seed</code>，返回 false 退出迭代或者返回一个二元数组。
-       二元数组第1个元素被添加到结果集合中，
+       二元数组第1个元素被添加到结果列表中，
        二元数组第2个元素被作为参数传递给下一次调用<code>fn</code>。</p>
 </span>
                         </li>
@@ -14185,17 +14175,16 @@ uncurriedAddFour(<span class="hljs-number">1</span>, <span class="hljs-number">2
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">结果集合</span>
+                        <span class="description">结果列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.10.0</small></p>
 
-            <div class="description"><p>通过种子(seed)建立一个集合。输入的迭代函数返回 false 停止迭代，
-否则返回一个数对，前者添加到结果集合中，后者用作种子(seed)传递给下一轮迭代。</p>
-<p>迭代函数只接收一个参数： <em>(seed)</em>
-The iterator function receives one argument: <em>(seed)</em>.</p>
+            <div class="description"><p>通过种子(seed)建立一个列表。给定的迭代函数返回 false 停止迭代，
+否则返回一个数对，前者添加到结果列表中，后者用作种子(seed)传递给下一轮迭代。</p>
+<p>迭代函数只接收一个参数： <em>(seed)</em></p>
 </div>
 
 
@@ -14226,28 +14215,28 @@ R.unfold(f, <span class="hljs-number">10</span>); <span class="hljs-comment">//=
                             <span class="type">
                             </span>
                             <span class="name">as</span>
-                            <span class="description"><p>第1个集合</p>
+                            <span class="description"><p>第1个列表</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">bs</span>
-                            <span class="description"><p>第2个集合</p>
+                            <span class="description"><p>第2个列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">两个集合拼接后去重的集合</span>
+                        <span class="description">两个列表拼接后去重的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>集合并运算，合并两个集合作为一个新的集合（没有重复元素）。</p>
+            <div class="description"><p>集合并运算，合并两个列表作为一个新的列表（没有重复元素）。</p>
 </div>
 
 
@@ -14284,28 +14273,28 @@ R.unfold(f, <span class="hljs-number">10</span>); <span class="hljs-comment">//=
                             <span class="type">
                             </span>
                             <span class="name">list1</span>
-                            <span class="description"><p>第1个集合</p>
+                            <span class="description"><p>第1个列表</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">list2</span>
-                            <span class="description"><p>第2个集合</p>
+                            <span class="description"><p>第2个列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">两个集合拼接后去重的集合</span>
+                        <span class="description">两个列表拼接后去重的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>集合并运算，合并两个集合作为一个新的集合（没有重复元素）。
+            <div class="description"><p>集合并运算，合并两个列表作为一个新的列表（没有重复元素）。
 “重复”由条件函数的返回值决定。</p>
 </div>
 
@@ -14342,22 +14331,22 @@ R.unionWith(R.eqBy(R.prop(<span class="hljs-string">'a'</span>)), l1, l2); <span
                             <span class="type">
                             </span>
                             <span class="name">list</span>
-                            <span class="description"><p>待处理的集合</p>
+                            <span class="description"><p>待处理的列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">不重复元素的集合</span>
+                        <span class="description">无重复元素的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>返回不重复的元素集合。
-比较函数是<code>R.equals</code>。</p>
+            <div class="description"><p>返回无重复元素的列表。
+比较函数是 <code>R.equals</code> 。</p>
 </div>
 
 
@@ -14396,23 +14385,23 @@ R.uniq([[<span class="hljs-number">42</span>], [<span class="hljs-number">42</sp
                             <span class="type">
                             </span>
                             <span class="name">list</span>
-                            <span class="description"><p>待处理的集合</p>
+                            <span class="description"><p>待处理的列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">不重复的元素集合</span>
+                        <span class="description">无重复元素的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.16.0</small></p>
 
-            <div class="description"><p>基于输入函数返回值来判断“重复”，返回一个没有重复元素的集合。
+            <div class="description"><p>基于给定函数返回值来判断“重复”，返回一个没有重复元素的列表。
 如果出现重复元素，则保留第1次出现的元素。
-比较函数是<code>R.equals</code>。</p>
+比较函数是 <code>R.equals</code> 。</p>
 </div>
 
 
@@ -14449,26 +14438,22 @@ R.uniq([[<span class="hljs-number">42</span>], [<span class="hljs-number">42</sp
                             <span class="type">
                             </span>
                             <span class="name">list</span>
-                            <span class="description"><p>待处理的集合</p>
+                            <span class="description"><p>待处理的列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">没有重复元素的集合</span>
+                        <span class="description">没有重复元素的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.2.0</small></p>
 
-            <div class="description"><p>基于输入的条件函数做元素的两两比较来判断“重复“，返回一个没有重复元素的集合。
-如果条件函数返回相等，则保留第1个元素。
-Returns a new list containing only one copy of each element in the original
-list, based upon the value returned by applying the supplied predicate to
-two list elements. Prefers the first item if two items compare equal based
-on the predicate.</p>
+            <div class="description"><p>基于给定的条件函数做元素的两两比较来判断“重复“，返回一个没有重复元素的列表。
+如果条件函数返回相等，则保留第1个元素。</p>
 </div>
 
 
@@ -14509,29 +14494,29 @@ R.uniqWith(strEq)([<span class="hljs-string">'1'</span>, <span class="hljs-numbe
                             <span class="type">
                             </span>
                             <span class="name">whenFalseFn</span>
-                            <span class="description"><p>当<code>pred</code>返回结果为 false 时调用的函数</p>
+                            <span class="description"><p>当 <code>pred</code> 返回结果为 false 时调用的函数</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">x</span>
-                            <span class="description"><p>作为参数传入<code>pred</code>用于判断，如果需要作为参数传入<code>whenFalseFn</code></p>
+                            <span class="description"><p>作为参数传入 <code>pred</code> 用于判断，如果需要作为参数传入 <code>whenFalseFn</code></p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">*</span>
-                        <span class="description">`x`或者`whenFalseFn`的执行结果</span>
+                        <span class="description">`x` 或者 `whenFalseFn` 的执行结果</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.18.0</small></p>
 
-            <div class="description"><p>最后一个输入<code>x</code>作为参数传给条件函数做判断，
-如果不满足则将<code>x</code>作为参数传给<code>whenFalseFn</code>返回结果，否则返回<code>x</code>。</p>
+            <div class="description"><p>最后一个输入 <code>x</code> 作为参数传给条件函数做判断，
+如果不满足则将 <code>x</code> 作为参数传给 <code>whenFalseFn</code> 返回结果，否则返回 <code>x</code> 。</p>
 </div>
 
 
@@ -14582,7 +14567,7 @@ coerceArray(<span class="hljs-number">1</span>);         <span class="hljs-comme
 
             <p><small>Added in v0.3.0</small></p>
 
-            <div class="description"><p><code>R.chain(R.identity)</code>的快捷方式, 从<a href="https://github.com/fantasyland/fantasy-land#chain">链式</a>消除一层嵌套.</p>
+            <div class="description"><p><code>R.chain(R.identity)</code> 的快捷方式, 从 <a href="https://github.com/fantasyland/fantasy-land#chain">Chain</a> 数据结构中消除一层嵌套.</p>
 </div>
 
 
@@ -14698,7 +14683,7 @@ R.unnest([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">第`index`个位置用`x`替换后的`list`的拷贝</span>
+                        <span class="description">第`index`个位置用`x` 替换后的 `list` 的拷贝</span>
                     </div>
                 </div>
             </div>
@@ -14740,30 +14725,30 @@ R.update(<span class="hljs-number">1</span>)(<span class="hljs-number">11</span>
                             <span class="type">
                             </span>
                             <span class="name">fn</span>
-                            <span class="description"><p>The function to wrap.</p>
+                            <span class="description"><p>需要封装的函数</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">transformers</span>
-                            <span class="description"><p>A list of transformer functions</p>
+                            <span class="description"><p>transformer 函数列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">function</span>
-                        <span class="description">The wrapped function.</span>
+                        <span class="description">封装后的函数</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>输入一个函数<code>fn</code>和一个 transformer 函数的集合，返回一个柯里化函数。
+            <div class="description"><p>给定一个函数 <code>fn</code> 和一个 transformer 函数的列表，返回一个柯里化函数。
 调用返回的函数会对每个参数执行对应的 transformer 函数，然后作为新的参数传入 <code>fn</code> 执行。</p>
-<p>如果传的参数数量比 transformer 函数的数量多，多出的参数会被直接传入<code>fn</code>。
+<p>如果传的参数数量比 transformer 函数的数量多，多出的参数会被直接传入 <code>fn</code> 。
 如果不需要处理多出的那部分参数，除了忽略之外，也可以用 identity 函数来作为 transformer ，以保证返回函数的参数数量是确定的。</p>
 </div>
 
@@ -14846,14 +14831,14 @@ R.useWith(<span class="hljs-built_in">Math</span>.pow, [R.dec, R.inc])(<span cla
                             <span class="type">
                             </span>
                             <span class="name">obj</span>
-                            <span class="description"><p>The object to extract values from</p>
+                            <span class="description"><p>需要展开的对象</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">An array of the values of the object's own and prototype properties.</span>
+                        <span class="description">对象可枚举属性和原型链上属性的值的数组</span>
                     </div>
                 </div>
             </div>
@@ -14981,8 +14966,8 @@ R.view(xLens, {<span class="hljs-attr">x</span>: <span class="hljs-number">4</sp
 
             <p><small>Added in v0.18.0</small></p>
 
-            <div class="description"><p>最后一个输入<code>x</code>作为参数传给条件函数做判断，
-如果不满足则将<code>x</code>作为参数传给<code>whenTrueFn</code>返回结果，否则返回<code>x</code>。</p>
+            <div class="description"><p>最后一个输入 <code>x</code> 作为参数传给条件函数做判断，
+如果不满足则将 <code>x</code> 作为参数传给 <code>whenTrueFn</code> 返回结果，否则返回 <code>x</code> 。</p>
 </div>
 
 
@@ -15044,8 +15029,8 @@ truncate(<span class="hljs-string">'0123456789ABC'</span>); <span class="hljs-co
 
             <div class="description"><p>输入参考标准和待检测对象，如果满足参考标准则返回 true，否则返回 false。
 参考标准的每个属性都要求是条件函数。
-每个条件函数对检测对象相应的属性值执行，如果都返回 true，则<code>where</code>返回 true，否则返回 false。</p>
-<p><code>where</code>适用于需要条件函数约束的地方，比如用于<code>filter</code>和<code>find</code>。</p>
+每个条件函数对检测对象相应的属性值执行，如果都返回 true，则 <code>where</code> 返回 true，否则返回 false。</p>
+<p><code>where</code> 适用于需要条件函数约束的地方，比如用于 <code>filter</code> 和 <code>find</code> 。</p>
 </div>
 
 
@@ -15107,8 +15092,8 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-string">'foo'</span>, 
             <p><small>Added in v0.14.0</small></p>
 
             <div class="description"><p>输入参考对象和待检测对象，如果满足参考值则返回 true，否则返回 false。
-如果待检测对象的每个属性值都等于（使用<code>R.equals</code>来判断）参考对象对应的属性值，那么这个对象就满足参考对象。</p>
-<p><code>whereEq</code>是<a href="#where"><code>where</code></a>的一个特殊形式。</p>
+如果待检测对象的每个属性值都等于（使用 <code>R.equals</code> 来判断）参考对象对应的属性值，那么这个对象就满足参考对象。</p>
+<p><code>whereEq</code> 是 <a href="#where"><code>where</code></a> 的一种特殊形式。</p>
 </div>
 
 
@@ -15148,29 +15133,29 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <spa
                             <span class="type">
                             </span>
                             <span class="name">list1</span>
-                            <span class="description"><p>需要从<code>list2</code>中移除的值</p>
+                            <span class="description"><p>需要从 <code>list2</code> 中移除的值</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">list2</span>
-                            <span class="description"><p>带移除的集合</p>
+                            <span class="description"><p>待移除的列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">没有`list1`中元素的集合</span>
+                        <span class="description">没有 `list1` 中元素的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.19.0</small></p>
 
-            <div class="description"><p>返回一个集合，其元素都不在第1个输入集合中。
-比较函数是<code>R.equals</code>。</p>
+            <div class="description"><p>返回一个列表，其元素都不在给定的第1个列表中。
+比较函数是 <code>R.equals</code> 。</p>
 <p>如果输入是 transformer ，那么按照 transducer 的方式执行。</p>
 </div>
 
@@ -15205,28 +15190,28 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <spa
                             <span class="type">
                             </span>
                             <span class="name">as</span>
-                            <span class="description"><p>第1个集合</p>
+                            <span class="description"><p>第1个列表</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">bs</span>
-                            <span class="description"><p>第2个集合</p>
+                            <span class="description"><p>第2个列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">`as` 和 `bs` 中元素两两组合成元素对（`[a, b]`）的集合</span>
+                        <span class="description">`as` 和 `bs` 中元素两两组合成元素对（`[a, b]`）的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>两个集合元素两两组合，生成一个新的元素对的集合。</p>
+            <div class="description"><p>两个列表的元素两两组合，生成一个新的元素对的列表。</p>
 </div>
 
 
@@ -15256,30 +15241,30 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <spa
                             <span class="type">
                             </span>
                             <span class="name">list1</span>
-                            <span class="description"><p>第1个的集合</p>
+                            <span class="description"><p>第1个列表</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">list2</span>
-                            <span class="description"><p>第2个的集合</p>
+                            <span class="description"><p>第2个列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">`list1` 和 `list2` 对应位置的元素对的集合</span>
+                        <span class="description">`list1` 和 `list2` 对应位置的元素对的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>两个集合对应位置元素组合，生成一个新的元素对的集合。
-生成的集合长度取较短的输入集合的长度。
-注意，<code>zip</code>等价于<code>zipWith(function(a, b) { return [a, b] })</code>。</p>
+            <div class="description"><p>两个列表对应位置元素组合，生成一个新的元素对的列表。
+生成的列表长度取较短的输入列表的长度。
+注意， <code>zip</code> 等价于 <code>zipWith(function(a, b) { return [a, b] })</code> 。</p>
 </div>
 
 
@@ -15309,30 +15294,30 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <spa
                             <span class="type">
                             </span>
                             <span class="name">keys</span>
-                            <span class="description"><p>作为属性名的集合</p>
+                            <span class="description"><p>作为属性名的列表</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">values</span>
-                            <span class="description"><p>作为属性值的集合</p>
+                            <span class="description"><p>作为属性值的列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Object</span>
-                        <span class="description">`list1` 和 `list2` 对应位置的键值对的集合</span>
+                        <span class="description">`list1` 和 `list2` 对应位置的键值对的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.3.0</small></p>
 
-            <div class="description"><p>两个集合对应位置元素作为键值对组合，生成一个新的键值对的集合。
-生成的集合长度取较短的输入集合的长度。
-注意，<code>zip</code>等价于<code>pipe(zipWith(pair), fromPairs)</code>。</p>
+            <div class="description"><p>两个列表对应位置元素作为键值对组合，生成一个新的键值对的列表。
+生成的列表长度取较短的输入列表的长度。
+注意，<code>zip</code> 等价于 <code>pipe(zipWith(pair), fromPairs)</code> 。</p>
 </div>
 
 
@@ -15362,35 +15347,36 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <spa
                             <span class="type">
                             </span>
                             <span class="name">fn</span>
-                            <span class="description"><p>用来组合两个元素使之成为一个值的函数。</p>
+                            <span class="description"><p>把两个元素合并成一个值的函数</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">list1</span>
-                            <span class="description"><p>第一个被操作的数组。</p>
+                            <span class="description"><p>第1个列表</p>
 </span>
                         </li>
                         <li class="list-group-item">
                             <span class="type">
                             </span>
                             <span class="name">list2</span>
-                            <span class="description"><p>第二个被操作的数组。</p>
+                            <span class="description"><p>第2个列表</p>
 </span>
                         </li>
                     </ul>
                     <div class="panel-body">
                         <span class="returns">Returns</span>
                         <span class="type">Array</span>
-                        <span class="description">list1 和 list2 中的下标相同的元素为参数，使用 fn 进行计算所得的新数组。</span>
+                        <span class="description">`list1` 和 `list2` 对应位置的元素对通过`fn`处理后的列表</span>
                     </div>
                 </div>
             </div>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>生成一个新的数组，该数组的值，是对两个输入数组中下标相同的元素调用函数所得。新数组的长度与两个输入数组中长度较短的那个相同。</p>
+            <div class="description"><p>两个列表对应位置元素通过一个函数处理，生成一个新的元素的列表。
+生成的列表长度取较短的输入列表的长度。</p>
 </div>
 
 
