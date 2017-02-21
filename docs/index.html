@@ -1729,7 +1729,7 @@
             <p><small>Added in v0.6.0</small></p>
 
             <div class="description"><p>柯里化函数的参数占位符。允许部分应用于任何位置的参数。</p>
-<p>假设 <code>g</code> 代表柯里化的三元函数，<code>_</code> 代表 <code>R.__</code>，下面几种写法是等价的：</p>
+<p>假设 <code>g</code> 代表柯里化的三元函数，<code>_</code> 代表 <code>R.__</code>，则下面几种写法是等价的：</p>
 <ul>
 <li><code>g(1, 2, 3)</code></li>
 <li><code>g(_, 2, 3)(1)</code></li>
@@ -1838,8 +1838,8 @@ R.add(<span class="hljs-number">7</span>)(<span class="hljs-number">10</span>); 
 
             <p><small>Added in v0.15.0</small></p>
 
-            <div class="description"><p>对已有迭代函数的回调函数添加两个新的参数：当前索引、整个 list ，创建出一个新的 list 迭代函数</p>
-<p>例如，这将把 Ramda 中简单的 <code>map</code> 函数变成更接近于 <code>Array.prototype.map</code> 形式的函数。注意，只有满足下面条件的函数才能正常工作：迭代回调函数是其首个参数; list 是回调函数的最后一个参数。（如果 list 参数没有用到，后一个条件可以忽略）</p>
+            <div class="description"><p>通过向列表迭代函数的回调函数添加两个新的参数：当前索引、整个列表，创建新的列表迭代函数。</p>
+<p>例如，<code>addIndex</code> 可以将 Ramda 中简单的 <code>map</code> 转换为类似于 <code>Array.prototype.map</code> 的函数。注意，<code>addIndex</code> 只适用于迭代回调函数是首个参数、列表是最后一个参数的函数。（如果列表参数没有用到，后一个条件可以忽略）。</p>
 </div>
 
 
@@ -1902,7 +1902,7 @@ mapIndexed(<span class="hljs-function">(<span class="hljs-params">val, idx</span
 
             <p><small>Added in v0.14.0</small></p>
 
-            <div class="description"><p>对数组中给定索引的值进行函数变换，返回一份新的数组拷贝，数组中给定索引处的值被替换为函数变换的结果。</p>
+            <div class="description"><p>将数组中指定索引处的值替换为经函数变换的值。</p>
 </div>
 
 
@@ -1959,7 +1959,7 @@ R.adjust(R.add(<span class="hljs-number">10</span>))(<span class="hljs-number">1
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>如果列表中的所有元素都满足 predicate，则返回 <code>true</code>，如果有任意元素不满足，则返回 <code>false</code>。</p>
+            <div class="description"><p>如果列表中的所有元素都满足 predicate，则返回 <code>true</code>；否则，返回 <code>false</code>。</p>
 <p>若第二个参数自身存在 <code>all</code> 方法，则调用自身的 <code>all</code> 方法。</p>
 <p>若在列表位置中给出 transfomer，则用作 transducer 。</p>
 </div>
@@ -2013,8 +2013,8 @@ R.all(equals3)([<span class="hljs-number">3</span>, <span class="hljs-number">3<
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>接受一个 predicates 列表，并返回一个满足下面条件的 predicate：如果给定的每个参数都满足所有的 predicates ，则返回 <code>true</code>。</p>
-<p>该函数返回一个柯里化的函数，参数个数由参数最多的 predicate 决定。</p>
+            <div class="description"><p>传入包含多个 predicate 的列表，返回一个 predicate：如果给定的参数满足列表中的所有 predicate ，则返回 <code>true</code>。</p>
+<p>该函数返回一个柯里化的函数，参数个数由列表中参数最多的 predicate 决定。</p>
 </div>
 
 
@@ -2067,8 +2067,8 @@ isQueenOfSpades({<span class="hljs-attr">rank</span>: <span class="hljs-string">
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>返回一个总是返回给定值的函数。注意，对于非原始值，返回的值是对原始值的引用。</p>
-<p>此函数在其他语言或库中被称作：<code>const</code>、<code>constant</code>、或 <code>K</code> (在 K combinator 中)</p>
+            <div class="description"><p>返回一个返回恒定值的函数。注意，对于非原始值，返回的值是对原始值的引用。</p>
+<p>此函数在其他语言或库中也被称作：<code>const</code>、<code>constant</code>、或 <code>K</code> (K combinator 中)</p>
 </div>
 
 
@@ -2118,7 +2118,7 @@ t(); <span class="hljs-comment">//=&gt; 'Tee'</span></code></pre>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>如果两个参数都是 <code>true</code>，则返回 <code>true</code>；否则为<code>false</code>。</p>
+            <div class="description"><p>如果两个参数都是 <code>true</code>，则返回 <code>true</code>；否则返回 <code>false</code>。</p>
 </div>
 
 
@@ -2177,7 +2177,7 @@ R.and(<span class="hljs-literal">false</span>, <span class="hljs-literal">false<
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>若列表中至少有一个元素满足 predicate，则返回 <code>true</code>，否则返回 <code>false</code>。</p>
+            <div class="description"><p>只要列表中有一个元素满足 predicate，就返回 <code>true</code>，否则返回 <code>false</code>。</p>
 <p>若第二个参数自身存在 <code>any</code> 方法，则调用其自身的 <code>any</code>。</p>
 <p>若在列表位置中给出 transfomer，则用作 transducer 。</p>
 </div>
@@ -2232,8 +2232,8 @@ R.any(lessThan2)([<span class="hljs-number">1</span>, <span class="hljs-number">
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>接受一个 predicates 列表，并返回一个满足下面条件的 predicate：如果给定的参数满足至少一个 predicates ，则返回 <code>true</code>。</p>
-<p>该函数返回一个柯里化的函数，参数个数由参数最多的 predicate 决定。</p>
+            <div class="description"><p>传入包含多个 predicate 的列表，返回一个 predicate：只要给定的参数满足列表中的一个 predicate ，就返回 <code>true</code>。</p>
+<p>该函数返回一个柯里化的函数，参数个数由列表中参数最多的 predicate 决定。</p>
 </div>
 
 
@@ -2295,8 +2295,8 @@ isBlackCard({<span class="hljs-attr">rank</span>: <span class="hljs-string">'Q'<
 
             <p><small>Added in v0.3.0</small></p>
 
-            <div class="description"><p>ap 将一系列函数列表作用于一系列值上。</p>
-<p>若第二个参数自身存在 <code>ap</code> 方法，则调用自身的 <code>ap</code> 方法。柯里化函数也被当做 applicative。</p>
+            <div class="description"><p>ap 将函数列表作用于值列表上。</p>
+<p>若第二个参数自身存在 <code>ap</code> 方法，则调用自身的 <code>ap</code> 方法。柯里化函数也可以作为 applicative。</p>
 </div>
 
 
@@ -2348,7 +2348,7 @@ R.ap([R.concat(<span class="hljs-string">'tasty '</span>), R.toUpper], [<span cl
 
             <p><small>Added in v0.12.0</small></p>
 
-            <div class="description"><p>返回一个新列表，由相邻元素组成的 n元组组成。如果 <code>n</code> 大于列表的长度，则返回空列表。</p>
+            <div class="description"><p>返回一个新列表，列表中的元素为由原列表相邻元素组成的 n 元组。如果 <code>n</code> 大于列表的长度，则返回空列表。</p>
 <p>若在列表位置中给出 transfomer，则用作 transducer 。</p>
 </div>
 
@@ -2407,7 +2407,7 @@ R.aperture(<span class="hljs-number">7</span>, [<span class="hljs-number">1</spa
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>返回一个新列表，前面为给定列表的内容，末尾拼接给定的元素</p>
+            <div class="description"><p>在列表末尾拼接一个元素。</p>
 </div>
 
 
@@ -2464,7 +2464,7 @@ R.append([<span class="hljs-string">'tests'</span>], [<span class="hljs-string">
 
             <p><small>Added in v0.7.0</small></p>
 
-            <div class="description"><p>将函数 <code>fn</code> 作用于参数列表 <code>args</code>。这对于从变参函数创建为定参（参数个数确定）函数很有帮助。如果上下文很重要，则 <code>fn</code> 应该绑定其上下文。</p>
+            <div class="description"><p>将函数 <code>fn</code> 作用于参数列表 <code>args</code>。<code>apply</code> 可以将变参函数转换为为定参函数。如果上下文很重要，则 <code>fn</code> 应该绑定其上下文。</p>
 </div>
 
 
