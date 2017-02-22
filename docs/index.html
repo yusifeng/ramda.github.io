@@ -2517,7 +2517,7 @@ associated function with the supplied arguments.</span>
 
             <p><small>Added in v0.20.0</small></p>
 
-            <div class="description"><p>给定一个能递归地将属性值映射到函数的特定规范的对象，来创建一个能生成相同结构对象的函数。该函数使用传入的参数调用对象的每个属性位对应的函数来生成相应属性的值。</p>
+            <div class="description"><p>接受一个属性值为函数的对象，返回一个能生成相同结构对象的函数。返回的函数使用传入的参数调用对象的每个属性位对应的函数，来生成相应属性的值。</p>
 </div>
 
 
@@ -2584,7 +2584,7 @@ getMetrics(<span class="hljs-number">2</span>, <span class="hljs-number">4</span
 
             <p><small>Added in v0.23.0</small></p>
 
-            <div class="description"><p>接受一个返回值可以与 <code>&lt;</code> 和 <code>&gt;</code> 比较的函数，返回一个升序比较器。</p>
+            <div class="description"><p>由返回值可与 <code>&lt;</code> 和 <code>&gt;</code> 比较的函数，生成一个升序比较函数。</p>
 </div>
 
 
@@ -2646,7 +2646,8 @@ getMetrics(<span class="hljs-number">2</span>, <span class="hljs-number">4</span
 
             <p><small>Added in v0.8.0</small></p>
 
-            <div class="description"><p>将对象浅复制，并设置或覆盖指定的属性。注意，这也会将 prototype 属性复制和展开到新的对象中。所有非原始类型属性都通过引用复制。</p>
+            <div class="description"><p>设置或覆盖对象的指定属性。</p>
+<p>注意，该函数也会将 prototype 属性复制到新的对象中。所有非原始类型属性都通过引用复制。</p>
 </div>
 
 
@@ -2709,7 +2710,8 @@ getMetrics(<span class="hljs-number">2</span>, <span class="hljs-number">4</span
 
             <p><small>Added in v0.8.0</small></p>
 
-            <div class="description"><p>将对象浅复制，设置或覆盖即将创建的给定路径所需的节点，并将特定值放在该路径的尾端。请注意，这也会将原型属性复制和展开到新对象上。所有非原始类型属性都通过引用复制。</p>
+            <div class="description"><p>设置或覆盖即将创建的给定路径所需的节点，并将特定值放在该路径的末端。</p>
+<p>注意，这也会将 prototype 属性复制到新对象上。所有非原始类型属性都通过引用复制。</p>
 </div>
 
 
@@ -2761,7 +2763,7 @@ R.assocPath([<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'
 
             <p><small>Added in v0.2.0</small></p>
 
-            <div class="description"><p>将任意元函数封装进二元函数（只接受2个参数）中。 任何额外的参数都不会传递给被包裹的函数。</p>
+            <div class="description"><p>将任意元函数封装为二元函数（只接受2个参数）中。任何额外的参数都不会传递给被封装的函数。</p>
 </div>
 
 
@@ -2879,7 +2881,7 @@ R.pipe(R.assoc(<span class="hljs-string">'a'</span>, <span class="hljs-number">2
 
             <p><small>Added in v0.12.0</small></p>
 
-            <div class="description"><p>该函数调用两个函数，并对两函数返回值进行<code>与操作</code>。若第一个函数结果为 false-y 的 (false, null, 0 等)，则返回该结果，否则返回第二个函数的结果。注意，<code>both</code> 为短路操作，即如果第一个函数返回 false-y 的值，则不会调用第二个函数。</p>
+            <div class="description"><p>该函数调用两个函数，并对两函数返回值进行<code>与操作</code>。若第一个函数结果为 false-y 值 (false, null, 0 等)，则返回该结果，否则返回第二个函数的结果。注意，<code>both</code> 为短路操作，即如果第一个函数返回 false-y 值，则不会调用第二个函数。</p>
 <p>除了函数，<code>R.both</code> 还接受任何兼容 fantasy-land 的 applicative functor。</p>
 </div>
 
@@ -2940,7 +2942,7 @@ f(<span class="hljs-number">30</span>); <span class="hljs-comment">//=&gt; false
             <p><small>Added in v0.9.0</small></p>
 
             <div class="description"><p>提取第一个参数作为函数，其余参数作为刚提取的函数的参数，调用该函数并将结果返回。</p>
-<p><code>R.call</code>有时可以用作 <code>R.converge</code> 的 convergeing 函数：第一个分支函数生成一个函数，其余分支函数生成一系列值作为参数传递给该函数。（<code>R.converge</code> 第二个参数为一个分支函数列表）。</p>
+<p><code>R.call</code> 有时可以用作 <code>R.converge</code> 的 convergeing 函数：第一个分支函数生成函数，其余分支函数生成一系列值作为该函数的参数。（<code>R.converge</code> 第二个参数为一个分支函数列表）。</p>
 </div>
 
 
@@ -3068,8 +3070,8 @@ R.chain(R.append, R.head)([<span class="hljs-number">1</span>, <span class="hljs
 
             <p><small>Added in v0.20.0</small></p>
 
-            <div class="description"><p>将数字限制在某个范围内。</p>
-<p>也适用于其他有序类型，如字符串和日期。</p>
+            <div class="description"><p>将数字限制在指定的范围内。</p>
+<p><code>clamp</code> 也可用于其他有序类型，如字符串和日期。</p>
 </div>
 
 
@@ -3115,7 +3117,7 @@ R.clamp(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>,
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>深复制。其值可能（嵌套）包含 <code>Array</code>、<code>Object</code>、<code>Number</code>、<code>String</code>、<code>Boolean</code>、<code>Date</code> 类型的数据。<code>Function</code> 进行引用复制。</p>
+            <div class="description"><p>深复制。其值可能（嵌套）包含 <code>Array</code>、<code>Object</code>、<code>Number</code>、<code>String</code>、<code>Boolean</code>、<code>Date</code> 类型的数据。<code>Function</code> 通过引用复制。</p>
 <p>若自身存在 <code>clone</code> 方法，则调用自身的 <code>clone</code> 方法。</p>
 </div>
 
@@ -3164,7 +3166,7 @@ is less than the second, <code>false</code> otherwise</p>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>接受判断首个元素是否小于第二个元素的函数，返回比较函数。</p>
+            <div class="description"><p>由首个参数是否小于第二个参数的判断函数，生成一个比较函数。</p>
 </div>
 
 
@@ -3212,7 +3214,7 @@ is less than the second, <code>false</code> otherwise</p>
             <p><small>Added in v0.12.0</small></p>
 
             <div class="description"><p>对函数的返回值取反。接受一个函数 <code>f</code>，返回一个新函数 <code>g</code>：在输入参数相同的情况下，若 <code>f</code> 返回 &#39;true-y&#39; ，则 <code>g</code> 返回 <code>false-y</code> ，反之亦然。</p>
-<p>可以将 <code>R.complement</code> 应用于任何 functor。</p>
+<p><code>R.complement</code> 可用于任何 functor。</p>
 </div>
 
 
@@ -3264,7 +3266,7 @@ isNotNil(<span class="hljs-number">7</span>); <span class="hljs-comment">//=&gt;
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>从右往左执行函数组合。最右边函数可以是任意元函数（参数个数不限），其余函数必须是一元函数。</p>
+            <div class="description"><p>从右往左执行函数组合（右侧函数的输出作为左侧函数的输入）。最右侧函数可以是任意元函数（参数个数不限），其余函数必须是一元函数。</p>
 <p><strong>注意：</strong>compose 输出的函数不会自动进行柯里化。</p>
 </div>
 
@@ -3377,7 +3379,7 @@ R.compose(<span class="hljs-built_in">Math</span>.abs, R.add(<span class="hljs-n
 
             <p><small>Added in v0.10.0</small></p>
 
-            <div class="description"><p>从右向左执行返回 Promise 的函数的组合。 最右边的函数可以是任意元函数（参数个数不限）; 其余函数必须是一元函数。</p>
+            <div class="description"><p>从右向左执行返回 Promise 的函数的组合。最右边的函数可以是任意元函数（参数个数不限）; 其余函数必须是一元函数。</p>
 </div>
 
 
