@@ -624,13 +624,6 @@
                     >List</span>
                 </a>
             </li>
-            <li class="func" data-name="init" data-category="List">
-                <a href="#init">
-                    init
-                    <span data-category="List" class="label label-category pull-right"
-                    >List</span>
-                </a>
-            </li>
             <li class="func" data-name="insert" data-category="List">
                 <a href="#insert">
                     insert
@@ -4949,8 +4942,7 @@ R.empty({<span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <
 
             <p><small>Added in v0.18.0</small></p>
 
-            <div class="description"><p>接受一个函数和两个值，通过传入函数对两个值进行相等性判断。</p>
-<p>如果两个值通过传入函数的计算后相等，则返回 <code>true</code> ；否则返回 <code>false</code> 。</p>
+            <div class="description"><p>接受一个函数和两个值，通过传入函数对两个值进行相等性判断。如果两个值的计算结果相等，则返回 <code>true</code> ；否则返回 <code>false</code> 。</p>
 </div>
 
 
@@ -6430,8 +6422,7 @@ incCount({ <span class="hljs-attr">count</span>: <span class="hljs-number">1</sp
 
             <p><small>Added in v0.19.0</small></p>
 
-            <div class="description"><p>根据给定函数生成的键，将一个包含多个对象的 list 转换为一个包含多个以该键对应值为索引对象的新对象。
-注意如果 list 中多个对象根据该键索引的值相同，那么只有最后一个对象会被保留。</p>
+            <div class="description"><p>通过生成键的函数，将元素为对象的 list 转换为以生成的键为索引的新对象。注意，如果 list 中多个对象元素生成相同的键，以最后一个对象元素作为该键的值。</p>
 <p>若在 list 位置中给出 <code>transfomer</code> ，则用作 <code>transducer</code> 。</p>
 </div>
 
@@ -6485,7 +6476,7 @@ R.indexBy(R.prop(<span class="hljs-string">'id'</span>), list);
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>返回数组中第一次出现目标元素的索引，如果目标元素不存在于数组中，则返回 <code>-1</code>。借助 <code>R.equals</code> 来判断元素是否相等。</p>
+            <div class="description"><p>返回给定元素在数组中首次出现时的索引值，如果数组中没有该元素，则返回 <code>-1</code>。通过 <code>R.equals</code> 函数进行相等性判断。</p>
 </div>
 
 
@@ -6497,64 +6488,6 @@ R.indexBy(R.prop(<span class="hljs-string">'id'</span>), list);
 
 	    <pre><button class="try-repl" data-ramda-version="0.23.0">Try in REPL</button><code class="hljs javascript">R.indexOf(<span class="hljs-number">3</span>, [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]); <span class="hljs-comment">//=&gt; 2</span>
 R.indexOf(<span class="hljs-number">10</span>, [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]); <span class="hljs-comment">//=&gt; -1</span></code></pre>
-        </section>
-        <div id="init" class="section-id"></div>
-        <section class="card">
-            <h2>
-                <a tabindex="2" class="name" href="#init">init</a>
-                <span class="pull-right">
-                        <span class="label label-category">List</span>
-                        <a target="_blank" title="View source on GitHub" href="https://github.com/ramda/ramda/tree/v0.23.0/src/init.js"><small class="glyphicon glyphicon-new-window"></small></a>
-                </span>
-            </h2>
-
-
-            <div><code>[a] → [a]</code></div>
-            <div><code>String → String</code></div>
-
-
-            <div class="params" data-expanded="false">
-                <a href="#expand" class="toggle-params">Parameters</a>
-                <div class="details panel panel-default">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <span class="type">
-                            </span>
-                            <span class="name">list</span>
-                            <span class="description"></span>
-                        </li>
-                    </ul>
-                    <div class="panel-body">
-                        <span class="returns">Returns</span>
-                        <span class="type">*</span>
-                        <span class="description"></span>
-                    </div>
-                </div>
-            </div>
-
-            <p><small>Added in v0.9.0</small></p>
-
-            <div class="description"><p>返回给定 list 或 string 去除最后一个元素后的结果。</p>
-</div>
-
-
-
-            <div class="see">
-                See also
-                <a href="#last">last</a>,
-                <a href="#head">head</a>,
-                <a href="#tail">tail</a>.
-            </div>
-
-	    <pre><button class="try-repl" data-ramda-version="0.23.0">Try in REPL</button><code class="hljs javascript">R.init([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);  <span class="hljs-comment">//=&gt; [1, 2]</span>
-R.init([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]);     <span class="hljs-comment">//=&gt; [1]</span>
-R.init([<span class="hljs-number">1</span>]);        <span class="hljs-comment">//=&gt; []</span>
-R.init([]);         <span class="hljs-comment">//=&gt; []</span>
-
-R.init(<span class="hljs-string">'abc'</span>);  <span class="hljs-comment">//=&gt; 'ab'</span>
-R.init(<span class="hljs-string">'ab'</span>);   <span class="hljs-comment">//=&gt; 'a'</span>
-R.init(<span class="hljs-string">'a'</span>);    <span class="hljs-comment">//=&gt; ''</span>
-R.init(<span class="hljs-string">''</span>);     <span class="hljs-comment">//=&gt; ''</span></code></pre>
         </section>
         <div id="insert" class="section-id"></div>
         <section class="card">
@@ -6606,8 +6539,7 @@ R.init(<span class="hljs-string">''</span>);     <span class="hljs-comment">//=&
 
             <p><small>Added in v0.2.2</small></p>
 
-            <div class="description"><p>将给定的元素插入到 list 指定 <code>index</code> 的位置。注意这个变化是不具有破坏性的：它返回的是携带变化的数组拷贝。
-<small>应用中的所有 list 不会因为这个方法受到任何副作用影响。</small></p>
+            <div class="description"><p>将元素插入到 list 指定索引处。注意，该函数无破坏性：它返回的是变化的列表的拷贝。<small>函数运行过程中不会破坏任何列表。</small></p>
 </div>
 
 
@@ -6665,8 +6597,7 @@ R.init(<span class="hljs-string">''</span>);     <span class="hljs-comment">//=&
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>将给定的子 list 插入到 list 指定 <code>index</code> 的位置。注意这个变化是不具有破坏性的：它返回的是携带变化的数组拷贝。
-<small>应用中的所有 list 不会因为这个方法受到任何副作用影响。</small></p>
+            <div class="description"><p>将子 list 插入到 list 指定索引处。注意，该函数无破坏性：它返回的是变化的列表的拷贝。<small>函数运行过程中不会破坏任何列表。</small></p>
 </div>
 
 
@@ -6717,7 +6648,7 @@ R.init(<span class="hljs-string">''</span>);     <span class="hljs-comment">//=&
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>返回由两个 list 中相同元素组成的 list 。</p>
+            <div class="description"><p>取出两个 list 中相同的元素组成的 set （集合：没有重复元素）。</p>
 </div>
 
 
@@ -6780,7 +6711,7 @@ R.init(<span class="hljs-string">''</span>);     <span class="hljs-comment">//=&
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>返回由两个 list 中相同元素组成的 list 。判断元素是否相同由给定的 <code>predicate</code> 来定义。</p>
+            <div class="description"><p>取出两个 list 中相同的元素组成的 set （集合：没有重复元素）。由给定的 <code>predicate</code> 进行相同性判断。</p>
 </div>
 
 
@@ -6850,7 +6781,7 @@ R.intersectionWith(R.eqBy(R.prop(<span class="hljs-string">'id'</span>)), buffal
 
             <p><small>Added in v0.14.0</small></p>
 
-            <div class="description"><p>创建一个新的 list ，该 list 会将给定的 separator 元素插入到 list 每两个元素之间。</p>
+            <div class="description"><p>在列表的元素之间插入分割元素。</p>
 <p>若第二个参数自身存在 <code>intersperse</code> 方法，则调用自身的 <code>intersperse</code> 方法。</p>
 </div>
 
@@ -6909,14 +6840,10 @@ R.intersectionWith(R.eqBy(R.prop(<span class="hljs-string">'id'</span>)), buffal
 
             <p><small>Added in v0.12.0</small></p>
 
-            <div class="description"><p>根据给定的 transducer 对 list 中的元素进行转换，然后使用基于 accumulator 类型的迭代器将转换后的元素依次添加到 accumulator 中。</p>
-<p>该 accumulator 可以是以下数据类型：array、string、object 或者 transformer 。
-如果 accumulator 类型是数组或者字符串，则迭代元素将会被附加到数组中或者连接到字符串上。如果是对象，迭代元素将会被直接合并，
-如果是二元数组，迭代元素则将会根据键值对进行合并。</p>
-<p>该 accumulator 也可以是一个 transformer 对象，它提供 transformer 所必须的 step、init、result 方法。
-step 方法被用作规约函数中的迭代函数。result 方法被用来将最终的 accumulator 转换为相应的返回类型（大部分情况都是 R.identity）。
-init 方法被用来提供初始的 accumulator。</p>
-<p>在 transducer 初始化之后，iteration 和 R.reduce 同步执行。</p>
+            <div class="description"><p>使用 transducer 对 list 中的元素进行转换，然后使用基于 accumulator 的类型的迭代器函数将转换后的元素依次添加到 accumulator 上。</p>
+<p>accumulator 的类型可以是：array、string、object 或者 transformer 。如果 accumulator 类型是 array 或 string，则迭代元素将被添加到数组或连接到字符串上；如果是对象，迭代元素将会被直接合并；如果是二元素数组，迭代元素会以键值对形式进行合并。</p>
+<p>accumulator 也可作为 transformer 对象，提供 transformer 所需要的二元 reducing iterator、step、零元 init 和 一元 result 函数。step 作作为 reduce 过程中的迭代函数；result 将最终的 accumulator 转换为需要的返回类型（通常为 R.identity）；init 提供初始 accumulator。</p>
+<p>在 transducer 初始化之后，使用 R.reduce 进行迭代操作。</p>
 </div>
 
 
@@ -6967,7 +6894,7 @@ in an array.</span>
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>和 R.invertObj 等同，但是对于具有多个相同值的 object 的情况，该方法会将这些值对应键存到一个数组中。</p>
+            <div class="description"><p>与 R.invertObj 类似，但会将值放入数组中，来处理一个键对应多个值的情况。</p>
 </div>
 
 
@@ -7017,7 +6944,7 @@ R.invert(raceResultsByFirstName);
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>返回一个键值交换后的新的 object，交换后的键会被强制转换为 string。注意，如果原 object 存在多个相同的值那么最后一个会被保留。</p>
+            <div class="description"><p>将对象的键、值交换位置：值作为键，对应的键作为值。交换后的键会被强制转换为字符串。注意，如果原对象同一值对应多个键，采用最后一个键。</p>
 </div>
 
 
