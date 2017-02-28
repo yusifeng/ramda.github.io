@@ -6539,7 +6539,7 @@ R.indexOf(<span class="hljs-number">10</span>, [<span class="hljs-number">1</spa
 
             <p><small>Added in v0.2.2</small></p>
 
-            <div class="description"><p>将元素插入到 list 指定索引处。注意，该函数无破坏性：它返回的是变化的列表的拷贝。<small>函数运行过程中不会破坏任何列表。</small></p>
+            <div class="description"><p>将元素插入到 list 指定索引处。注意，该函数是破坏性的：返回处理后列表的拷贝。<small>函数运行过程中不会破坏任何列表。</small></p>
 </div>
 
 
@@ -6597,7 +6597,7 @@ R.indexOf(<span class="hljs-number">10</span>, [<span class="hljs-number">1</spa
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>将子 list 插入到 list 指定索引处。注意，该函数无破坏性：它返回的是变化的列表的拷贝。<small>函数运行过程中不会破坏任何列表。</small></p>
+            <div class="description"><p>将子 list 插入到 list 指定索引处。注意，该函数是破坏性的：返回处理后列表的拷贝。<small>函数运行过程中不会破坏任何列表。</small></p>
 </div>
 
 
@@ -11589,7 +11589,7 @@ namesByGrade(students);
 
             <p><small>Added in v0.22.0</small></p>
 
-            <div class="description"><p>与 <code>reduce</code> 类似， <code>reduceWhile</code> 会遍历列表，相继调用二元迭代函数，并返回最终累积值。 <code>reduceWhile</code> 在每次迭代前使用 predicate 进行判断。如果 predicate 返回 <code>false</code> ，则提前终止遍历操作，并返回当前累积值。</p>
+            <div class="description"><p>与 <code>reduce</code> 类似， <code>reduceWhile</code> 会遍历列表，相继调用二元迭代函数，并返回最终累积值。<code>reduceWhile</code> 在每次调用迭代函数前，先使用 predicate 进行判断，如果 predicate 返回 <code>false</code> ，则提前终止遍历操作，并返回当前累积值。</p>
 </div>
 
 
@@ -11717,7 +11717,7 @@ R.reject(isOdd, {<span class="hljs-attr">a</span>: <span class="hljs-number">1</
 
             <p><small>Added in v0.2.2</small></p>
 
-            <div class="description"><p>移除列表中从 <code>start</code> 开始的 <code>count</code> 个元素。<em> 注意，该操作是非破坏性的：不改变原列表，返回处理后列表的拷贝。</em></p>
+            <div class="description"><p>删除列表中从 <code>start</code> 开始的 <code>count</code> 个元素。_ 注意，该操作是非破坏性的：不改变原列表，返回处理后列表的拷贝。</p>
 </div>
 
 
@@ -11830,7 +11830,7 @@ repeatedObjs[<span class="hljs-number">0</span>] === repeatedObjs[<span class="h
 
             <p><small>Added in v0.7.0</small></p>
 
-            <div class="description"><p>用代替值替换字符串的子串或正则匹配到的值。</p>
+            <div class="description"><p>替换字符串的子串或正则匹配到的值。</p>
 </div>
 
 
@@ -11945,7 +11945,7 @@ R.reverse(<span class="hljs-string">''</span>);         <span class="hljs-commen
 
             <p><small>Added in v0.10.0</small></p>
 
-            <div class="description"><p>Scan 与 reduce 类似。但会将每次迭代计算的累积值记录下来，组成一个列表返回。</p>
+            <div class="description"><p>Scan 与 reduce 类似，但会将每次迭代计算的累积值记录下来，组成一个列表返回。</p>
 </div>
 
 
@@ -11996,7 +11996,7 @@ R.reverse(<span class="hljs-string">''</span>);         <span class="hljs-commen
             <p><small>Added in v0.19.0</small></p>
 
             <div class="description"><p>将一个 <a href="https://github.com/fantasyland/fantasy-land#applicative">Applicative</a> 的 <a href="https://github.com/fantasyland/fantasy-land#traversable">Traversable</a> 转换成一个 Traversable 类型的 Applicative。</p>
-<p>如果第二个参数带有 <code>sequence</code> 方法，则调用其自身的 <code>sequence</code>。</p>
+<p>如果第二个参数自身存在 <code>sequence</code> 方法，则调用自身的 <code>sequence</code>。</p>
 </div>
 
 
@@ -12127,8 +12127,8 @@ R.set(xLens, <span class="hljs-number">8</span>, {<span class="hljs-attr">x</spa
 
             <p><small>Added in v0.1.4</small></p>
 
-            <div class="description"><p>对于给定的列表或字符串（或带有 <code>slice</code> 方法的对象），返回从 <code>fromIndex</code>（包括）到 <code>toIndex</code>（不包括）的元素</p>
-<p>如果第三个参数存在 <code>slice</code> 方法，则调用其自身的 <code>slice</code>。</p>
+            <div class="description"><p>取出给定的列表或字符串（或带有 <code>slice</code> 方法的对象）中，从 <code>fromIndex</code>（包括）到 <code>toIndex</code>（不包括）的元素。</p>
+<p>如果第三个参数自身存在 <code>slice</code> 方法，则调用自身的 <code>slice</code> 方法。</p>
 </div>
 
 
@@ -12183,7 +12183,7 @@ R.slice(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>, 
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>根据 comparator 对列表进行排序。comparator 函数每次接受两个参数，如果第一个值较小，则返回负数；如果第一个值较大，则返回正数；如果两值相等，返回零。注意，返回的是列表的 <strong> 拷贝 </strong> ，不会修改原列表。</p>
+            <div class="description"><p>使用比较函数对列表进行排序。比较函数每次接受两个参数，如果第一个值较小，则返回负数；如果第一个值较大，则返回正数；如果两值相等，返回零。注意，返回的是列表的 <strong> 拷贝 </strong> ，不会修改原列表。</p>
 </div>
 
 
@@ -12302,7 +12302,7 @@ sortByNameCaseInsensitive(people); <span class="hljs-comment">//=&gt; [alice, bo
 
             <p><small>Added in v0.23.0</small></p>
 
-            <div class="description"><p>依据 comparators 列表对原列表进行排序。</p>
+            <div class="description"><p>依据比较函数列表对输入列表进行排序。</p>
 </div>
 
 
@@ -12370,7 +12370,7 @@ ageNameSort(people); <span class="hljs-comment">//=&gt; [alice, clara, bob]</spa
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>根据给定的分隔符将字符串拆分为字符串数组。</p>
+            <div class="description"><p>根据指定的分隔符将字符串拆分为字符串类型的数组。</p>
 </div>
 
 
@@ -12429,7 +12429,7 @@ R.split(<span class="hljs-string">'.'</span>, <span class="hljs-string">'a.b.c.x
 
             <p><small>Added in v0.19.0</small></p>
 
-            <div class="description"><p>在给定的索引位置拆分列表或者字符串</p>
+            <div class="description"><p>在指定的索引处拆分列表或者字符串。</p>
 </div>
 
 
@@ -12481,7 +12481,7 @@ R.splitAt(<span class="hljs-number">-1</span>, <span class="hljs-string">'foobar
 
             <p><small>Added in v0.16.0</small></p>
 
-            <div class="description"><p>将 collection 拆分成指定长度的子 collection 列表。</p>
+            <div class="description"><p>将列表拆分成指定长度的子列表集。</p>
 </div>
 
 
@@ -12533,7 +12533,7 @@ R.splitEvery(<span class="hljs-number">3</span>, <span class="hljs-string">'foob
 
             <p><small>Added in v0.19.0</small></p>
 
-            <div class="description"><p>遍历列表，在第一个符合 predicate 的元素的位置，将列表拆分为两部分。第一个符合 predicate 的元素包含在后一部分中。</p>
+            <div class="description"><p>查找列表中首个满足 predicate 的元素，在该处将列表拆分为两部分。首个满足 predicate 的元素包含在后一部分。</p>
 </div>
 
 
@@ -12584,7 +12584,7 @@ R.splitEvery(<span class="hljs-number">3</span>, <span class="hljs-string">'foob
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>第1个参数减去第2个参数。</p>
+            <div class="description"><p>首个参数减去第二个参数。</p>
 </div>
 
 
