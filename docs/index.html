@@ -6842,7 +6842,7 @@ R.intersectionWith(R.eqBy(R.prop(<span class="hljs-string">'id'</span>)), buffal
 
             <div class="description"><p>使用 transducer 对 list 中的元素进行转换，然后使用基于 accumulator 的类型的迭代器函数将转换后的元素依次添加到 accumulator 上。</p>
 <p>accumulator 的类型可以是：array、string、object 或者 transformer 。如果 accumulator 类型是 array 或 string，则迭代元素将被添加到数组或连接到字符串上；如果是对象，迭代元素将会被直接合并；如果是二元素数组，迭代元素会以键值对形式进行合并。</p>
-<p>accumulator 也可作为 transformer 对象，提供 transformer 所需要的二元 reducing iterator、step、零元 init 和 一元 result 函数。step 作作为 reduce 过程中的迭代函数；result 将最终的 accumulator 转换为需要的返回类型（通常为 R.identity）；init 提供初始 accumulator。</p>
+<p>accumulator 也可作为 transformer 对象，提供 transformer 所需要的二元 reducing iterator、step、零元 init 和 一元 result 函数。step 作为 reduce 过程中的迭代函数；result 将最终的 accumulator 转换为需要的返回类型（通常为 R.identity）；init 提供初始 accumulator。</p>
 <p>在 transducer 初始化之后，使用 R.reduce 进行迭代操作。</p>
 </div>
 
@@ -13603,7 +13603,7 @@ R.toString(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Dat
             <div class="description"><p>用 iterator function 初始化 transducer ，生成一个 transformed iterator function。然后顺次遍历列表，对每个列表元素先进行转换，然后与累积值进行归约，返回值作为下一轮迭代的累积值。最终返回与初始累积值类型相同的一个累积值。</p>
 <p>iterator function 接收两个参数： <em>(acc, value)</em> ，iterator function 会被封装为 transformer 来初始化 transducer 。可以直接传递 transformer 来代替 iterator function。这两种情况下，可以使用 <code>R.reduced</code> 提前终止迭代操作。</p>
 <p>transducer 函数接受一个 transformer ，返回一个新的 transformer ，并且 transducer 函数可以直接组合。</p>
-<p>transformer 是一个对象，其中包含二元 reducing iterator、step、零元 init 和 一元 result 函数。step 作作为 reduce 过程中的迭代函数；result 将最终的累积值转换为需要的返回类型（通常为 R.identity）；init 提供初始累积值，但通常会被 <code>transduce</code> 函数忽略。</p>
+<p>transformer 是一个对象，其中包含二元 reducing iterator、step、零元 init 和 一元 result 函数。step 作为 reduce 过程中的迭代函数；result 将最终的累积值转换为需要的返回类型（通常为 R.identity）；init 提供初始累积值，但通常会被 <code>transduce</code> 函数忽略。</p>
 <p>在 transducer 初始化之后，使用 R.reduce 进行迭代操作。</p>
 </div>
 
