@@ -4176,7 +4176,7 @@ defaultTo42(<span class="hljs-built_in">parseInt</span>(<span class="hljs-string
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>求差集。求第一个列表中未包含在第二个列表中的所有元素的集合。对象和数组比较数值相等，而非引用相等。</p>
+            <div class="description"><p>求差集。求第一个列表中，未包含在第二个列表中的任一元素的集合。对象和数组比较数值相等，而非引用相等。</p>
 </div>
 
 
@@ -14090,9 +14090,8 @@ uncurriedAddFour(<span class="hljs-number">1</span>, <span class="hljs-number">2
 
             <p><small>Added in v0.10.0</small></p>
 
-            <div class="description"><p>通过种子(seed)建立一个列表。给定的迭代函数返回 false 停止迭代，
-否则返回一个数对，前者添加到结果列表中，后者用作种子(seed)传递给下一轮迭代。</p>
-<p>迭代函数只接收一个参数： <em>(seed)</em></p>
+            <div class="description"><p>通过一个种子值（ seed ）创建一个列表。<code>unfold</code> 接受一个迭代函数：该函数或者返回 false 停止迭代，或者返回一个长度为 2 的数组：数组首个元素添加到结果列表，第二个元素作为种子值传给下一轮迭代使用。</p>
+<p>迭代函数接受单个参数： <em>(seed)</em>。</p>
 </div>
 
 
@@ -14144,7 +14143,7 @@ R.unfold(f, <span class="hljs-number">10</span>); <span class="hljs-comment">//=
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>集合并运算，合并两个列表作为一个新的列表（没有重复元素）。</p>
+            <div class="description"><p>集合并运算，合并两个列表为新列表（新列表中无重复元素）。</p>
 </div>
 
 
@@ -14202,8 +14201,7 @@ R.unfold(f, <span class="hljs-number">10</span>); <span class="hljs-comment">//=
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>集合并运算，合并两个列表作为一个新的列表（没有重复元素）。
-“重复”由条件函数的返回值决定。</p>
+            <div class="description"><p>集合并运算，合并两个列表为新列表（新列表中无重复元素）。由 predicate 的返回值决定两元素是否重复。</p>
 </div>
 
 
@@ -14253,8 +14251,7 @@ R.unionWith(R.eqBy(R.prop(<span class="hljs-string">'a'</span>)), l1, l2); <span
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>返回无重复元素的列表。
-比较函数是 <code>R.equals</code> 。</p>
+            <div class="description"><p>列表去重操作。返回无重复元素的列表。通过 <code>R.equals</code> 函数进行相等性判断。</p>
 </div>
 
 
@@ -14307,9 +14304,7 @@ R.uniq([[<span class="hljs-number">42</span>], [<span class="hljs-number">42</sp
 
             <p><small>Added in v0.16.0</small></p>
 
-            <div class="description"><p>基于给定函数返回值来判断“重复”，返回一个没有重复元素的列表。
-如果出现重复元素，则保留第1次出现的元素。
-比较函数是 <code>R.equals</code> 。</p>
+            <div class="description"><p>返回无重复元素的列表。元素通过给定的函数的返回值以及 <code>R.equals</code> 进行相同性判断。如果给定的函数返回值相同，保留第一个元素。</p>
 </div>
 
 
@@ -14360,8 +14355,7 @@ R.uniq([[<span class="hljs-number">42</span>], [<span class="hljs-number">42</sp
 
             <p><small>Added in v0.2.0</small></p>
 
-            <div class="description"><p>基于给定的条件函数做元素的两两比较来判断“重复“，返回一个没有重复元素的列表。
-如果条件函数返回相等，则保留第1个元素。</p>
+            <div class="description"><p>返回无重复元素的列表。元素通过 predicate 进行相同性判断。如果通过 predicate 判断两元素相同，保留第一个元素。</p>
 </div>
 
 
@@ -14423,8 +14417,7 @@ R.uniqWith(strEq)([<span class="hljs-string">'1'</span>, <span class="hljs-numbe
 
             <p><small>Added in v0.18.0</small></p>
 
-            <div class="description"><p>最后一个输入 <code>x</code> 作为参数传给条件函数做判断，
-如果不满足则将 <code>x</code> 作为参数传给 <code>whenFalseFn</code> 返回结果，否则返回 <code>x</code> 。</p>
+            <div class="description"><p>判断输入值是否满足 predicate，若不符合，则将输入值传给 <code>whenFalseFn</code> 处理，并将处理结果作为返回；若符合，则将输入值原样返回。</p>
 </div>
 
 
@@ -14475,7 +14468,7 @@ coerceArray(<span class="hljs-number">1</span>);         <span class="hljs-comme
 
             <p><small>Added in v0.3.0</small></p>
 
-            <div class="description"><p><code>R.chain(R.identity)</code> 的快捷方式, 从 <a href="https://github.com/fantasyland/fantasy-land#chain">Chain</a> 数据结构中消除一层嵌套.</p>
+            <div class="description"><p><code>R.chain(R.identity)</code> 的简写, 对 <a href="https://github.com/fantasyland/fantasy-land#chain">Chain</a> 类型的数据消除一层嵌套.</p>
 </div>
 
 
@@ -14539,8 +14532,7 @@ R.unnest([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span
 
             <p><small>Added in v0.20.0</small></p>
 
-            <div class="description"><p>接收一个条件函数、一个迭代函数、一个初始值，返回一个与初始值同类型的值。
-如果迭代的结果满足条件函数，那么返回这个值。</p>
+            <div class="description"><p>接受一个 predicate ，transform function 和 初始值，返回一个与初始值相同类型的值。对输入值进行 transform ，直到 transform 的结果满足 predicate，此时返回这个满足 predicate 的值。</p>
 </div>
 
 
@@ -14598,7 +14590,7 @@ R.unnest([[<span class="hljs-number">1</span>, <span class="hljs-number">2</span
 
             <p><small>Added in v0.14.0</small></p>
 
-            <div class="description"><p>修改一个数组拷贝指定位置的值，然后返回修改后的数组拷贝。</p>
+            <div class="description"><p>替换数组中指定索引处的值。</p>
 </div>
 
 
@@ -14654,10 +14646,8 @@ R.update(<span class="hljs-number">1</span>)(<span class="hljs-number">11</span>
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>给定一个函数 <code>fn</code> 和一个 transformer 函数的列表，返回一个柯里化函数。
-调用返回的函数会对每个参数执行对应的 transformer 函数，然后作为新的参数传入 <code>fn</code> 执行。</p>
-<p>如果传的参数数量比 transformer 函数的数量多，多出的参数会被直接传入 <code>fn</code> 。
-如果不需要处理多出的那部分参数，除了忽略之外，也可以用 identity 函数来作为 transformer ，以保证返回函数的参数数量是确定的。</p>
+            <div class="description"><p>接受一个函数 <code>fn</code> 和一个 transformer 函数的列表，返回一个柯里化的新函数。当被调用时，新函数将每个参数转发给对应位置的 transformer 函数，然后将每个 transformer 函数的计算结果作为参数传递给 <code>fn</code>，<code>fn</code> 的计算结果即新函数的返回值。</p>
+<p>如果新函数传传入参数的数量比 transformer 函数的数量多，多出的参数会作为附加参数直接传给 <code>fn</code> 。如果不需要处理多出的那部分参数，除了忽略之外，也可以用 identity 函数来作为 transformer ，以保证新函数的参数数量是确定的。</p>
 </div>
 
 
@@ -14708,7 +14698,7 @@ R.useWith(<span class="hljs-built_in">Math</span>.pow, [R.dec, R.inc])(<span cla
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>输入一个对象，返回所有可枚举的属性值。注意：不同 JS 运行环境输出数组的顺序可能不一致。</p>
+            <div class="description"><p>返回对象所有自身可枚举的属性的值。注意：不同 JS 运行环境输出数组的顺序可能不一致。</p>
 </div>
 
 
@@ -14752,7 +14742,7 @@ R.useWith(<span class="hljs-built_in">Math</span>.pow, [R.dec, R.inc])(<span cla
 
             <p><small>Added in v0.2.0</small></p>
 
-            <div class="description"><p>输入一个对象，返回所有的属性值，包括原型链上的属性。注意：不同 JS 运行环境输出数组的顺序可能不一致。</p>
+            <div class="description"><p>返回对象所有属性的值，包括原型链上的属性。注意：不同 JS 运行环境输出数组的顺序可能不一致。</p>
 </div>
 
 
@@ -14805,7 +14795,7 @@ R.valuesIn(f); <span class="hljs-comment">//=&gt; ['X', 'Y']</span></code></pre>
 
             <p><small>Added in v0.16.0</small></p>
 
-            <div class="description"><p>返回一个结构在一个镜头(lens)下的“视野”。镜头的焦点取决于数据结构的可见性。</p>
+            <div class="description"><p>返回数据结构中，lens 聚焦的部分。lens 的焦点决定了数据结构中的哪部分是可见的。</p>
 </div>
 
 
@@ -14872,8 +14862,7 @@ R.view(xLens, {<span class="hljs-attr">x</span>: <span class="hljs-number">4</sp
 
             <p><small>Added in v0.18.0</small></p>
 
-            <div class="description"><p>最后一个输入 <code>x</code> 作为参数传给条件函数做判断，
-如果不满足则将 <code>x</code> 作为参数传给 <code>whenTrueFn</code> 返回结果，否则返回 <code>x</code> 。</p>
+            <div class="description"><p>判断输入值是否满足 predicate，若符合，则将输入值传给 <code>whenTrueFn</code> 处理，并将处理结果作为返回；若不符合，则将输入值原样返回。</p>
 </div>
 
 
@@ -14933,10 +14922,8 @@ truncate(<span class="hljs-string">'0123456789ABC'</span>); <span class="hljs-co
 
             <p><small>Added in v0.1.1</small></p>
 
-            <div class="description"><p>输入参考标准和待检测对象，如果满足参考标准则返回 true，否则返回 false。
-参考标准的每个属性都要求是条件函数。
-每个条件函数对检测对象相应的属性值执行，如果都返回 true，则 <code>where</code> 返回 true，否则返回 false。</p>
-<p><code>where</code> 适用于需要条件函数约束的地方，比如用于 <code>filter</code> 和 <code>find</code> 。</p>
+            <div class="description"><p>接受一个测试规范对象和一个待检测对象，如果测试满足规范，则返回 true，否则返回 false。测试规范对象的每个属性值都必须是 predicate 。每个 predicate 作用于待检测对象对应的属性值，如果所有 predicate 都返回 true，则 <code>where</code> 返回 true，否则返回 false 。</p>
+<p><code>where</code> 非常适合于需要声明式表示约束的函数，比如 <code>filter</code> 和 <code>find</code> 。</p>
 </div>
 
 
@@ -14997,8 +14984,7 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-string">'foo'</span>, 
 
             <p><small>Added in v0.14.0</small></p>
 
-            <div class="description"><p>输入参考对象和待检测对象，如果满足参考值则返回 true，否则返回 false。
-如果待检测对象的每个属性值都等于（使用 <code>R.equals</code> 来判断）参考对象对应的属性值，那么这个对象就满足参考对象。</p>
+            <div class="description"><p>接受一个测试规范对象和一个待检测对象，如果测试满足规范，则返回 true，否则返回 false。如果对于每一个测试规范对象的属性值，待检测对象中都有一个对应的相同属性值，则 <code>where</code> 返回 true，否则返回 false 。</p>
 <p><code>whereEq</code> 是 <a href="#where"><code>where</code></a> 的一种特殊形式。</p>
 </div>
 
@@ -15060,9 +15046,8 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <spa
 
             <p><small>Added in v0.19.0</small></p>
 
-            <div class="description"><p>返回一个列表，其元素都不在给定的第1个列表中。
-比较函数是 <code>R.equals</code> 。</p>
-<p>如果输入是 transformer ，那么按照 transducer 的方式执行。</p>
+            <div class="description"><p>求第二个列表中，未包含在第一个列表中的任一元素的集合。通过 <code>R.equals</code> 函数进行相等性判断</p>
+<p>若在列表位置中给出 transfomer，则用作 transducer 。</p>
 </div>
 
 
@@ -15117,7 +15102,7 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <spa
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>两个列表的元素两两组合，生成一个新的元素对的列表。</p>
+            <div class="description"><p>将两个列表的元素两两组合，生成一个新的元素对列表。</p>
 </div>
 
 
@@ -15168,9 +15153,8 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <spa
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>两个列表对应位置元素组合，生成一个新的元素对的列表。
-生成的列表长度取较短的输入列表的长度。
-注意， <code>zip</code> 等价于 <code>zipWith(function(a, b) { return [a, b] })</code> 。</p>
+            <div class="description"><p>将两个列表对应位置的元素组合，生成一个新的元素对列表。生成的列表长度取决于较短的输入列表的长度。
+注意，<code>zip</code> 等价于 <code>zipWith(function(a, b) { return [a, b] })</code> 。</p>
 </div>
 
 
@@ -15221,9 +15205,8 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <spa
 
             <p><small>Added in v0.3.0</small></p>
 
-            <div class="description"><p>两个列表对应位置元素作为键值对组合，生成一个新的键值对的列表。
-生成的列表长度取较短的输入列表的长度。
-注意，<code>zip</code> 等价于 <code>pipe(zipWith(pair), fromPairs)</code> 。</p>
+            <div class="description"><p>将两个列表对应位置的元素作为键值对组合，生成一个新的键值对的列表。生成的列表长度取决于较短的输入列表的长度。</p>
+<p>注意，<code>zip</code> 等价于 <code>pipe(zipWith(pair), fromPairs)</code> 。</p>
 </div>
 
 
@@ -15281,8 +15264,7 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <spa
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>两个列表对应位置元素通过一个函数处理，生成一个新的元素的列表。
-生成的列表长度取较短的输入列表的长度。</p>
+            <div class="description"><p>将两个列表对应位置的元素通过一个函数处理，生成一个新的元素的列表。生成的列表长度取决于较短的输入列表的长度。</p>
 </div>
 
 
