@@ -624,6 +624,13 @@
                     >List</span>
                 </a>
             </li>
+            <li class="func" data-name="init" data-category="List">
+                <a href="#init">
+                    init
+                    <span data-category="List" class="label label-category pull-right"
+                    >List</span>
+                </a>
+            </li>
             <li class="func" data-name="insert" data-category="List">
                 <a href="#insert">
                     insert
@@ -6488,6 +6495,64 @@ R.indexBy(R.prop(<span class="hljs-string">'id'</span>), list);
 
 	    <pre><button class="try-repl" data-ramda-version="0.23.0">Try in REPL</button><code class="hljs javascript">R.indexOf(<span class="hljs-number">3</span>, [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]); <span class="hljs-comment">//=&gt; 2</span>
 R.indexOf(<span class="hljs-number">10</span>, [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]); <span class="hljs-comment">//=&gt; -1</span></code></pre>
+        </section>
+        <div id="init" class="section-id"></div>
+        <section class="card">
+            <h2>
+                <a tabindex="2" class="name" href="#init">init</a>
+                <span class="pull-right">
+                        <span class="label label-category">List</span>
+                        <a target="_blank" title="View source on GitHub" href="https://github.com/ramda/ramda/tree/v0.23.0/src/init.js"><small class="glyphicon glyphicon-new-window"></small></a>
+                </span>
+            </h2>
+
+
+            <div><code>[a] → [a]</code></div>
+            <div><code>String → String</code></div>
+
+
+            <div class="params" data-expanded="false">
+                <a href="#expand" class="toggle-params">Parameters</a>
+                <div class="details panel panel-default">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">list</span>
+                            <span class="description"></span>
+                        </li>
+                    </ul>
+                    <div class="panel-body">
+                        <span class="returns">Returns</span>
+                        <span class="type">*</span>
+                        <span class="description"></span>
+                    </div>
+                </div>
+            </div>
+
+            <p><small>Added in v0.9.0</small></p>
+
+            <div class="description"><p>返回 list 或 string 删除最后一个元素后的部分。</p>
+</div>
+
+
+
+            <div class="see">
+                See also
+                <a href="#last">last</a>,
+                <a href="#head">head</a>,
+                <a href="#tail">tail</a>.
+            </div>
+
+	    <pre><button class="try-repl" data-ramda-version="0.23.0">Try in REPL</button><code class="hljs javascript">R.init([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);  <span class="hljs-comment">//=&gt; [1, 2]</span>
+R.init([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]);     <span class="hljs-comment">//=&gt; [1]</span>
+R.init([<span class="hljs-number">1</span>]);        <span class="hljs-comment">//=&gt; []</span>
+R.init([]);         <span class="hljs-comment">//=&gt; []</span>
+
+R.init(<span class="hljs-string">'abc'</span>);  <span class="hljs-comment">//=&gt; 'ab'</span>
+R.init(<span class="hljs-string">'ab'</span>);   <span class="hljs-comment">//=&gt; 'a'</span>
+R.init(<span class="hljs-string">'a'</span>);    <span class="hljs-comment">//=&gt; ''</span>
+R.init(<span class="hljs-string">''</span>);     <span class="hljs-comment">//=&gt; ''</span></code></pre>
         </section>
         <div id="insert" class="section-id"></div>
         <section class="card">
@@ -15153,8 +15218,8 @@ pred({<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <spa
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>将两个列表对应位置的元素组合，生成一个新的元素对列表。生成的列表长度取决于较短的输入列表的长度。
-注意，<code>zip</code> 等价于 <code>zipWith(function(a, b) { return [a, b] })</code> 。</p>
+            <div class="description"><p>将两个列表对应位置的元素组合，生成一个新的元素对列表。生成的列表长度取决于较短的输入列表的长度。</p>
+<p>注意，<code>zip</code> 等价于 <code>zipWith(function(a, b) { return [a, b] })</code> 。</p>
 </div>
 
 
