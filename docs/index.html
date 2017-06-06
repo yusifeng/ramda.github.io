@@ -428,6 +428,13 @@
                     >Function</span>
                 </a>
             </li>
+            <li class="func" data-name="endsWith" data-category="List">
+                <a href="#endsWith">
+                    endsWith
+                    <span data-category="List" class="label label-category pull-right"
+                    >List</span>
+                </a>
+            </li>
             <li class="func" data-name="eqBy" data-category="Relation">
                 <a href="#eqBy">
                     eqBy
@@ -629,6 +636,13 @@
                     init
                     <span data-category="List" class="label label-category pull-right"
                     >List</span>
+                </a>
+            </li>
+            <li class="func" data-name="innerJoin" data-category="Relation">
+                <a href="#innerJoin">
+                    innerJoin
+                    <span data-category="Relation" class="label label-category pull-right"
+                    >Relation</span>
                 </a>
             </li>
             <li class="func" data-name="insert" data-category="List">
@@ -897,6 +911,13 @@
                     >Function</span>
                 </a>
             </li>
+            <li class="func" data-name="memoizeWith" data-category="Function">
+                <a href="#memoizeWith">
+                    memoizeWith
+                    <span data-category="Function" class="label label-category pull-right"
+                    >Function</span>
+                </a>
+            </li>
             <li class="func" data-name="merge" data-category="Object">
                 <a href="#merge">
                     merge
@@ -909,6 +930,13 @@
                     mergeAll
                     <span data-category="List" class="label label-category pull-right"
                     >List</span>
+                </a>
+            </li>
+            <li class="func" data-name="mergeDeepLeft" data-category="Object">
+                <a href="#mergeDeepLeft">
+                    mergeDeepLeft
+                    <span data-category="Object" class="label label-category pull-right"
+                    >Object</span>
                 </a>
             </li>
             <li class="func" data-name="mergeDeepRight" data-category="Object">
@@ -1012,6 +1040,13 @@
             <li class="func" data-name="nthArg" data-category="Function">
                 <a href="#nthArg">
                     nthArg
+                    <span data-category="Function" class="label label-category pull-right"
+                    >Function</span>
+                </a>
+            </li>
+            <li class="func" data-name="o" data-category="Function">
+                <a href="#o">
+                    o
                     <span data-category="Function" class="label label-category pull-right"
                     >Function</span>
                 </a>
@@ -1380,6 +1415,13 @@
                     >List</span>
                 </a>
             </li>
+            <li class="func" data-name="startsWith" data-category="List">
+                <a href="#startsWith">
+                    startsWith
+                    <span data-category="List" class="label label-category pull-right"
+                    >List</span>
+                </a>
+            </li>
             <li class="func" data-name="subtract" data-category="Math">
                 <a href="#subtract">
                     subtract
@@ -1672,6 +1714,13 @@
                     when
                     <span data-category="Logic" class="label label-category pull-right"
                     >Logic</span>
+                </a>
+            </li>
+            <li class="func" data-name="where" data-category="Object">
+                <a href="#where">
+                    where
+                    <span data-category="Object" class="label label-category pull-right"
+                    >Object</span>
                 </a>
             </li>
             <li class="func" data-name="whereEq" data-category="Object">
@@ -4925,6 +4974,59 @@ R.empty([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>,
 R.empty(<span class="hljs-string">'unicorns'</span>);    <span class="hljs-comment">//=&gt; ''</span>
 R.empty({<span class="hljs-attr">x</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">2</span>});  <span class="hljs-comment">//=&gt; {}</span></code></pre>
         </section>
+        <div id="endsWith" class="section-id"></div>
+        <section class="card">
+            <h2>
+                <a tabindex="2" class="name" href="#endsWith">endsWith</a>
+                <span class="pull-right">
+                        <span class="label label-category">List</span>
+                        <a target="_blank" title="View source on GitHub" href="https://github.com/ramda/ramda/tree/v0.24.1/src/endsWith.js"><small class="glyphicon glyphicon-new-window"></small></a>
+                </span>
+            </h2>
+
+
+            <div><code>[a] → Boolean</code></div>
+            <div><code>String → Boolean</code></div>
+
+
+            <div class="params" data-expanded="false">
+                <a href="#expand" class="toggle-params">Parameters</a>
+                <div class="details panel panel-default">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">suffix</span>
+                            <span class="description"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">list</span>
+                            <span class="description"></span>
+                        </li>
+                    </ul>
+                    <div class="panel-body">
+                        <span class="returns">Returns</span>
+                        <span class="type">Boolean</span>
+                        <span class="description"></span>
+                    </div>
+                </div>
+            </div>
+
+            <p><small>Added in v0.24.0</small></p>
+
+            <div class="description"><p>检查列表是否以给定的值结尾。</p>
+</div>
+
+
+
+
+	    <pre><button class="try-repl" data-ramda-version="0.24.1">Try in REPL</button><code class="hljs javascript">R.endsWith(<span class="hljs-string">'c'</span>, <span class="hljs-string">'abc'</span>)                <span class="hljs-comment">//=&gt; true</span>
+R.endsWith(<span class="hljs-string">'b'</span>, <span class="hljs-string">'abc'</span>)                <span class="hljs-comment">//=&gt; false</span>
+R.endsWith([<span class="hljs-string">'c'</span>], [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>])    <span class="hljs-comment">//=&gt; true</span>
+R.endsWith([<span class="hljs-string">'b'</span>], [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>])    <span class="hljs-comment">//=&gt; false</span></code></pre>
+        </section>
         <div id="eqBy" class="section-id"></div>
         <section class="card">
             <h2>
@@ -6580,6 +6682,76 @@ R.init(<span class="hljs-string">'abc'</span>);  <span class="hljs-comment">//=&
 R.init(<span class="hljs-string">'ab'</span>);   <span class="hljs-comment">//=&gt; 'a'</span>
 R.init(<span class="hljs-string">'a'</span>);    <span class="hljs-comment">//=&gt; ''</span>
 R.init(<span class="hljs-string">''</span>);     <span class="hljs-comment">//=&gt; ''</span></code></pre>
+        </section>
+        <div id="innerJoin" class="section-id"></div>
+        <section class="card">
+            <h2>
+                <a tabindex="2" class="name" href="#innerJoin">innerJoin</a>
+                <span class="pull-right">
+                        <span class="label label-category">Relation</span>
+                        <a target="_blank" title="View source on GitHub" href="https://github.com/ramda/ramda/tree/v0.24.1/src/innerJoin.js"><small class="glyphicon glyphicon-new-window"></small></a>
+                </span>
+            </h2>
+
+
+            <div><code>(a → b → Boolean) → [a] → [b] → [a]</code></div>
+
+
+            <div class="params" data-expanded="false">
+                <a href="#expand" class="toggle-params">Parameters</a>
+                <div class="details panel panel-default">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">pred</span>
+                            <span class="description"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">xs</span>
+                            <span class="description"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">ys</span>
+                            <span class="description"></span>
+                        </li>
+                    </ul>
+                    <div class="panel-body">
+                        <span class="returns">Returns</span>
+                        <span class="type">Array</span>
+                        <span class="description"></span>
+                    </div>
+                </div>
+            </div>
+
+            <p><small>Added in v0.24.0</small></p>
+
+            <div class="description"><p>接受一个 predicate <code>pred</code> 、列表 <code>xs</code> 和 <code>ys</code> ，返回列表 <code>xs&#39;</code>。依次取出 <code>xs</code> 中的元素，若通过 <code>pred</code> 判断等于 <code>ys</code> 中的一个或多个元素，则放入 <code>xs&#39;</code> 。</p>
+<p><code>pred</code> 必须为二元函数，两个参数分别来自于对应两个列表中的元素。</p>
+<p><code>xs</code>、<code>ys</code> 和 <code>xs&#39;</code> 被当作集合处理，所以从语义上讲，元素的顺序并不重要，但由于 <code>xs&#39;</code> 是列表（列表中元素有排列顺序），所以本实现保证 <code>xs&#39;</code> 中元素的顺序与 <code>xs</code> 中的一致。重复的元素也不会被移除，因此，若 <code>xs</code> 中含重复元素，<code>xs&#39;</code> 中也会包含元素。</p>
+</div>
+
+
+
+            <div class="see">
+                See also
+                <a href="#intersection">intersection</a>.
+            </div>
+
+	    <pre><button class="try-repl" data-ramda-version="0.24.1">Try in REPL</button><code class="hljs javascript">R.innerJoin(
+  <span class="hljs-function">(<span class="hljs-params">record, id</span>) =&gt;</span> record.id === id,
+  [{<span class="hljs-attr">id</span>: <span class="hljs-number">824</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'Richie Furay'</span>},
+   {<span class="hljs-attr">id</span>: <span class="hljs-number">956</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'Dewey Martin'</span>},
+   {<span class="hljs-attr">id</span>: <span class="hljs-number">313</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'Bruce Palmer'</span>},
+   {<span class="hljs-attr">id</span>: <span class="hljs-number">456</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'Stephen Stills'</span>},
+   {<span class="hljs-attr">id</span>: <span class="hljs-number">177</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">'Neil Young'</span>}],
+  [<span class="hljs-number">177</span>, <span class="hljs-number">456</span>, <span class="hljs-number">999</span>]
+);
+<span class="hljs-comment">//=&gt; [{id: 456, name: 'Stephen Stills'}, {id: 177, name: 'Neil Young'}]</span></code></pre>
         </section>
         <div id="insert" class="section-id"></div>
         <section class="card">
@@ -8746,6 +8918,69 @@ factorial(<span class="hljs-number">5</span>); <span class="hljs-comment">//=&gt
 factorial(<span class="hljs-number">5</span>); <span class="hljs-comment">//=&gt; 120</span>
 count; <span class="hljs-comment">//=&gt; 1</span></code></pre>
         </section>
+        <div id="memoizeWith" class="section-id"></div>
+        <section class="card">
+            <h2>
+                <a tabindex="2" class="name" href="#memoizeWith">memoizeWith</a>
+                <span class="pull-right">
+                        <span class="label label-category">Function</span>
+                        <a target="_blank" title="View source on GitHub" href="https://github.com/ramda/ramda/tree/v0.24.1/src/memoizeWith.js"><small class="glyphicon glyphicon-new-window"></small></a>
+                </span>
+            </h2>
+
+
+            <div><code>(*… → String) → (*… → a) → (*… → a)</code></div>
+
+
+            <div class="params" data-expanded="false">
+                <a href="#expand" class="toggle-params">Parameters</a>
+                <div class="details panel panel-default">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">fn</span>
+                            <span class="description"><p>The function to generate the cache key.</p>
+</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">fn</span>
+                            <span class="description"><p>The function to memoize.</p>
+</span>
+                        </li>
+                    </ul>
+                    <div class="panel-body">
+                        <span class="returns">Returns</span>
+                        <span class="type">function</span>
+                        <span class="description">Memoized version of `fn`.</span>
+                    </div>
+                </div>
+            </div>
+
+            <p><small>Added in v0.24.0</small></p>
+
+            <div class="description"><p><a href="＃memoize"><code>R.memoize</code></a> 的可定制版本。<code>memoizeWith</code> 需要一个额外的函数，该函数接受一个参数集，用于创建缓存的键值，在该缓存中会存储被缓存函数的结果。注意，生成缓存键值时，要避免可能会错误地覆盖之前已缓存键值对的冲突。</p>
+</div>
+
+
+
+            <div class="see">
+                See also
+                <a href="#memoize">memoize</a>.
+            </div>
+
+	    <pre><button class="try-repl" data-ramda-version="0.24.1">Try in REPL</button><code class="hljs javascript"><span class="hljs-keyword">let</span> count = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">const</span> factorial = R.memoizeWith(R.identity, n =&gt; {
+  count += <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">return</span> R.product(R.range(<span class="hljs-number">1</span>, n + <span class="hljs-number">1</span>));
+});
+factorial(<span class="hljs-number">5</span>); <span class="hljs-comment">//=&gt; 120</span>
+factorial(<span class="hljs-number">5</span>); <span class="hljs-comment">//=&gt; 120</span>
+factorial(<span class="hljs-number">5</span>); <span class="hljs-comment">//=&gt; 120</span>
+count; <span class="hljs-comment">//=&gt; 1</span></code></pre>
+        </section>
         <div id="merge" class="section-id"></div>
         <section class="card">
             <h2>
@@ -8853,6 +9088,68 @@ resetToDefault({<span class="hljs-attr">x</span>: <span class="hljs-number">5</s
 
 	    <pre><button class="try-repl" data-ramda-version="0.24.1">Try in REPL</button><code class="hljs javascript">R.mergeAll([{<span class="hljs-attr">foo</span>:<span class="hljs-number">1</span>},{<span class="hljs-attr">bar</span>:<span class="hljs-number">2</span>},{<span class="hljs-attr">baz</span>:<span class="hljs-number">3</span>}]); <span class="hljs-comment">//=&gt; {foo:1,bar:2,baz:3}</span>
 R.mergeAll([{<span class="hljs-attr">foo</span>:<span class="hljs-number">1</span>},{<span class="hljs-attr">foo</span>:<span class="hljs-number">2</span>},{<span class="hljs-attr">bar</span>:<span class="hljs-number">2</span>}]); <span class="hljs-comment">//=&gt; {foo:2,bar:2}</span></code></pre>
+        </section>
+        <div id="mergeDeepLeft" class="section-id"></div>
+        <section class="card">
+            <h2>
+                <a tabindex="2" class="name" href="#mergeDeepLeft">mergeDeepLeft</a>
+                <span class="pull-right">
+                        <span class="label label-category">Object</span>
+                        <a target="_blank" title="View source on GitHub" href="https://github.com/ramda/ramda/tree/v0.24.1/src/mergeDeepLeft.js"><small class="glyphicon glyphicon-new-window"></small></a>
+                </span>
+            </h2>
+
+
+            <div><code>{a} → {a} → {a}</code></div>
+
+
+            <div class="params" data-expanded="false">
+                <a href="#expand" class="toggle-params">Parameters</a>
+                <div class="details panel panel-default">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">lObj</span>
+                            <span class="description"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">rObj</span>
+                            <span class="description"></span>
+                        </li>
+                    </ul>
+                    <div class="panel-body">
+                        <span class="returns">Returns</span>
+                        <span class="type">Object</span>
+                        <span class="description"></span>
+                    </div>
+                </div>
+            </div>
+
+            <p><small>Added in v0.24.0</small></p>
+
+            <div class="description"><p>合并两个对象的自身属性（不包括 prototype 属性）。如果某个 key 在两个对象中都存在：</p>
+<ul>
+<li>并且两个值都是对象，则继续递归合并这两个值。</li>
+<li>否则，采用第一个对象的值。</li>
+</ul>
+</div>
+
+
+
+            <div class="see">
+                See also
+                <a href="#merge">merge</a>,
+                <a href="#mergeDeepRight">mergeDeepRight</a>,
+                <a href="#mergeDeepWith">mergeDeepWith</a>,
+                <a href="#mergeDeepWithKey">mergeDeepWithKey</a>.
+            </div>
+
+	    <pre><button class="try-repl" data-ramda-version="0.24.1">Try in REPL</button><code class="hljs javascript">R.mergeDeepLeft({ <span class="hljs-attr">name</span>: <span class="hljs-string">'fred'</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">contact</span>: { <span class="hljs-attr">email</span>: <span class="hljs-string">'moo@example.com'</span> }},
+                { <span class="hljs-attr">age</span>: <span class="hljs-number">40</span>, <span class="hljs-attr">contact</span>: { <span class="hljs-attr">email</span>: <span class="hljs-string">'baa@example.com'</span> }});
+<span class="hljs-comment">//=&gt; { name: 'fred', age: 10, contact: { email: 'moo@example.com' }}</span></code></pre>
         </section>
         <div id="mergeDeepRight" class="section-id"></div>
         <section class="card">
@@ -9747,6 +10044,65 @@ R.nth(<span class="hljs-number">3</span>, <span class="hljs-string">'abc'</span>
 
 	    <pre><button class="try-repl" data-ramda-version="0.24.1">Try in REPL</button><code class="hljs javascript">R.nthArg(<span class="hljs-number">1</span>)(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>); <span class="hljs-comment">//=&gt; 'b'</span>
 R.nthArg(<span class="hljs-number">-1</span>)(<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>); <span class="hljs-comment">//=&gt; 'c'</span></code></pre>
+        </section>
+        <div id="o" class="section-id"></div>
+        <section class="card">
+            <h2>
+                <a tabindex="2" class="name" href="#o">o</a>
+                <span class="pull-right">
+                        <span class="label label-category">Function</span>
+                        <a target="_blank" title="View source on GitHub" href="https://github.com/ramda/ramda/tree/v0.24.1/src/o.js"><small class="glyphicon glyphicon-new-window"></small></a>
+                </span>
+            </h2>
+
+
+            <div><code>(b → c) → (a → b) → a → c</code></div>
+
+
+            <div class="params" data-expanded="false">
+                <a href="#expand" class="toggle-params">Parameters</a>
+                <div class="details panel panel-default">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">f</span>
+                            <span class="description"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">g</span>
+                            <span class="description"></span>
+                        </li>
+                    </ul>
+                    <div class="panel-body">
+                        <span class="returns">Returns</span>
+                        <span class="type">function</span>
+                        <span class="description"></span>
+                    </div>
+                </div>
+            </div>
+
+            <p><small>Added in v0.24.0</small></p>
+
+            <div class="description"><p><code>o</code> 是一个柯里化组合函数，返回一元函数。</p>
+<p>类似于 <a href="＃compose"><code>compose</code></a>，<code>o</code> 从右到左执行函数组合。但与 <a href="＃compose"><code>compose</code></a> 不同的是，传递给 <code>o</code> 的最右边的函数为一元函数。</p>
+</div>
+
+
+
+            <div class="see">
+                See also
+                <a href="#compose">compose</a>,
+                <a href="#pipe">pipe</a>.
+            </div>
+
+	    <pre><button class="try-repl" data-ramda-version="0.24.1">Try in REPL</button><code class="hljs javascript"><span class="hljs-keyword">var</span> classyGreeting = <span class="hljs-function"><span class="hljs-params">name</span> =&gt;</span> <span class="hljs-string">"The name's "</span> + name.last + <span class="hljs-string">", "</span> + name.first + <span class="hljs-string">" "</span> + lastName
+<span class="hljs-keyword">var</span> yellGreeting = R.o(R.toUpper, classyGreeting);
+yellGreeting({<span class="hljs-attr">first</span>: <span class="hljs-string">'James'</span>, <span class="hljs-attr">last</span>: <span class="hljs-string">'Bond'</span>}); <span class="hljs-comment">//=&gt; "THE NAME'S BOND, JAMES BOND"</span>
+
+R.o(R.multiply(<span class="hljs-number">10</span>), R.add(<span class="hljs-number">10</span>))(<span class="hljs-number">-4</span>) <span class="hljs-comment">//=&gt; 60</span></code></pre>
         </section>
         <div id="objOf" class="section-id"></div>
         <section class="card">
@@ -12841,6 +13197,59 @@ R.splitEvery(<span class="hljs-number">3</span>, <span class="hljs-string">'foob
 
 	    <pre><button class="try-repl" data-ramda-version="0.24.1">Try in REPL</button><code class="hljs javascript">R.splitWhen(R.equals(<span class="hljs-number">2</span>), [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);   <span class="hljs-comment">//=&gt; [[1], [2, 3, 1, 2, 3]]</span></code></pre>
         </section>
+        <div id="startsWith" class="section-id"></div>
+        <section class="card">
+            <h2>
+                <a tabindex="2" class="name" href="#startsWith">startsWith</a>
+                <span class="pull-right">
+                        <span class="label label-category">List</span>
+                        <a target="_blank" title="View source on GitHub" href="https://github.com/ramda/ramda/tree/v0.24.1/src/startsWith.js"><small class="glyphicon glyphicon-new-window"></small></a>
+                </span>
+            </h2>
+
+
+            <div><code>[a] → Boolean</code></div>
+            <div><code>String → Boolean</code></div>
+
+
+            <div class="params" data-expanded="false">
+                <a href="#expand" class="toggle-params">Parameters</a>
+                <div class="details panel panel-default">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">prefix</span>
+                            <span class="description"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">list</span>
+                            <span class="description"></span>
+                        </li>
+                    </ul>
+                    <div class="panel-body">
+                        <span class="returns">Returns</span>
+                        <span class="type">Boolean</span>
+                        <span class="description"></span>
+                    </div>
+                </div>
+            </div>
+
+            <p><small>Added in v0.24.0</small></p>
+
+            <div class="description"><p>检查列表是否以给定的值开头。</p>
+</div>
+
+
+
+
+	    <pre><button class="try-repl" data-ramda-version="0.24.1">Try in REPL</button><code class="hljs javascript">R.startsWith(<span class="hljs-string">'a'</span>, <span class="hljs-string">'abc'</span>)                <span class="hljs-comment">//=&gt; true</span>
+R.startsWith(<span class="hljs-string">'b'</span>, <span class="hljs-string">'abc'</span>)                <span class="hljs-comment">//=&gt; false</span>
+R.startsWith([<span class="hljs-string">'a'</span>], [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>])    <span class="hljs-comment">//=&gt; true</span>
+R.startsWith([<span class="hljs-string">'b'</span>], [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>])    <span class="hljs-comment">//=&gt; false</span></code></pre>
+        </section>
         <div id="subtract" class="section-id"></div>
         <section class="card">
             <h2>
@@ -15204,6 +15613,68 @@ R.view(xLens, {<span class="hljs-attr">x</span>: <span class="hljs-number">4</sp
 );
 truncate(<span class="hljs-string">'12345'</span>);         <span class="hljs-comment">//=&gt; '12345'</span>
 truncate(<span class="hljs-string">'0123456789ABC'</span>); <span class="hljs-comment">//=&gt; '0123456789…'</span></code></pre>
+        </section>
+        <div id="where" class="section-id"></div>
+        <section class="card">
+            <h2>
+                <a tabindex="2" class="name" href="#where">where</a>
+                <span class="pull-right">
+                        <span class="label label-category">Object</span>
+                        <a target="_blank" title="View source on GitHub" href="https://github.com/ramda/ramda/tree/v0.24.1/src/where.js"><small class="glyphicon glyphicon-new-window"></small></a>
+                </span>
+            </h2>
+
+
+            <div><code>{String: (* → Boolean)} → {String: *} → Boolean</code></div>
+
+
+            <div class="params" data-expanded="false">
+                <a href="#expand" class="toggle-params">Parameters</a>
+                <div class="details panel panel-default">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">spec</span>
+                            <span class="description"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="type">
+                            </span>
+                            <span class="name">testObj</span>
+                            <span class="description"></span>
+                        </li>
+                    </ul>
+                    <div class="panel-body">
+                        <span class="returns">Returns</span>
+                        <span class="type">Boolean</span>
+                        <span class="description"></span>
+                    </div>
+                </div>
+            </div>
+
+            <p><small>Added in v0.1.1</small></p>
+
+            <div class="description"><p>接受一个测试规范对象和一个待检测对象，如果测试满足规范，则返回 true，否则返回 false。测试规范对象的每个属性值都必须是 predicate 。每个 predicate 作用于待检测对象对应的属性值，如果所有 predicate 都返回 true，则 <code>where</code> 返回 true，否则返回 false 。</p>
+<p><code>where</code> 非常适合于需要声明式表示约束的函数，比如 <a href="#filter"><code>filter</code></a> 和 <a href="#find"><code>find</code></a> 。</p>
+</div>
+
+
+
+
+	    <pre><button class="try-repl" data-ramda-version="0.24.1">Try in REPL</button><code class="hljs javascript"><span class="hljs-comment">// pred :: Object -&gt; Boolean</span>
+<span class="hljs-keyword">var</span> pred = R.where({
+  <span class="hljs-attr">a</span>: R.equals(<span class="hljs-string">'foo'</span>),
+  <span class="hljs-attr">b</span>: R.complement(R.equals(<span class="hljs-string">'bar'</span>)),
+  <span class="hljs-attr">x</span>: R.gt(R.__, <span class="hljs-number">10</span>),
+  <span class="hljs-attr">y</span>: R.lt(R.__, <span class="hljs-number">20</span>)
+});
+
+pred({<span class="hljs-attr">a</span>: <span class="hljs-string">'foo'</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'xxx'</span>, <span class="hljs-attr">x</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">19</span>}); <span class="hljs-comment">//=&gt; true</span>
+pred({<span class="hljs-attr">a</span>: <span class="hljs-string">'xxx'</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'xxx'</span>, <span class="hljs-attr">x</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">19</span>}); <span class="hljs-comment">//=&gt; false</span>
+pred({<span class="hljs-attr">a</span>: <span class="hljs-string">'foo'</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'bar'</span>, <span class="hljs-attr">x</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">19</span>}); <span class="hljs-comment">//=&gt; false</span>
+pred({<span class="hljs-attr">a</span>: <span class="hljs-string">'foo'</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'xxx'</span>, <span class="hljs-attr">x</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">19</span>}); <span class="hljs-comment">//=&gt; false</span>
+pred({<span class="hljs-attr">a</span>: <span class="hljs-string">'foo'</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'xxx'</span>, <span class="hljs-attr">x</span>: <span class="hljs-number">11</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">20</span>}); <span class="hljs-comment">//=&gt; false</span></code></pre>
         </section>
         <div id="whereEq" class="section-id"></div>
         <section class="card">
