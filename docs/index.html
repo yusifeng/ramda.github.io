@@ -2704,8 +2704,8 @@ getMetrics(<span class="hljs-number">2</span>, <span class="hljs-number">4</span
 
             <p><small>Added in v0.8.0</small></p>
 
-            <div class="description"><p>设置或覆盖对象的指定属性。</p>
-<p>注意，该函数也会将 prototype 属性复制到新的对象中。所有非原始类型属性都通过引用复制。</p>
+            <div class="description"><p>浅复制对象，然后设置或覆盖对象的指定属性。</p>
+<p>注意，该函数也会将 prototype 属性复制到新的对象中。所有 <code>non-primitive</code> 属性都通过引用复制。</p>
 </div>
 
 
@@ -2768,8 +2768,8 @@ getMetrics(<span class="hljs-number">2</span>, <span class="hljs-number">4</span
 
             <p><small>Added in v0.8.0</small></p>
 
-            <div class="description"><p>设置或覆盖即将创建的给定路径所需的节点，并将特定值放在该路径的末端。</p>
-<p>注意，这也会将 prototype 属性复制到新对象上。所有非原始类型属性都通过引用复制。</p>
+            <div class="description"><p>浅复制对象，设置或覆盖即将创建的给定路径所需的节点，并将特定值放在该路径的末端。</p>
+<p>注意，这也会将 prototype 属性复制到新对象上。所有 <code>non-primitive</code> 属性都通过引用复制。</p>
 </div>
 
 
@@ -4437,8 +4437,8 @@ R.differenceWith(cmp, l1, l2); <span class="hljs-comment">//=&gt; [{a: 1}, {a: 2
 
             <p><small>Added in v0.11.0</small></p>
 
-            <div class="description"><p>删除对象中指定路径上的属性。</p>
-<p>注意，这也会将 prototype 属性复制到新对象上并展开。所有非原始类型属性都通过引用复制。</p>
+            <div class="description"><p>浅复制对象，删除返回对象中指定路径上的属性。</p>
+<p>注意，这也会将 prototype 属性复制到新对象上并展开。所有 <code>non-primitive</code> 属性都通过引用复制。</p>
 </div>
 
 
