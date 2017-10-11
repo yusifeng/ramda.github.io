@@ -62,7 +62,7 @@
                 <a tabindex="2" class="name" href="#{{name}}">{{name}}</a>
                 <span class="pull-right">
                         <span class="label label-category">{{category}}</span>
-                        <a target="_blank" title="View source on GitHub" href="https://github.com/ramda/ramda/tree/v{{../version}}/source/{{name}}.js"><small class="glyphicon glyphicon-new-window"></small></a>
+                        <a target="_blank" title="View source on GitHub" href="https://github.com/ramda/ramda/tree/v{{../version}}/src/{{name}}.js"><small class="glyphicon glyphicon-new-window"></small></a>
                 </span>
             </h2>
 
@@ -153,13 +153,12 @@
             {{/if}}
 
             {{#if example}}
-	    <pre><div class = "try-repl" ><button class = "send-repl" data-ramda-version="{{@root.version}}">Open in REPL</button><button class = "run-here" data-ramda-version="{{@root.version}}">Run it here</button></div><code class="hljs javascript">{{{example}}}</code></pre>
+	    <pre><button class="try-repl" data-ramda-version="{{@root.version}}">Try in REPL</button><code class="hljs javascript">{{{example}}}</code></pre>
             {{/if}}
         </section>
         {{/each}}
     </main>
     <script src="dist/ramda.js"></script>
     <script src="main.js"></script>
-    <script src = "https://embed.runkit.com"></script>
 </body>
 </html>

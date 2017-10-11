@@ -1784,9 +1784,11 @@
 
             <p><small>Added in v0.6.0</small></p>
 
-            <div class="description"><p>柯里化函数的参数占位符。允许部分应用于任何位置的参数。</p>
-<p>假设 <code>g</code> 代表柯里化的三元函数，<code>_</code> 代表 <code>R.__</code>，下面几种写法是等价的：</p>
-<p>haha</p>
+            <div class="description"><p>A special placeholder value used to specify &quot;gaps&quot; within curried functions,
+allowing partial application of any combination of arguments, regardless of
+their positions.</p>
+<p>If <code>g</code> is a curried ternary function and <code>_</code> is <code>R.__</code>, the following are
+equivalent:</p>
 <ul>
 <li><code>g(1, 2, 3)</code></li>
 <li><code>g(_, 2, 3)(1)</code></li>
@@ -1943,7 +1945,7 @@ R.map(R.trim, R.split(<span class="hljs-string">','</span>, <span class="hljs-st
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>两数相加。</p>
+            <div class="description"><p>Adds two values.</p>
 </div>
 
 
@@ -2061,7 +2063,9 @@ mapIndexed(<span class="hljs-function">(<span class="hljs-params">val, idx</span
 
             <p><small>Added in v0.14.0</small></p>
 
-            <div class="description"><p>对数组中给定索引的值进行函数变换，返回一份新的数组拷贝，给定索引处的值被替换为函数变换的结果。</p>
+            <div class="description"><p>Applies a function to the value at the given index of an array, returning a
+new copy of the array with the element at the given index replaced with the
+result of the function application.</p>
 </div>
 
 

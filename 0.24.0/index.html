@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="home-page"><head><meta charset="UTF-8"><meta content="width=device-width, initial-scale=1" name="viewport"><title>Ramda Documentation</title><link href="./style.css" rel="stylesheet" type="text/css"></head><body><input id="open-nav" type="checkbox"><header class="navbar navbar-fixed-top navbar-inverse container-fluid"><div class="container-fluid"><div class="navbar-header"><label class="open-nav" for="open-nav"></label><a class="navbar-brand" href="#"><strong>Ramda</strong><span class="version"> v0.25.0</span></a></div><ul class="nav navbar-nav navbar-left"><li class="active"><a href="./">Home</a></li><li><a href="./docs/">Documentation</a></li><li><a href="./repl/">Try Ramda</a></li></ul><ul class="nav navbar-nav navbar-right"><li><a href="https://github.com/ramda/ramda">GitHub</a></li><li><a href="https://gitter.im/ramda/ramda">Discuss</a></li></ul></div></header><main class="container"><article><h1 id="ramda">Ramda</h1>
+<!DOCTYPE html><html class="home-page"><head><meta charset="UTF-8"><meta content="width=device-width, initial-scale=1" name="viewport"><title>Ramda Documentation</title><link href="./style.css" rel="stylesheet" type="text/css"></head><body><input id="open-nav" type="checkbox"><header class="navbar navbar-fixed-top navbar-inverse container-fluid"><div class="container-fluid"><div class="navbar-header"><label class="open-nav" for="open-nav"></label><a class="navbar-brand" href="#"><strong>Ramda</strong><span class="version"> v0.24.0</span></a></div><ul class="nav navbar-nav navbar-left"><li class="active"><a href="./">Home</a></li><li><a href="./docs/">Documentation</a></li><li><a href="./repl/">Try Ramda</a></li></ul><ul class="nav navbar-nav navbar-right"><li><a href="https://github.com/ramda/ramda">GitHub</a></li><li><a href="https://gitter.im/ramda/ramda">Discuss</a></li></ul></div></header><main class="container"><article><h1 id="ramda">Ramda</h1>
 <p>A practical functional library for JavaScript programmers.</p>
 <p><a href="https://travis-ci.org/ramda/ramda"><img src="https://travis-ci.org/ramda/ramda.svg?branch=master" alt="Build Status"></a>
 <a href="https://www.npmjs.org/package/ramda"><img src="https://badge.fury.io/js/ramda.svg" alt="npm module"></a>
@@ -63,25 +63,27 @@ implementation wins over any notions of functional purity.</p>
 <pre><code class="lang-html">&lt;script src=&quot;path/to/yourCopyOf/ramda.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <p>or from a CDN, either cdnjs:</p>
-<pre><code class="lang-html">&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/ramda/0.25.0/ramda.min.js&quot;&gt;&lt;/script&gt;
+<pre><code class="lang-html">&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/ramda/0.24.0/ramda.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <p>or one of the below links from <a href="http://jsdelivr.com">jsDelivr</a>:</p>
-<pre><code class="lang-html">&lt;script src=&quot;//cdn.jsdelivr.net/npm/ramda@0.25.1/dist/ramda.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;//cdn.jsdelivr.net/npm/ramda@0.25/dist/ramda.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;//cdn.jsdelivr.net/npm/ramda@latest/dist/ramda.min.js&quot;&gt;&lt;/script&gt;
+<pre><code class="lang-html">&lt;script src=&quot;//cdn.jsdelivr.net/ramda/0.24.0/ramda.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//cdn.jsdelivr.net/ramda/0.24/ramda.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//cdn.jsdelivr.net/ramda/latest/ramda.min.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <p>(note that using <code>latest</code> is taking a significant risk that ramda API changes could break your code.)</p>
 <p>These script tags add the variable <code>R</code> on the browser&#39;s global scope.</p>
 <p>Or you can inject ramda into virtually any unsuspecting website using <a href="https://github.com/ramda/ramda/blob/master/BOOKMARKLET.md">the bookmarklet</a>.</p>
 <h3 id="build">Build</h3>
-<p><code>npm run build</code> creates <code>es</code>, <code>src</code> directories and updates both <strong>dist/ramda.js</strong> and <strong>dist/ramda.min.js</strong></p>
+<ul>
+<li>on Unix-based platforms, <code>npm run build</code> updates <strong>dist/ramda.js</strong> and <strong>dist/ramda.min.js</strong></li>
+<li>on Windows, write the output of <code>scripts/build --complete</code> to a temporary file, then rename the temporary file <strong>dist/ramda.js</strong>.</li>
+</ul>
 <h4 id="partial-builds">Partial Builds</h4>
 <p>It is possible to build Ramda with a subset of the functionality to reduce its file size. Ramda&#39;s build system supports this with command line flags. For example if you&#39;re using <code>R.compose</code>, <code>R.reduce</code>, and <code>R.filter</code> you can create a partial build with:</p>
-<pre><code>npm run --silent partial-build compose reduce filter &gt; dist/ramda.custom.js
-</code></pre><p>This requires having Node/io.js installed and ramda&#39;s dependencies installed (just use <code>npm install</code> before running partial build). </p>
+<pre><code>./scripts/build -- src/compose.js src/reduce.js src/filter.js &gt; dist/ramda.custom.js
+</code></pre><p>This requires having Node/io.js installed. </p>
 <h2 id="documentation">Documentation</h2>
 <p>Please review the <a href="http://ramdajs.com/docs/">API documentation</a>.</p>
-<p>Also available is our <a href="https://github.com/ramda/ramda/wiki/Cookbook">Cookbook</a> of functions built from Ramda that you may find useful.</p>
 <h2 id="the-name">The Name</h2>
 <p>Ok, so we like sheep.  That&#39;s all.  It&#39;s a short name, not already 
 taken.  It could as easily have been <code>eweda</code>, but then we would be 
@@ -105,16 +107,8 @@ tests. Install testem (<code>npm install -g testem</code>) and run <code>testem<
 link provided in your browser and you will see the results in your terminal.</p>
 <p>If you have <em>PhantomJS</em> installed, you can run <code>testem -l phantomjs</code> to run the
 tests completely headlessly.</p>
-<h2 id="typings">Typings</h2>
-<ul>
-<li><a href="https://github.com/types/npm-ramda/">TypeScript</a></li>
-<li><a href="https://github.com/flowtype/flow-typed/tree/master/definitions/npm/ramda_v0.x.x">Flow</a></li>
-</ul>
 <h2 id="translations">Translations</h2>
-<ul>
-<li><a href="http://ramda.cn/">Chinese(中文)</a></li>
-<li><a href="https://github.com/ivanzusko/ramda">Ukrainian(Українська)</a></li>
-</ul>
+<p><a href="http://ramda.cn/">Chinese(中文)</a></p>
 <h2 id="acknowledgements">Acknowledgements</h2>
 <p>Thanks to <a href="http://www.jcphillipps.com">J. C. Phillipps</a> for the Ramda logo.
 Ramda logo artwork &copy; 2014 J. C. Phillipps. Licensed Creative Commons 

@@ -1,19 +1,15 @@
 {
   "name": "ramda.github.io",
-  "version": "0.25.0",
+  "version": "0.24.1",
   "description": "Ramda website",
-  "engines": {
-    "node": ">=6.0.0"
-  },
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/ramdacn/ramda.github.io.git"
+    "url": "git://github.com/ramda/ramda.github.io.git"
   },
   "license": "MIT",
   "devDependencies": {
     "bootstrap": "3.3.x",
-    "chokidar": "^1.6.1",
     "gitbook-cli": "2.3.x",
     "handlebars": "4.x.x",
     "highlight.js": "9.x.x",
@@ -24,7 +20,7 @@
     "less-plugin-clean-css": "1.5.x",
     "marked": "0.3.x",
     "pug": "^2.0.0-beta6",
-    "ramda": "0.25.0",
+    "ramda": "0.24.1",
     "semver-compare": "1.0.x",
     "walk": "2.3.x"
   },
