@@ -104,6 +104,7 @@ var T = always(true);
  *   - `g(_, 2)(1, 3)`
  *   - `g(_, 2)(_, 3)(1)`
  *
+ * @name __
  * @constant
  * @memberOf R
  * @since v0.6.0
@@ -379,8 +380,8 @@ function _curry3(fn) {
  * @see R.update
  * @example
  *
- *      R.adjust(R.add(10), 1, [1, 2, 3]);     //=> [1, 12, 3]
- *      R.adjust(R.add(10))(1)([1, 2, 3]);     //=> [1, 12, 3]
+ *      R.adjust(R.toUpper, 1, ['a', 'b', 'c', 'd']);      //=> ['a', 'B', 'c', 'd']
+ *      R.adjust(R.toUpper, -1, ['a', 'b', 'c', 'd']);     //=> ['a', 'b', 'c', 'D']
  * @symb R.adjust(f, -1, [a, b]) = [a, f(b)]
  * @symb R.adjust(f, 0, [a, b]) = [f(a), b]
  */
@@ -748,11 +749,11 @@ var contains = function contains(list, item) {
  *
  *      R.keys({a: 1, b: 2, c: 3}); //=> ['a', 'b', 'c']
  */
-var _keys = typeof Object.keys === 'function' && !hasArgsEnumBug ?
-  function keys(obj) {
+var keys = typeof Object.keys === 'function' && !hasArgsEnumBug ?
+  _curry1(function keys(obj) {
     return Object(obj) !== obj ? [] : Object.keys(obj);
-  } :
-  function keys(obj) {
+  }) :
+  _curry1(function keys(obj) {
     if (Object(obj) !== obj) {
       return [];
     }
@@ -775,8 +776,7 @@ var _keys = typeof Object.keys === 'function' && !hasArgsEnumBug ?
       }
     }
     return ks;
-  };
-var keys = _curry1(_keys);
+  });
 
 /**
  * 接收一个函数和一个 [functor](https://github.com/fantasyland/fantasy-land#functor), 将该函数应用到 functor 的每个值上，返回一个具有相同形态的 functor。
@@ -2819,6 +2819,7 @@ var concat = _curry2(function concat(a, b) {
  * @sig [[(*... -> Boolean),(*... -> *)]] -> (*... -> *)
  * @param {Array} pairs A list of [predicate, transformer]
  * @return {Function}
+ * @see R.ifElse, R.unless, R.when
  * @example
  *
  *      var fn = R.cond([
@@ -3294,8 +3295,8 @@ var remove = _curry3(function remove(start, count, list) {
  * @see R.adjust
  * @example
  *
- *      R.update(1, 11, [0, 1, 2]);     //=> [0, 11, 2]
- *      R.update(1)(11)([0, 1, 2]);     //=> [0, 11, 2]
+ *      R.update(1, '_', ['a', 'b', 'c']);      //=> ['a', '_', 'c']
+ *      R.update(-1, '_', ['a', 'b', 'c']);     //=> ['a', 'b', '_']
  * @symb R.update(-1, a, [b, c]) = [b, a]
  * @symb R.update(0, a, [b, c]) = [a, c]
  * @symb R.update(1, a, [b, c]) = [b, a]
@@ -4606,7 +4607,7 @@ var identity = _curry1(_identity);
  * @param {Function} onFalse A function to invoke when the `condition` evaluates to a falsy value.
  * @return {Function} A new function that will process either the `onTrue` or the `onFalse`
  *                    function depending upon the result of the `condition` predicate.
- * @see R.unless, R.when
+ * @see R.unless, R.when, R.cond
  * @example
  *
  *      var incCount = R.ifElse(
@@ -7985,16 +7986,15 @@ var hasProtoTrim = (typeof String.prototype.trim === 'function');
  *      R.trim('   xyz  '); //=> 'xyz'
  *      R.map(R.trim, R.split(',', 'x, y, z')); //=> ['x', 'y', 'z']
  */
-var _trim = !hasProtoTrim || (ws.trim() || !zeroWidth.trim()) ?
-    function trim(str) {
-      var beginRx = new RegExp('^[' + ws + '][' + ws + ']*');
-      var endRx = new RegExp('[' + ws + '][' + ws + ']*$');
-      return str.replace(beginRx, '').replace(endRx, '');
-    } :
-    function trim(str) {
-      return str.trim();
-    };
-var trim = _curry1(_trim);
+var trim = !hasProtoTrim || (ws.trim() || !zeroWidth.trim()) ?
+  _curry1(function trim(str) {
+    var beginRx = new RegExp('^[' + ws + '][' + ws + ']*');
+    var endRx = new RegExp('[' + ws + '][' + ws + ']*$');
+    return str.replace(beginRx, '').replace(endRx, '');
+  }) :
+  _curry1(function trim(str) {
+    return str.trim();
+  });
 
 /**
  * `tryCatch` 接受两个函数：`tryer` 和 `catcher`，生成的函数执行 `tryer`，若未抛出异常，则返回执行结果。若抛出异常，则执行 `catcher`，返回 `catcher` 的执行结果。注意，为了有效的组合该函数，`tryer` 和 `catcher` 应赶回相同类型的值。
@@ -8229,11 +8229,13 @@ var unionWith = _curry3(function unionWith(pred, list1, list2) {
  * @since v0.18.0
  * @category Logic
  * @sig (a -> Boolean) -> (a -> a) -> a -> a
- * @param {Function} pred 条件函数
- * @param {Function} whenFalseFn 当 `pred` 返回结果为 false 时调用的函数
- * @param {*} x 作为参数传入 `pred` 用于判断，如果需要作为参数传入 `whenFalseFn`
- * @return {*} `x` 或者 `whenFalseFn` 的执行结果
- * @see R.ifElse, R.when
+ * @param {Function} pred        A predicate function
+ * @param {Function} whenFalseFn A function to invoke when the `pred` evaluates
+ *                               to a falsy value.
+ * @param {*}        x           An object to test with the `pred` function and
+ *                               pass to `whenFalseFn` if necessary.
+ * @return {*} Either `x` or the result of applying `x` to `whenFalseFn`.
+ * @see R.ifElse, R.when, R.cond
  * @example
  *
  *      let safeInc = R.unless(R.isNil, R.inc);
@@ -8352,11 +8354,13 @@ var view = _curry2(function view(lens, x) {
  * @since v0.18.0
  * @category Logic
  * @sig (a -> Boolean) -> (a -> a) -> a -> a
- * @param {Function} pred 条件函数
- * @param {Function} whenTrueFn 当`pred`函数返回为 false 时候调用的函数
- * @param {*} x 作为参数传入`pred`用于判断，如果需要作为参数传入`whenTrueFn`
- * @return {*} `x`或者`whenTrueFn`的执行结果
- * @see R.ifElse, R.unless
+ * @param {Function} pred       A predicate function
+ * @param {Function} whenTrueFn A function to invoke when the `condition`
+ *                              evaluates to a truthy value.
+ * @param {*}        x          An object to test with the `pred` function and
+ *                              pass to `whenTrueFn` if necessary.
+ * @return {*} Either `x` or the result of applying `x` to `whenTrueFn`.
+ * @see R.ifElse, R.unless, R.cond
  * @example
  *
  *      // truncate :: String -> String
