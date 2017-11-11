@@ -6876,7 +6876,7 @@ R.init(<span class="hljs-string">''</span>);     <span class="hljs-comment">//=&
 
             <p><small>Added in v0.2.2</small></p>
 
-            <div class="description"><p>将元素插入到 list 指定索引处。注意，该函数是破坏性的：返回处理后列表的拷贝。<small>函数运行过程中不会破坏任何列表。</small></p>
+            <div class="description"><p>将元素插入到 list 指定索引处。注意，该函数是非破坏性的：返回处理后列表的拷贝。<small>函数运行过程中不会破坏任何列表。</small></p>
 </div>
 
 
@@ -6934,7 +6934,7 @@ R.init(<span class="hljs-string">''</span>);     <span class="hljs-comment">//=&
 
             <p><small>Added in v0.9.0</small></p>
 
-            <div class="description"><p>将子 list 插入到 list 指定索引处。注意，该函数是破坏性的：返回处理后列表的拷贝。<small>函数运行过程中不会破坏任何列表。</small></p>
+            <div class="description"><p>将子 list 插入到 list 指定索引处。注意，该函数是非破坏性的：返回处理后列表的拷贝。<small>函数运行过程中不会破坏任何列表。</small></p>
 </div>
 
 
@@ -10294,7 +10294,7 @@ R.of([<span class="hljs-number">42</span>]); <span class="hljs-comment">//=&gt; 
 
             <p><small>Added in v0.1.0</small></p>
 
-            <div class="description"><p>创建一个只能调用一次的函数。</p>
+            <div class="description"><p>创建一个只执行一次的函数。</p>
 <p>将给定函数 <code>fn</code> 封装到新函数<code>fn&#39;</code>中，<code>fn&#39;</code> 确保 <code>fn</code> 只能调用一次。重复调用<code>fn&#39;</code> ，只会返回第一次执行时的结果。</p>
 </div>
 
@@ -12363,7 +12363,7 @@ R.reject(isOdd, {<span class="hljs-attr">a</span>: <span class="hljs-number">1</
 
             <p><small>Added in v0.2.2</small></p>
 
-            <div class="description"><p>删除列表中从 <code>start</code> 开始的 <code>count</code> 个元素。_ 注意，该操作是非破坏性的：不改变原列表，返回处理后列表的拷贝。</p>
+            <div class="description"><p>删除列表中从 <code>start</code> 开始的 <code>count</code> 个元素。注意，该操作是非破坏性的：不改变原列表，返回处理后列表的拷贝。</p>
 </div>
 
 
