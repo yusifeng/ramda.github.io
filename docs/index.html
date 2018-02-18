@@ -12154,7 +12154,7 @@ namesByGrade(students);
             <div class="description"><p>右折叠操作。</p>
 <p>遍历列表，相继调用二元迭代函数（参数为累积值和从数组中取出的当前元素），将本次迭代结果作为下次迭代的累积值。返回最终累积值。</p>
 <p>类似于 <a href="#reduce"><code>reduce</code></a>，除了遍历列表的顺序是从右向左的。</p>
-<p><code>reduceRight</code> 的迭代函数接收两个参数 <em>(acc, value)</em>。与之对应的，<code>reduce</code> 的迭代函数的参数顺序为 <em>(value, acc)</em></p>
+<p><code>reduceRight</code> 的迭代函数接收两个参数 <em>(value, acc)</em>。与之对应的，<code>reduce</code> 的迭代函数的参数顺序为 <em>(acc, value)</em></p>
 <p>注意：<code>R.reduceRight</code> 与原生 <code>Array.prototype.reduceRight</code> 方法不同，它不会跳过删除或未分配的索引项（稀疏矩阵）。更多关于原生 reduceRight 的行为，请参考：<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight#Description">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight#Description</a></p>
 </div>
 
