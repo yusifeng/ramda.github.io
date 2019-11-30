@@ -123,17 +123,18 @@
 
     parent.style.background = "transparent";
     parent.style.overflow = "hidden";
-    
+
     var container = document.createElement("div");
 
     container.style.width = "1px";
     container.style.height = "1px";
-    
+
     parent.appendChild(container);
 
     RunKit.createNotebook({
         element: container,
         nodeVersion: '*',
+        preamble: 'var { Maybe, Either } = require("ramda-fantasy");\nvar R = require("ramda' + ramdaVersion + '");',
         preamble: 'var R = require("ramda' + ramdaVersion + '")',
         source: codeElement.textContent,
         theme: 'atom-dark',
