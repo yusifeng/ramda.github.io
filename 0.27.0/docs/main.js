@@ -123,12 +123,12 @@
 
     parent.style.background = "transparent";
     parent.style.overflow = "hidden";
-    
+
     var container = document.createElement("div");
 
     container.style.width = "1px";
     container.style.height = "1px";
-    
+
     parent.appendChild(container);
 
     RunKit.createNotebook({
