@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="home-page"><head><meta charset="UTF-8"><meta content="width=device-width, initial-scale=1" name="viewport"><title>Ramda Documentation</title><link href="./style.css" rel="stylesheet" type="text/css"></head><body><input id="open-nav" type="checkbox"><header class="navbar navbar-fixed-top navbar-inverse container-fluid"><div class="container-fluid"><div class="navbar-header"><label class="open-nav" for="open-nav"></label><a class="navbar-brand" href="#"><strong>Ramda</strong><span class="version"> v0.27.0</span></a></div><ul class="nav navbar-nav navbar-left"><li class="active"><a href="./">Home</a></li><li><a href="./docs/">Documentation</a></li><li><a href="./repl/">Try Ramda</a></li></ul><ul class="nav navbar-nav navbar-right"><li><a href="https://github.com/ramda/ramda">GitHub</a></li><li><a href="https://gitter.im/ramda/ramda">Discuss</a></li></ul></div></header><main class="container"><article><h1 id="ramda">Ramda</h1>
+<!DOCTYPE html><html class="home-page"><head><meta charset="UTF-8"><meta content="width=device-width, initial-scale=1" name="viewport"><title>Ramda Documentation</title><link href="./style.css" rel="stylesheet" type="text/css"></head><body><input id="open-nav" type="checkbox"><header class="navbar navbar-fixed-top navbar-inverse container-fluid"><div class="container-fluid"><div class="navbar-header"><label class="open-nav" for="open-nav"></label><a class="navbar-brand" href="#"><strong>Ramda</strong><span class="version"> v0.26.1</span></a></div><ul class="nav navbar-nav navbar-left"><li class="active"><a href="./">Home</a></li><li><a href="./docs/">Documentation</a></li><li><a href="./repl/">Try Ramda</a></li></ul><ul class="nav navbar-nav navbar-right"><li><a href="https://github.com/ramda/ramda">GitHub</a></li><li><a href="https://gitter.im/ramda/ramda">Discuss</a></li></ul></div></header><main class="container"><article><h1 id="ramda">Ramda</h1>
 <p>A practical functional library for JavaScript programmers.</p>
 <p><a href="https://travis-ci.org/ramda/ramda"><img src="https://travis-ci.org/ramda/ramda.svg?branch=master" alt="Build Status"></a>
 <a href="https://www.npmjs.org/package/ramda"><img src="https://badge.fury.io/js/ramda.svg" alt="npm module"></a>
@@ -123,7 +123,7 @@ identity()
 </code></pre>
 <p>Manually cherry picking methods is cumbersome, however. Most bundlers like Webpack and Rollup offer tree-shaking as a way to drop unused Ramda code and reduce bundle size, but their performance varies, discussed <a href="https://github.com/scabbiaza/ramda-webpack-tree-shaking-examples">here</a>. Here is a summary of the optimal setup based on what technology you are using:</p>
 <ol>
-<li>Webpack + Babel - use <a href="https://github.com/megawac/babel-plugin-ramda"><code>babel-plugin-ramda</code></a> to automatically cherry pick methods. Discussion <a href="https://www.andrewsouthpaw.com/ramda-webpack-and-tree-shaking/">here</a>, example <a href="https://github.com/AndrewSouthpaw/ramda-webpack-tree-shaking-examples/blob/master/07-webpack-babel-plugin-ramda/package.json">here</a></li>
+<li>Webpack + Babel - use <a href="https://github.com/megawac/babel-plugin-ramda"><code>babel-plugin-ramda</code></a> to automatically cherry pick methods. Discussion <a href="http://www.andrewsouthpaw.com/2018/01/19/ramda-tree-shaking-not-supported-out-of-the-box/">here</a>, example <a href="https://github.com/AndrewSouthpaw/ramda-webpack-tree-shaking-examples/blob/master/07-webpack-babel-plugin-ramda/package.json">here</a></li>
 <li>Webpack only - use <code>UglifyJS</code> plugin for treeshaking along with the <code>ModuleConcatenationPlugin</code>. Discussion <a href="https://github.com/ramda/ramda/issues/2355">here</a>, with an example setup <a href="https://github.com/scabbiaza/ramda-webpack-tree-shaking-examples/blob/master/06-webpack-scope-hoisted/webpack.config.js">here</a></li>
 <li>Rollup - does a fine job properly treeshaking, no special work needed; example <a href="https://github.com/scabbiaza/ramda-webpack-tree-shaking-examples/blob/master/07-rollup-ramda-tree-shaking/rollup.config.js">here</a></li>
 </ol>
@@ -136,7 +136,6 @@ identity()
 <ul>
 <li><a href="http://ramda.cn/">Chinese(中文)</a></li>
 <li><a href="https://github.com/ivanzusko/ramda">Ukrainian(Українська)</a></li>
-<li><a href="https://github.com/renansj/ramda">Portuguese(BR)</a></li>
 <li><a href="https://github.com/Guck111/ramda">Russian(Русский)</a></li>
 </ul>
 <h2 id="acknowledgements">Acknowledgements</h2>
